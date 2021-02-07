@@ -5,18 +5,17 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 
-public class JsonFileReader implements Reader{
+public class LolFileReader extends Reader {
 
     BufferedReader reader;
-    String jsonResult;
 
-    public JsonFileReader(String filePath ) {
+    public LolFileReader(String filePath ) {
         try {
             reader = new BufferedReader(new FileReader(filePath));
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
-        jsonResult = "";
+        this.stringResult = "";
     }
 
     @Override
@@ -25,8 +24,7 @@ public class JsonFileReader implements Reader{
         try{
             currentLine = reader.readLine();
             while (currentLine != null) {
-                System.out.println(currentLine);
-                this.jsonResult += currentLine;
+                this.stringResult += currentLine.trim();
                 currentLine = reader.readLine();
             }
         }catch(IOException e){

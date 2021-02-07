@@ -2,7 +2,13 @@ package org.toby.reader;
 
 import java.io.IOException;
 
-public interface Reader {
+public abstract class Reader {
 
-    public void read() throws IOException;
+    protected String stringResult;
+
+    public abstract void read() throws IOException;
+
+    public String getStringResult() {
+        return stringResult;
+    }
 }
