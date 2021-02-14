@@ -13,7 +13,11 @@ import org.toby.content.champion.ChampionCollection;
 import org.toby.lolobject.Champion;
 
 import java.io.IOException;
-import java.util.*;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Set;
+
 
 public class CollectionDeserializer extends StdDeserializer<ChampionCollection> {
 
@@ -26,7 +30,7 @@ public class CollectionDeserializer extends StdDeserializer<ChampionCollection> 
     }
 
     @Override
-    public ChampionCollection deserialize(JsonParser jsonParser, DeserializationContext deserializationContext) throws IOException, JsonProcessingException {
+    public ChampionCollection deserialize(JsonParser jsonParser, DeserializationContext deserializationContext) throws IOException {
 
         ChampionCollection championCollection = new ChampionCollection();
         ObjectCodec codec = jsonParser.getCodec();
@@ -50,8 +54,7 @@ public class CollectionDeserializer extends StdDeserializer<ChampionCollection> 
         while(championNodeIterator.hasNext()){
             Map.Entry<String, JsonNode> championJson = championNodeIterator.next();
             JsonNode championNode = championJson.getValue();
-            String json = championNode.toString();
-            System.out.println(json);
+            String json = getFormattedJson(championNode.toString());
             Champion champion = null;
             try {
                 champion= championMapper.readValue(json, Champion.class);
@@ -69,5 +72,25 @@ public class CollectionDeserializer extends StdDeserializer<ChampionCollection> 
         module.addDeserializer(Champion.class, new Deserializer());
         mapper.registerModule(module);
         return mapper;
+    }
+
+    private String getFormattedJson(String json){
+        StringBuilder newJson = new StringBuilder();
+        for(int charIndex = 0; charIndex<json.length(); charIndex++){
+            if(json.charAt(charIndex) == '['){
+                StringBuilder tagValue = new StringBuilder("\"");
+                while(json.charAt(charIndex) != ']'){
+                    if(json.charAt(charIndex) != '\"'){
+                        tagValue.append(json.charAt(charIndex));
+                    }
+                    charIndex++;
+                }
+                newJson.append(tagValue).append("]\"");
+            }
+            else {
+                newJson.append(json.charAt(charIndex));
+            }
+        }
+        return newJson.toString();
     }
 }
