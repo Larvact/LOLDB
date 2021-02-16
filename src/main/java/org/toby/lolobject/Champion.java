@@ -2,7 +2,7 @@ package org.toby.lolobject;
 
 import java.util.List;
 
-public class Champion {
+public class Champion implements Comparable<Champion> {
 
     private long id;
     private String name;
@@ -39,5 +39,10 @@ public class Champion {
 
     public void setRoles(List<String> roles) {
         this.roles = roles;
+    }
+
+    @Override
+    public int compareTo(Champion o) {
+        return this.name.compareTo(o.getName());
     }
 }

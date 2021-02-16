@@ -1,6 +1,6 @@
 package org.toby.lolobject;
 
-public class SummonerSpell {
+public class SummonerSpell implements Comparable<SummonerSpell>{
 
     private long id;
     private String name;
@@ -37,5 +37,10 @@ public class SummonerSpell {
 
     public void setLevelRequired(short levelRequired) {
         this.levelRequired = levelRequired;
+    }
+
+    @Override
+    public int compareTo(SummonerSpell o) {
+        return this.name.compareTo(o.getName());
     }
 }
