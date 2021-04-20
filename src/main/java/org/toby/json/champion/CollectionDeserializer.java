@@ -13,10 +13,8 @@ import org.toby.content.champion.ChampionCollection;
 import org.toby.lolobject.Champion;
 
 import java.io.IOException;
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
+
 
 
 public class CollectionDeserializer extends StdDeserializer<ChampionCollection> {
@@ -47,9 +45,9 @@ public class CollectionDeserializer extends StdDeserializer<ChampionCollection> 
         return championCollection;
     }
 
-    private Set<Champion> parseChampions(JsonNode championNodeData){
+    private List<Champion> parseChampions(JsonNode championNodeData){
         ObjectMapper championMapper = createChampionObjectmapper();
-        Set<Champion> championList = new HashSet<>();
+        List<Champion> championList = new ArrayList<>();
         Iterator<Map.Entry<String, JsonNode>> championNodeIterator = championNodeData.fields();
         while(championNodeIterator.hasNext()){
             Map.Entry<String, JsonNode> championJson = championNodeIterator.next();

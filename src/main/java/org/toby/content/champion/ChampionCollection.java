@@ -1,13 +1,13 @@
 package org.toby.content.champion;
 
 import org.toby.lolobject.Champion;
-import java.util.Set;
+import java.util.*;
 
 public class ChampionCollection {
 
     private String type;
     private double version;
-    private Set<Champion> champions;
+    private List<Champion> champions;
 
     public String getType() {
         return type;
@@ -25,11 +25,11 @@ public class ChampionCollection {
         this.version = version;
     }
 
-    public Set<Champion> getChampions() {
+    public List<Champion> getChampions() {
         return champions;
     }
 
-    public void setChampions(Set<Champion> champions) {
+    public void setChampions(List<Champion> champions) {
         this.champions = champions;
     }
 }
