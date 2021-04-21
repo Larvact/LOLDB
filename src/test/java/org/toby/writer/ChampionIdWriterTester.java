@@ -68,7 +68,7 @@ public class ChampionIdWriterTester {
 
     private static void setupGeneratedFileReader() {
         try {
-            generatedFileReader = generatedFileReader = new BufferedReader(new FileReader(generatedFilePath));
+            generatedFileReader = new BufferedReader(new FileReader(generatedFilePath));
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
