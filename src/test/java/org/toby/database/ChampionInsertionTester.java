@@ -20,5 +20,5 @@ public class ChampionInsertionTester {
     @Test
     public void populateChampionTable(){
         delegator.insert();
-    };
+    }
 }
