@@ -6,6 +6,8 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.module.SimpleModule;
 import org.toby.content.champion.ChampionCollection;
 import org.toby.database.LolDbConnector;
+import org.toby.database.delete.ChampionDeletion;
+import org.toby.database.delete.Deletion;
 import org.toby.database.insert.ChampionInsertion;
 import org.toby.database.insert.Insertion;
 import org.toby.json.champion.CollectionDeserializer;
@@ -20,6 +22,7 @@ public class SQLChampionManager extends SQLManager{
     private final String filePath = "D:\\Documents\\SQL Datasets\\Lol Datasets\\champion_info_2.json";
     private LolDbConnector connector;
     private Insertion championInsertion;
+    private Deletion championDeletion;
     private Reader reader;
     private ObjectMapper mapper;
     private ChampionCollection championCollection;
@@ -36,7 +39,9 @@ public class SQLChampionManager extends SQLManager{
 
     @Override
     public void delete() {
-        //DO LATER
+        this.connector = new LolDbConnector(this.lolDbConnectionString);
+        this.championDeletion = new ChampionDeletion(this.connector);
+        this.championDeletion.delete();
     }
 
     private void readChampionFile(){
