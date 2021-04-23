@@ -1,29 +1,28 @@
 package org.toby.database.insert;
 
 import org.toby.content.champion.ChampionCollection;
+import org.toby.content.role.RoleCollection;
 import org.toby.database.LolDbConnector;
 import org.toby.lolobject.Champion;
 
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-import java.util.Collections;
 
-public class ChampionInsertion extends Insertion{
+public class RoleInsertion extends Insertion{
 
-    private ChampionCollection championCollection;
+    private RoleCollection roleCollection;
 
-    public ChampionInsertion(LolDbConnector connection, ChampionCollection championCollection) {
+    public RoleInsertion(LolDbConnector connection, ChampionCollection championCollection) {
         super(connection);
-        this.championCollection = championCollection;
-        Collections.sort(championCollection.getChampions());
+        this.roleCollection = new RoleCollection(championCollection);
     }
 
     @Override
     public void insertData() {
         try {
             connection.connect();
-            PreparedStatement insertChampionStatement = this.connection.getConnection().prepareStatement(constructSQLInsertStatement());
-            insertChampionStatement.execute();
+            PreparedStatement insertRoleStatement = this.connection.getConnection().prepareStatement(constructSQLInsertStatement());
+            insertRoleStatement.execute();
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
@@ -37,13 +36,14 @@ public class ChampionInsertion extends Insertion{
     }
 
     private String constructSQLInsertStatement(){
-        String sqlInsertStatement = "INSERT INTO dbo.Champion (Name, Title) VALUES ";
+        String sqlInsertStatement = "INSERT INTO dbo.Role (Name) VALUES ";
         String valueString = "";
-        for(Champion champion : championCollection.getChampions()){
-            valueString = "(\'" + champion.getName() + "\', \'" + champion.getTitle() + "\'), ";
+        for(String role : roleCollection.getRoles()){
+            valueString = "(\'" + role + "\'), ";
             sqlInsertStatement += valueString;
         }
         sqlInsertStatement = sqlInsertStatement.substring(0, sqlInsertStatement.length() - 2) + ";";
+        System.out.println(sqlInsertStatement);
         return sqlInsertStatement;
     }
 }

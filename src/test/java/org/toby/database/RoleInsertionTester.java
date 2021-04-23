@@ -12,9 +12,7 @@ import org.toby.json.mappers.ChampionCollectionMapper;
 import org.toby.reader.LolFileReader;
 import org.toby.reader.Reader;
 
-
-public class ChampionInsertionTester {
-
+public class RoleInsertionTester {
     private static SQLManagementDelegator delegator;
     private static SQLManager sqlManager;
     private static Reader reader;

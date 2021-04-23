@@ -10,7 +10,8 @@ import org.toby.database.delete.ChampionDeletion;
 import org.toby.database.delete.Deletion;
 import org.toby.database.insert.ChampionInsertion;
 import org.toby.database.insert.Insertion;
-import org.toby.json.champion.CollectionDeserializer;
+import org.toby.json.deserialisers.champion.CollectionDeserializer;
+import org.toby.json.mappers.ChampionCollectionMapper;
 import org.toby.reader.LolFileReader;
 import org.toby.reader.Reader;
 
@@ -18,56 +19,26 @@ import java.io.IOException;
 
 public class SQLChampionManager extends SQLManager{
 
-    private String json;
-    private final String filePath = "D:\\Documents\\SQL Datasets\\Lol Datasets\\champion_info_2.json";
+    private ChampionCollectionMapper mapper;
     private LolDbConnector connector;
-    private Insertion championInsertion;
-    private Deletion championDeletion;
-    private Reader reader;
-    private ObjectMapper mapper;
-    private ChampionCollection championCollection;
+    private Insertion insertion;
+    private Deletion deletion;
+
+    public SQLChampionManager(ChampionCollectionMapper mapper, LolDbConnector connector, Insertion insertion, Deletion deletion) {
+        this.mapper = mapper;
+        this.connector = connector;
+        this.insertion = insertion;
+        this.deletion = deletion;
+    }
 
     @Override
     public void insert(){
-        readChampionFile();
-        setupChampionCollectionMapper();
-        populateChampionCollection();
-        this.connector = new LolDbConnector(this.lolDbConnectionString);
-        this.championInsertion = new ChampionInsertion(this.connector, this.championCollection);
-        this.championInsertion.insertData();
+        this.insertion.insertData();
     }
 
     @Override
     public void delete() {
-        this.connector = new LolDbConnector(this.lolDbConnectionString);
-        this.championDeletion = new ChampionDeletion(this.connector);
-        this.championDeletion.delete();
+        this.deletion.delete();
     }
-
-    private void readChampionFile(){
-        this.reader = new LolFileReader(this.filePath);
-        try {
-            this.reader.read();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        this.json = this.reader.getStringResult();
-    }
-
-    private void setupChampionCollectionMapper(){
-        this.mapper = new ObjectMapper();
-        SimpleModule module = new SimpleModule("ChampionCollectionDeserializer", new Version(1, 0, 0, null, null, null));
-        module.addDeserializer(ChampionCollection.class, new CollectionDeserializer());
-        this.mapper.registerModule(module);
-    }
-
-    private void populateChampionCollection(){
-        try {
-            this.championCollection = this.mapper.readValue(this.json, ChampionCollection.class);
-        } catch (JsonProcessingException e) {
-            e.printStackTrace();
-        }
-    }
-
 
 }

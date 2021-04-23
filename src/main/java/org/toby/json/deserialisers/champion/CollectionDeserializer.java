@@ -1,4 +1,4 @@
-package org.toby.json.champion;
+package org.toby.json.deserialisers.champion;
 
 import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.core.JsonProcessingException;

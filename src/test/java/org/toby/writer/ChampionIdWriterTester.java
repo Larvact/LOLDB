@@ -8,7 +8,7 @@ import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.toby.content.champion.ChampionCollection;
-import org.toby.json.champion.CollectionDeserializer;
+import org.toby.json.deserialisers.champion.CollectionDeserializer;
 import org.toby.reader.LolFileReader;
 import org.toby.reader.Reader;
 

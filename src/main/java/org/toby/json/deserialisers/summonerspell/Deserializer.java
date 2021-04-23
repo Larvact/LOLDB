@@ -1,4 +1,4 @@
-package org.toby.json.summonerspell;
+package org.toby.json.deserialisers.summonerspell;
 
 import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.core.JsonProcessingException;
