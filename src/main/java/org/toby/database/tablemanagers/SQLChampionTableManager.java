@@ -1,14 +1,14 @@
-package org.toby.database.managers;
+package org.toby.database.tablemanagers;
 
 import org.toby.database.delete.Deletion;
 import org.toby.database.insert.Insertion;
 
-public class SQLChampionManager extends SQLManager{
+public class SQLChampionTableManager extends SQLTableManager {
 
     private Insertion insertion;
     private Deletion deletion;
 
-    public SQLChampionManager(Insertion insertion, Deletion deletion) {
+    public SQLChampionTableManager(Insertion insertion, Deletion deletion) {
         this.insertion = insertion;
         this.deletion = deletion;
     }

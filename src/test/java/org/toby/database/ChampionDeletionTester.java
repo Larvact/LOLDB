@@ -7,16 +7,15 @@ import org.toby.database.delete.ChampionDeletion;
 import org.toby.database.delete.Deletion;
 import org.toby.database.insert.ChampionInsertion;
 import org.toby.database.insert.Insertion;
-import org.toby.database.managers.SQLChampionManager;
-import org.toby.database.managers.SQLManager;
+import org.toby.database.tablemanagers.SQLChampionTableManager;
+import org.toby.database.tablemanagers.SQLTableManager;
 import org.toby.json.mappers.ChampionCollectionMapper;
 import org.toby.reader.LolFileReader;
 import org.toby.reader.Reader;
 
 public class ChampionDeletionTester {
 
-    private static SQLManagementDelegator delegator;
-    private static SQLManager sqlManager;
+    private static SQLTableManager sqlTableManager;
     private static Reader reader;
     private static LolDbConnector connector;
     private static ChampionCollectionMapper mapper;
@@ -32,17 +31,16 @@ public class ChampionDeletionTester {
         mapper = new ChampionCollectionMapper(reader);
         insertion = new ChampionInsertion(connector, mapper.getChampionCollection());
         deletion = new ChampionDeletion(connector);
-        sqlManager = new SQLChampionManager(insertion, deletion);
-        delegator = new SQLManagementDelegator(sqlManager);
+        sqlTableManager = new SQLChampionTableManager(insertion, deletion);
     }
 
     @Before
     public void setupChampionData(){
-        delegator.insert();
+        sqlTableManager.insert();
     }
 
     @Test
     public void deleteDataFromChampionTable(){
-        delegator.delete();
+        sqlTableManager.delete();
     };
 }
