@@ -39,8 +39,6 @@ c
 3src/main/java/org/toby/lolobject/SummonerSpell.java,0\6\0650611c95b04b3cb92a08e3f9909535ae0eec28
 „
 Tsrc/test/java/org/toby/json/deserialisers/champion/CollectionDeserializerTester.java,2\0\20ad6820e9aa92eb77d181b77599d20ae96f09c3
-Y
-)src/main/java/org/toby/reader/Reader.java,3\5\3560a54e976b2f393588d144bcf534f809807f36
 `
 0src/main/java/org/toby/reader/LolFileReader.java,5\6\568c0b124fdaacbe1053ad389dbadb07afe8ee70
 q
