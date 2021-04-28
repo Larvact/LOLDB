@@ -12,10 +12,10 @@ public class LolFileReader extends Reader {
     public LolFileReader(String filePath ) {
         try {
             reader = new BufferedReader(new FileReader(filePath));
+            this.readData = new StringBuilder();
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
-        this.stringResult = "";
     }
 
     @Override
@@ -24,18 +24,16 @@ public class LolFileReader extends Reader {
         try{
             currentLine = reader.readLine();
             while (currentLine != null) {
-                this.stringResult += currentLine.trim();
+                this.readData.append(currentLine.trim());
                 currentLine = reader.readLine();
             }
         }catch(IOException e){
             e.printStackTrace();
         } finally {
-            if (reader != null) {
-                try {
-                    reader.close();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
+            try {
+                reader.close();
+            } catch (IOException e) {
+                e.printStackTrace();
             }
         }
     }

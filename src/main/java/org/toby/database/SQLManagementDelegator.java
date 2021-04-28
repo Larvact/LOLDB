@@ -4,21 +4,21 @@ import org.toby.database.managers.SQLManager;
 
 public class SQLManagementDelegator {
 
-    private SQLManager SQLManager;
+    private SQLManager sqlManager;
 
-    public SQLManagementDelegator(org.toby.database.managers.SQLManager SQLManager) {
-        this.SQLManager = SQLManager;
+    public SQLManagementDelegator(org.toby.database.managers.SQLManager sqlManager) {
+        this.sqlManager = sqlManager;
     }
 
-    public void setSQLManager(org.toby.database.managers.SQLManager SQLManager) {
-        this.SQLManager = SQLManager;
+    public void setSqlManager(org.toby.database.managers.SQLManager sqlManager) {
+        this.sqlManager = sqlManager;
     }
 
     public void insert(){
-        SQLManager.insert();
+        sqlManager.insert();
     }
 
     public void delete(){
-        SQLManager.delete();
+        sqlManager.delete();
     }
 }

@@ -29,7 +29,7 @@ public class CollectionDeserializer extends StdDeserializer<SummonerSpellCollect
     }
 
     @Override
-    public SummonerSpellCollection deserialize(JsonParser jsonParser, DeserializationContext deserializationContext) throws IOException, JsonProcessingException {
+    public SummonerSpellCollection deserialize(JsonParser jsonParser, DeserializationContext deserializationContext) throws IOException {
 
         SummonerSpellCollection summonerSpellCollection = new SummonerSpellCollection();
         ObjectCodec codec = jsonParser.getCodec();

@@ -10,7 +10,7 @@ import java.util.Collections;
 
 public class ChampionInsertion extends Insertion{
 
-    private ChampionCollection championCollection;
+    private final ChampionCollection championCollection;
 
     public ChampionInsertion(LolDbConnector connection, ChampionCollection championCollection) {
         super(connection);
@@ -22,8 +22,9 @@ public class ChampionInsertion extends Insertion{
     public void insertData() {
         try {
             connection.connect();
-            PreparedStatement insertChampionStatement = this.connection.getConnection().prepareStatement(constructSQLInsertStatement());
-            insertChampionStatement.execute();
+            try (PreparedStatement insertChampionStatement = this.connection.getConnection().prepareStatement(constructSQLInsertStatement())) {
+                insertChampionStatement.execute();
+            }
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
@@ -37,13 +38,10 @@ public class ChampionInsertion extends Insertion{
     }
 
     private String constructSQLInsertStatement(){
-        String sqlInsertStatement = "INSERT INTO dbo.Champion (Name, Title) VALUES ";
-        String valueString = "";
+        StringBuilder sqlInsertStatement = new StringBuilder("INSERT INTO dbo.Champion (Name, Title) VALUES ");
         for(Champion champion : championCollection.getChampions()){
-            valueString = "(\'" + champion.getName() + "\', \'" + champion.getTitle() + "\'), ";
-            sqlInsertStatement += valueString;
+            sqlInsertStatement.append("('").append(champion.getName()).append("', '").append(champion.getTitle()).append("'), ");
         }
-        sqlInsertStatement = sqlInsertStatement.substring(0, sqlInsertStatement.length() - 2) + ";";
-        return sqlInsertStatement;
+        return sqlInsertStatement.substring(0, sqlInsertStatement.length() - 2) + ";";
     }
 }

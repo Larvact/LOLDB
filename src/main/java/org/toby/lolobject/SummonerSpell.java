@@ -43,4 +43,18 @@ public class SummonerSpell implements Comparable<SummonerSpell>{
     public int compareTo(SummonerSpell o) {
         return this.name.compareTo(o.getName());
     }
+
+    @Override
+    public int hashCode() {
+        return super.hashCode();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if(!(obj instanceof SummonerSpell)){
+            return false;
+        }
+        SummonerSpell summonerSpell = (SummonerSpell) obj;
+        return this.name.equals(summonerSpell.getName());
+    }
 }

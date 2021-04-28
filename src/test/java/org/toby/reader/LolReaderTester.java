@@ -23,8 +23,8 @@ public class LolReaderTester {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        Assert.assertTrue(reader.getStringResult().contains("Darius"));
-        System.out.println(reader.getStringResult());
+        Assert.assertTrue(reader.getReadData().contains("Darius"));
+        System.out.println(reader.getReadData());
     }
 
     @Test
@@ -34,7 +34,7 @@ public class LolReaderTester {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        Assert.assertTrue(!reader.getStringResult().substring(0,4).equals("null"));
+        Assert.assertTrue(!reader.getReadData().substring(0,4).equals("null"));
     }
 
 

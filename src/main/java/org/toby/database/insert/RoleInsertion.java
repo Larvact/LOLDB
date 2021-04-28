@@ -3,7 +3,6 @@ package org.toby.database.insert;
 import org.toby.content.champion.ChampionCollection;
 import org.toby.content.role.RoleCollection;
 import org.toby.database.LolDbConnector;
-import org.toby.lolobject.Champion;
 
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
@@ -21,8 +20,9 @@ public class RoleInsertion extends Insertion{
     public void insertData() {
         try {
             connection.connect();
-            PreparedStatement insertRoleStatement = this.connection.getConnection().prepareStatement(constructSQLInsertStatement());
-            insertRoleStatement.execute();
+            try (PreparedStatement insertRoleStatement = this.connection.getConnection().prepareStatement(constructSQLInsertStatement())) {
+                insertRoleStatement.execute();
+            }
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
@@ -36,14 +36,10 @@ public class RoleInsertion extends Insertion{
     }
 
     private String constructSQLInsertStatement(){
-        String sqlInsertStatement = "INSERT INTO dbo.Role (Name) VALUES ";
-        String valueString = "";
+        StringBuilder sqlInsertStatement = new StringBuilder("INSERT INTO dbo.Role (Name) VALUES ");
         for(String role : roleCollection.getRoles()){
-            valueString = "(\'" + role + "\'), ";
-            sqlInsertStatement += valueString;
+            sqlInsertStatement.append("('").append(role).append("'), ");
         }
-        sqlInsertStatement = sqlInsertStatement.substring(0, sqlInsertStatement.length() - 2) + ";";
-        System.out.println(sqlInsertStatement);
-        return sqlInsertStatement;
+        return sqlInsertStatement.substring(0, sqlInsertStatement.length() - 2) + ";";
     }
 }

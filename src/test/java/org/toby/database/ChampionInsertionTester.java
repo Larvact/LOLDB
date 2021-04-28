@@ -32,7 +32,7 @@ public class ChampionInsertionTester {
         mapper = new ChampionCollectionMapper(reader);
         insertion = new ChampionInsertion(connector, mapper.getChampionCollection());
         deletion = new ChampionDeletion(connector);
-        sqlManager = new SQLChampionManager(mapper, connector, insertion, deletion);
+        sqlManager = new SQLChampionManager(insertion, deletion);
         delegator = new SQLManagementDelegator(sqlManager);
     }
 

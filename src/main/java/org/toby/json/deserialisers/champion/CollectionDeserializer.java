@@ -15,8 +15,6 @@ import org.toby.lolobject.Champion;
 import java.io.IOException;
 import java.util.*;
 
-
-
 public class CollectionDeserializer extends StdDeserializer<ChampionCollection> {
 
     public CollectionDeserializer() {

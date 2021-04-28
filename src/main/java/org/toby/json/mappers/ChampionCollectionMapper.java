@@ -40,7 +40,7 @@ public class ChampionCollectionMapper {
 
     private void populateChampionCollection(){
         try {
-            this.championCollection = this.mapper.readValue(this.reader.getStringResult(), ChampionCollection.class);
+            this.championCollection = this.mapper.readValue(this.reader.getReadData(), ChampionCollection.class);
         } catch (JsonProcessingException e) {
             e.printStackTrace();
         }

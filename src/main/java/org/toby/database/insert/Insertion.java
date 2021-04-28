@@ -6,7 +6,7 @@ public abstract class Insertion {
 
     protected LolDbConnector connection;
 
-    public Insertion(LolDbConnector connection) {
+    protected Insertion(LolDbConnector connection) {
         this.connection = connection;
     }
 

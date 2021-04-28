@@ -31,7 +31,7 @@ public class ChampionIdWriterTester {
     private static BufferedReader generatedFileReader;
     private final static String generatedFilePath = "D:\\Documents\\SQL Datasets\\Lol Datasets\\ChampionIdMapping.txt";
     private static Map<String, String> generatedChampionIdMap;
-    private final int numberOfChampions = 139;
+    private final int numberOfChampions = 138;
 
 
     @BeforeClass
@@ -42,7 +42,7 @@ public class ChampionIdWriterTester {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        json = reader.getStringResult();
+        json = reader.getReadData();
         setupMapper();
         setupChampionCollection();
         championFileWriter = new ChampionIdWriter(championCollection);

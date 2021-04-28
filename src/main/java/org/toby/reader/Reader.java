@@ -4,11 +4,11 @@ import java.io.IOException;
 
 public abstract class Reader {
 
-    protected String stringResult;
+    protected StringBuilder readData;
 
     public abstract void read() throws IOException;
 
-    public String getStringResult() {
-        return stringResult;
+    public String getReadData() {
+        return readData.toString();
     }
 }

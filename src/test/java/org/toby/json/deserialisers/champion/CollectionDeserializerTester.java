@@ -39,7 +39,7 @@ public class CollectionDeserializerTester {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        json = reader.getStringResult();
+        json = reader.getReadData();
         setupMapper();
         setupExpectedResults();
     }

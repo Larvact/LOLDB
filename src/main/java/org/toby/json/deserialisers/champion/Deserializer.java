@@ -1,7 +1,6 @@
 package org.toby.json.deserialisers.champion;
 
 import com.fasterxml.jackson.core.JsonParser;
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.ObjectCodec;
 import com.fasterxml.jackson.databind.DeserializationContext;
 import com.fasterxml.jackson.databind.JsonNode;
@@ -24,7 +23,7 @@ public class Deserializer extends StdDeserializer<Champion> {
     }
 
     @Override
-    public Champion deserialize(JsonParser jsonParser, DeserializationContext deserializationContext) throws IOException, JsonProcessingException {
+    public Champion deserialize(JsonParser jsonParser, DeserializationContext deserializationContext) throws IOException {
         Champion champion = new Champion();
         ObjectCodec codec = jsonParser.getCodec();
         JsonNode node = codec.readTree(jsonParser);
@@ -43,10 +42,10 @@ public class Deserializer extends StdDeserializer<Champion> {
     }
 
     private List<String> serparateString(String delimiter, String string){
-        String[] strings = string.split(",");
+        String[] strings = string.split(delimiter);
 
         if(strings[0].length() == 0){
-            return null;
+            return new ArrayList<>();
         }
 
         String firstString = strings[0];

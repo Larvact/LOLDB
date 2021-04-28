@@ -1,7 +1,6 @@
 package org.toby.json.deserialisers.summonerspell;
 
 import com.fasterxml.jackson.core.JsonParser;
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.ObjectCodec;
 import com.fasterxml.jackson.databind.DeserializationContext;
 import com.fasterxml.jackson.databind.JsonNode;
@@ -21,7 +20,7 @@ public class Deserializer extends StdDeserializer<SummonerSpell> {
     }
 
     @Override
-    public SummonerSpell deserialize(JsonParser jsonParser, DeserializationContext deserializationContext) throws IOException, JsonProcessingException {
+    public SummonerSpell deserialize(JsonParser jsonParser, DeserializationContext deserializationContext) throws IOException {
         SummonerSpell summonerSpell = new SummonerSpell();
         ObjectCodec codec = jsonParser.getCodec();
         JsonNode node = codec.readTree(jsonParser);

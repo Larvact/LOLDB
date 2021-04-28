@@ -45,4 +45,18 @@ public class Champion implements Comparable<Champion> {
     public int compareTo(Champion o) {
         return this.name.compareTo(o.getName());
     }
+
+    @Override
+    public int hashCode() {
+        return super.hashCode();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if(!(obj instanceof Champion)){
+            return false;
+        }
+        Champion champion = (Champion) obj;
+        return this.name.equals(champion.getName());
+    }
 }

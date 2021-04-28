@@ -4,25 +4,25 @@ package org.toby.writer;
 import org.toby.content.champion.ChampionCollection;
 import org.toby.lolobject.Champion;
 
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.*;
 import java.io.BufferedWriter;
-import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
-
 
 public class ChampionIdWriter implements Writer {
 
     private ChampionCollection championCollection;
     private BufferedWriter fileWriter;
-    private final String outputFileLocation = "D:\\Documents\\SQL Datasets\\Lol Datasets\\ChampionIdMapping.txt";
-    private File championIdMappingFile;
+    private static final String OUTPUTFILELOCATION = "D:\\Documents\\SQL Datasets\\Lol Datasets\\ChampionIdMapping.txt";
 
     public ChampionIdWriter(ChampionCollection championCollection) {
         deleteChampionIdMappingFile();
         this.championCollection = championCollection;
         try {
-            fileWriter = new BufferedWriter(new FileWriter(outputFileLocation));
+            fileWriter = new BufferedWriter(new FileWriter(OUTPUTFILELOCATION));
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -51,9 +51,11 @@ public class ChampionIdWriter implements Writer {
         }
     }
     private void deleteChampionIdMappingFile(){
-        championIdMappingFile = new File(outputFileLocation);
-        if(championIdMappingFile.exists()){
-            championIdMappingFile.delete();
+        Path path = Paths.get(OUTPUTFILELOCATION);
+        try{
+            Files.delete(path);
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 }
