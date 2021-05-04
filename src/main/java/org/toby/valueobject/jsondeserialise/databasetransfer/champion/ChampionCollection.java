@@ -1,6 +1,6 @@
-package org.toby.content.champion;
+package org.toby.valueobject.jsondeserialise.databasetransfer.champion;
 
-import org.toby.lolobject.Champion;
+import org.toby.valueobject.jsondeserialise.Champion;
 import java.util.*;
 
 public class ChampionCollection {

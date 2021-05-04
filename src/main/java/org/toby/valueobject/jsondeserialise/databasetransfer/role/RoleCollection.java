@@ -1,7 +1,7 @@
-package org.toby.content.role;
+package org.toby.valueobject.jsondeserialise.databasetransfer.role;
 
-import org.toby.content.champion.ChampionCollection;
-import org.toby.lolobject.Champion;
+import org.toby.valueobject.jsondeserialise.databasetransfer.champion.ChampionCollection;
+import org.toby.valueobject.jsondeserialise.Champion;
 
 import java.util.Set;
 import java.util.TreeSet;

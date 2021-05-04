@@ -5,7 +5,7 @@ import com.fasterxml.jackson.core.ObjectCodec;
 import com.fasterxml.jackson.databind.DeserializationContext;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
-import org.toby.lolobject.SummonerSpell;
+import org.toby.valueobject.jsondeserialise.SummonerSpell;
 
 import java.io.IOException;
 

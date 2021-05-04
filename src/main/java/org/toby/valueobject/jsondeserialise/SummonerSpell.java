@@ -1,4 +1,4 @@
-package org.toby.lolobject;
+package org.toby.valueobject.jsondeserialise;
 
 public class SummonerSpell implements Comparable<SummonerSpell>{
 

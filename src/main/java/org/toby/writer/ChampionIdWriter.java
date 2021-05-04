@@ -1,8 +1,8 @@
 package org.toby.writer;
 
 
-import org.toby.content.champion.ChampionCollection;
-import org.toby.lolobject.Champion;
+import org.toby.valueobject.jsondeserialise.databasetransfer.champion.ChampionCollection;
+import org.toby.valueobject.jsondeserialise.Champion;
 
 import java.nio.file.Files;
 import java.nio.file.Path;

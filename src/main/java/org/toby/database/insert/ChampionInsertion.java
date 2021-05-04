@@ -1,8 +1,8 @@
 package org.toby.database.insert;
 
-import org.toby.content.champion.ChampionCollection;
+import org.toby.valueobject.jsondeserialise.databasetransfer.champion.ChampionCollection;
 import org.toby.database.LolDbConnector;
-import org.toby.lolobject.Champion;
+import org.toby.valueobject.jsondeserialise.Champion;
 
 import java.sql.PreparedStatement;
 import java.sql.SQLException;

@@ -1,4 +1,4 @@
-package org.toby.lolobject;
+package org.toby.valueobject.jsondeserialise;
 
 import java.util.List;
 

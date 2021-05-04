@@ -7,7 +7,7 @@ import com.fasterxml.jackson.databind.module.SimpleModule;
 import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;
-import org.toby.lolobject.Champion;
+import org.toby.valueobject.jsondeserialise.Champion;
 
 import java.util.ArrayList;
 import java.util.List;

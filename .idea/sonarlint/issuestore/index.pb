@@ -1,6 +1,4 @@
 
-o
-?src/main/java/org/toby/content/champion/ChampionCollection.java,1\1\1157255b16c7ba8c4d1d6a18e34c024dad3f2520
 e
 5src/main/java/org/toby/database/insert/Insertion.java,0\a\0a15ff44d50076cf657bb32fde45830e1a59f939
 c
@@ -13,8 +11,6 @@ y
 Isrc/main/java/org/toby/json/deserialisers/summonerspell/Deserializer.java,a\b\abda374733bb00b4eadc508fb80d74170378dd25
 ~
 Nsrc/main/java/org/toby/json/deserialisers/champion/CollectionDeserializer.java,f\6\f6f6e208e91bfc49ca74261cc904cd8e06b1f0dd
-^
-.src/main/java/org/toby/lolobject/Champion.java,3\9\396e05134d09e86b58d77d935e97c173ea24e91b
 c
 3src/main/java/org/toby/lolobject/SummonerSpell.java,0\6\0650611c95b04b3cb92a08e3f9909535ae0eec28
 „
@@ -33,7 +29,5 @@ Y
 )src/main/java/org/toby/reader/Reader.java,3\5\3560a54e976b2f393588d144bcf534f809807f36
 h
 8src/main/java/org/toby/properties/PropertyRetriever.java,a\1\a13c432e947ccae0eec85e4d79fb242ffe375cac
-y
-Isrc/main/java/org/toby/content/summonerspell/SummonerSpellCollection.java,5\0\509ef67727eeaa89a0a86fde0584cd9655053ab4
 n
 >src/test/java/org/toby/properties/PropertyRetrieverTester.java,a\c\ac98bcaade7bd77f2831af28b3ac4191447a6839

@@ -9,8 +9,8 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import com.fasterxml.jackson.databind.module.SimpleModule;
-import org.toby.content.summonerspell.SummonerSpellCollection;
-import org.toby.lolobject.SummonerSpell;
+import org.toby.valueobject.jsondeserialise.databasetransfer.summonerspell.SummonerSpellCollection;
+import org.toby.valueobject.jsondeserialise.SummonerSpell;
 
 import java.io.IOException;
 import java.util.HashSet;

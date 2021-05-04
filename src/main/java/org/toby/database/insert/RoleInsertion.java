@@ -1,7 +1,7 @@
 package org.toby.database.insert;
 
-import org.toby.content.champion.ChampionCollection;
-import org.toby.content.role.RoleCollection;
+import org.toby.valueobject.jsondeserialise.databasetransfer.champion.ChampionCollection;
+import org.toby.valueobject.jsondeserialise.databasetransfer.role.RoleCollection;
 import org.toby.database.LolDbConnector;
 
 import java.sql.PreparedStatement;

@@ -9,8 +9,8 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import com.fasterxml.jackson.databind.module.SimpleModule;
-import org.toby.content.champion.ChampionCollection;
-import org.toby.lolobject.Champion;
+import org.toby.valueobject.jsondeserialise.databasetransfer.champion.ChampionCollection;
+import org.toby.valueobject.jsondeserialise.Champion;
 
 import java.io.IOException;
 import java.util.*;

@@ -7,8 +7,8 @@ import com.fasterxml.jackson.databind.module.SimpleModule;
 import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;
-import org.toby.content.champion.ChampionCollection;
-import org.toby.lolobject.Champion;
+import org.toby.valueobject.jsondeserialise.databasetransfer.champion.ChampionCollection;
+import org.toby.valueobject.jsondeserialise.Champion;
 import org.toby.reader.LolFileReader;
 import org.toby.reader.Reader;
 

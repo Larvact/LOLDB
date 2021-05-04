@@ -1,6 +1,6 @@
-package org.toby.content.summonerspell;
+package org.toby.valueobject.jsondeserialise.databasetransfer.summonerspell;
 
-import org.toby.lolobject.SummonerSpell;
+import org.toby.valueobject.jsondeserialise.SummonerSpell;
 
 import java.util.Set;
 
