@@ -1,6 +1,6 @@
 USE [loldb]
 GO
-CREATE OR ALTER PROCEDURE [test].[spChampionTableTest]
+CREATE OR ALTER PROCEDURE [test].[spChampionTableTest] (@ExpectedNumberOfChampions SMALLINT)
 AS
 	BEGIN
 		SET NOCOUNT ON;
@@ -11,7 +11,6 @@ AS
 		DECLARE @TestOutcome BIT;
 
 		/*Test 1 Ensure that the correct number of champions have been added to the champions table*/
-		DECLARE @ExpectedNumberOfChampions SMALLINT = 138;
 		DECLARE @ActualNumberOfChampions SMALLINT;
 		SET @TestDescription = 'Ensure that the total number of rows within the table is ' + CAST(@ExpectedNumberOfChampions AS VARCHAR(255));
 		SET @ExpectedResult = 'The total number of champions within the champions table is ' + CAST(@ExpectedNumberOfChampions AS VARCHAR(255));
