@@ -1,14 +1,26 @@
 package org.toby.database.tablemanagers;
 
-public abstract class SQLTableManager {
+import org.toby.database.delete.Deletion;
+import org.toby.database.insert.Insertion;
 
-    protected String lolDbConnectionString = "jdbc:sqlserver://localhost:1434;"  + "databaseName=loldb;" + "integratedSecurity=true;";
+public class SQLTableManager extends SQLManager {
 
-    public abstract void insert();
+    private Insertion insertion;
+    private Deletion deletion;
 
-    public abstract void delete();
+    public SQLTableManager(Insertion insertion, Deletion deletion) {
+        this.insertion = insertion;
+        this.deletion = deletion;
+    }
 
+    @Override
+    public void insert(){
+        this.insertion.insertData();
+    }
 
-
+    @Override
+    public void delete() {
+        this.deletion.delete();
+    }
 
 }

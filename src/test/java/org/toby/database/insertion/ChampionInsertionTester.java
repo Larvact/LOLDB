@@ -1,19 +1,22 @@
-package org.toby.database;
+package org.toby.database.insertion;
 
 import org.junit.BeforeClass;
 import org.junit.Test;
+import org.toby.database.LolDbConnector;
 import org.toby.database.delete.ChampionDeletion;
 import org.toby.database.delete.Deletion;
 import org.toby.database.insert.ChampionInsertion;
 import org.toby.database.insert.Insertion;
-import org.toby.database.tablemanagers.SQLChampionTableManager;
 import org.toby.database.tablemanagers.SQLTableManager;
+import org.toby.database.tablemanagers.SQLManager;
 import org.toby.json.mappers.ChampionCollectionMapper;
 import org.toby.reader.LolFileReader;
 import org.toby.reader.Reader;
 
-public class RoleInsertionTester {
-    private static SQLTableManager sqlTableManager;
+
+public class ChampionInsertionTester {
+
+    private static SQLManager sqlManager;
     private static Reader reader;
     private static LolDbConnector connector;
     private static ChampionCollectionMapper mapper;
@@ -23,17 +26,17 @@ public class RoleInsertionTester {
     private static Deletion deletion;
 
     @BeforeClass
-    public static void setUpChampionManager(){
+    public static void setUpManager(){
         reader = new LolFileReader(lolChampionFilePath);
         connector = new LolDbConnector(lolDbConnectionString);
         mapper = new ChampionCollectionMapper(reader);
         insertion = new ChampionInsertion(connector, mapper.getChampionCollection());
         deletion = new ChampionDeletion(connector);
-        sqlTableManager = new SQLChampionTableManager(insertion, deletion);
+        sqlManager = new SQLTableManager(insertion, deletion);
     }
 
     @Test
     public void populateChampionTable(){
-        sqlTableManager.insert();
+        sqlManager.insert();
     }
 }

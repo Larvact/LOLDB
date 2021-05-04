@@ -1,14 +1,6 @@
 
 o
 ?src/main/java/org/toby/content/champion/ChampionCollection.java,1\1\1157255b16c7ba8c4d1d6a18e34c024dad3f2520
-l
-<src/main/java/org/toby/database/delete/ChampionDeletion.java,0\8\0801aeeef46376708d407ad1ae782e3001fa0f36
-d
-4src/main/java/org/toby/database/delete/Deletion.java,b\5\b56d8dc391e4075fb56810e337143f4ec91fd9f0
-i
-9src/main/java/org/toby/database/insert/RoleInsertion.java,e\a\ea00ab4c317d63d22642edb289e36e84ee2e209c
-m
-=src/main/java/org/toby/database/insert/ChampionInsertion.java,2\3\23f6417e360b14e6912a3eb735d2c160883a518e
 e
 5src/main/java/org/toby/database/insert/Insertion.java,0\a\0a15ff44d50076cf657bb32fde45830e1a59f939
 c
@@ -27,8 +19,6 @@ c
 3src/main/java/org/toby/lolobject/SummonerSpell.java,0\6\0650611c95b04b3cb92a08e3f9909535ae0eec28
 „
 Tsrc/test/java/org/toby/json/deserialisers/champion/CollectionDeserializerTester.java,2\0\20ad6820e9aa92eb77d181b77599d20ae96f09c3
-q
-Asrc/main/java/org/toby/json/mappers/ChampionCollectionMapper.java,2\b\2bf21e0ba9450347e2eff94ccaeb7f4408558efa
 O
 src/main/java/org/toby/App.java,8\0\80a23f121712509e365cb227ce62be0815434902
 f
@@ -45,11 +35,5 @@ h
 8src/main/java/org/toby/properties/PropertyRetriever.java,a\1\a13c432e947ccae0eec85e4d79fb242ffe375cac
 y
 Isrc/main/java/org/toby/content/summonerspell/SummonerSpellCollection.java,5\0\509ef67727eeaa89a0a86fde0584cd9655053ab4
-g
-7src/main/java/org/toby/content/role/RoleCollection.java,1\8\18b35ec61a2ef30a2adb9ec2b63cd750e4108060
-r
-Bsrc/main/java/org/toby/database/tablemanagers/SQLTableManager.java,0\6\0619435783af4b47e74c7df28e09d96fe8416a9b
 n
 >src/test/java/org/toby/properties/PropertyRetrieverTester.java,a\c\ac98bcaade7bd77f2831af28b3ac4191447a6839
-h
-8src/test/java/org/toby/database/RoleInsertionTester.java,2\6\261c90291540d25325115bea8983e0a2dab32d89

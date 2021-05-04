@@ -3,7 +3,8 @@ package org.toby.content.role;
 import org.toby.content.champion.ChampionCollection;
 import org.toby.lolobject.Champion;
 
-import java.util.*;
+import java.util.Set;
+import java.util.TreeSet;
 
 public class RoleCollection {
 
