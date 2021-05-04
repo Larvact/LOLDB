@@ -34,12 +34,12 @@ public class RoleDeletionTester {
         deletion = new RoleDeletion(connector);
         sqlManager = new SQLTableManager(insertion, deletion);
     }
-/*
+
     @Before
     public void setupRoleData(){
         sqlManager.insert();
     }
-*/
+
     @Test
     public void deleteDataFromRoleTable(){
         sqlManager.delete();
