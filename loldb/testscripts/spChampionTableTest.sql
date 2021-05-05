@@ -5,6 +5,7 @@ AS
 	BEGIN
 		SET NOCOUNT ON;
 
+		DECLARE @DateTimeOfExecution DATETIME2 = CURRENT_TIMESTAMP;
 		DECLARE @TestDescription VARCHAR(MAX);
 		DECLARE @ExpectedResult VARCHAR(MAX);
 		DECLARE @ActualResult VARCHAR(MAX);
@@ -27,13 +28,13 @@ AS
 			BEGIN
 				SET @TestOutcome = 1;
 				INSERT INTO [test].[TestResults]
-				VALUES (@TestDescription, @ExpectedResult, @ActualResult, @TestOutcome)
+				VALUES (@DateTimeOfExecution, @TestDescription, @ExpectedResult, @ActualResult, @TestOutcome)
 				SET @TestOutcome = 0;
 			END
 		ELSE
 			BEGIN
 				SET @TestOutcome = 0;
 				INSERT INTO [test].[TestResults]
-				VALUES (@TestDescription, @ExpectedResult, @ActualResult, @TestOutcome)
+				VALUES (@DateTimeOfExecution, @TestDescription, @ExpectedResult, @ActualResult, @TestOutcome)
 			END
 	END

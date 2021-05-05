@@ -15,7 +15,7 @@ public class ChampionRoleInsertion extends Insertion{
 
     private Map<String, Integer> championIdMap;
     private Map<String, Integer> roleIdMap;
-    private ChampionCollection championCollection;
+    private final ChampionCollection championCollection;
 
     public ChampionRoleInsertion(LolDbConnector connection, ChampionCollection championCollection) {
         super(connection);
