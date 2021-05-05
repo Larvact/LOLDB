@@ -10,13 +10,13 @@ AS
 		DECLARE @ActualResult VARCHAR(MAX);
 		DECLARE @TestOutcome BIT;
 
-		/*Test 1 Ensure that the correct number of champions have been added to the champions table*/
+		/*Test 1 Ensure that the selected champion exists within the champion table*/
 		SET @TestDescription = 'Ensure that the champion ' + @SelectedChampion + ' exits within the champion table';
 		SET @ExpectedResult = @SelectedChampion + ' exists within the champion table';
 
 		BEGIN TRY
 			IF Exists
-			(SELECT * FROM [dbo].[Champion] c
+			(SELECT 1 FROM [dbo].[Champion] c
 				WHERE c.Name = @SelectedChampion
 			)
 				BEGIN

@@ -12,12 +12,12 @@ AS
 
 		/*Test 1 Ensure that the correct number of champions have been added to the champions table*/
 		DECLARE @ActualNumberOfChampions SMALLINT;
-		SET @TestDescription = 'Ensure that the total number of rows within the table is ' + CAST(@ExpectedNumberOfChampions AS VARCHAR(255));
-		SET @ExpectedResult = 'The total number of champions within the champions table is ' + CAST(@ExpectedNumberOfChampions AS VARCHAR(255));
+		SET @TestDescription = 'Ensure that the total number of rows within the champion table is ' + CAST(@ExpectedNumberOfChampions AS VARCHAR(255));
+		SET @ExpectedResult = 'The total number of champions within the champion table is ' + CAST(@ExpectedNumberOfChampions AS VARCHAR(255));
 
 		BEGIN TRY 
 			SET @ActualNumberOfChampions = (SELECT COUNT(c.Id) FROM [dbo].[Champion] c)
-			SET @ActualResult = 'The total number of champions within the champions table is ' + CAST(@ActualNumberOfChampions AS VARCHAR(255));
+			SET @ActualResult = 'The total number of champions within the champion table is ' + CAST(@ActualNumberOfChampions AS VARCHAR(255));
 		END TRY
 		BEGIN CATCH
 			SET @ActualResult = (SELECT ERROR_MESSAGE());
