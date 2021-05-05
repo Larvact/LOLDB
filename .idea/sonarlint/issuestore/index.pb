@@ -1,8 +1,6 @@
 
 e
 5src/main/java/org/toby/database/insert/Insertion.java,0\a\0a15ff44d50076cf657bb32fde45830e1a59f939
-c
-3src/main/java/org/toby/database/LolDbConnector.java,e\6\e69a451bd530ca39d2a92a32d840e9d189160cc9
 t
 Dsrc/main/java/org/toby/json/deserialisers/champion/Deserializer.java,e\4\e4ff31c242595405fd8229c1639e391b72316c08
 ƒ
@@ -33,12 +31,8 @@ m
 =src/main/java/org/toby/database/tablemanagers/SQLManager.java,3\6\36f994eced40d3c963fda4e6d8f9f423bb117a7f
 r
 Bsrc/main/java/org/toby/database/tablemanagers/SQLTableManager.java,0\6\0619435783af4b47e74c7df28e09d96fe8416a9b
-l
-<src/main/java/org/toby/database/delete/ChampionDeletion.java,0\8\0801aeeef46376708d407ad1ae782e3001fa0f36
 d
 4src/main/java/org/toby/database/delete/Deletion.java,b\5\b56d8dc391e4075fb56810e337143f4ec91fd9f0
-t
-Dsrc/test/java/org/toby/database/deletion/ChampionDeletionTester.java,d\b\db0d26ca4a9861da746a8f2440ac081192fad4ca
 p
 @src/main/java/org/toby/valueobject/jsondeserialise/Champion.java,e\1\e167f153bd90c1f5b7187eb767bff4033baddf8c
 Œ

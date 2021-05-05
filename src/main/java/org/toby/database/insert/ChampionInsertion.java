@@ -6,7 +6,6 @@ import org.toby.valueobject.jsondeserialise.Champion;
 
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-import java.util.Collections;
 
 public class ChampionInsertion extends Insertion{
 
@@ -15,7 +14,6 @@ public class ChampionInsertion extends Insertion{
     public ChampionInsertion(LolDbConnector connection, ChampionCollection championCollection) {
         super(connection);
         this.championCollection = championCollection;
-        Collections.sort(championCollection.getChampions());
     }
 
     @Override

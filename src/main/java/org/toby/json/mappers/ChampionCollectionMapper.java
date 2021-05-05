@@ -9,6 +9,7 @@ import org.toby.json.deserialisers.champion.CollectionDeserializer;
 import org.toby.reader.Reader;
 
 import java.io.IOException;
+import java.util.Collections;
 
 public class ChampionCollectionMapper {
 
@@ -21,6 +22,7 @@ public class ChampionCollectionMapper {
         readChampionFile();
         setupChampionCollectionMapper();
         populateChampionCollection();
+        Collections.sort(championCollection.getChampions());
     }
 
     private void readChampionFile(){
