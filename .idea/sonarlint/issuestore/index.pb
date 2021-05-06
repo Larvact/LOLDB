@@ -39,3 +39,15 @@ p
 \src/main/java/org/toby/valueobject/jsondeserialise/databasetransfer/role/RoleCollection.java,3\e\3e7d6d4b3ad51f8cb558360aab9084261affe9df
 ž
 nsrc/main/java/org/toby/valueobject/jsondeserialise/databasetransfer/summonerspell/SummonerSpellCollection.java,0\2\025efeba05097d36cd56e39ae78552a8f407e6c8
+r
+Bsrc/test/java/org/toby/database/insertion/RoleInsertionTester.java,f\a\fa61bf1b2c43497e8b17538afa8407a0463366b4
+h
+8src/main/java/org/toby/database/delete/RoleDeletion.java,1\1\111684a3622564807b55f7aedc80ed68e8a1bdc3
+p
+@src/test/java/org/toby/database/deletion/RoleDeletionTester.java,c\e\cefb86736e4f51736ea1061c4fbff941065ca924
+h
+8src/main/java/org/toby/properties/PropertyRetriever.java,a\1\a13c432e947ccae0eec85e4d79fb242ffe375cac
+n
+>src/test/java/org/toby/properties/PropertyRetrieverTester.java,a\c\ac98bcaade7bd77f2831af28b3ac4191447a6839
+”
+dsrc/main/java/org/toby/valueobject/jsondeserialise/databasetransfer/champion/ChampionCollection.java,9\3\93c4989ea535abd846fdca9ad841a8faba5d7fe2
