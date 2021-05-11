@@ -9,15 +9,15 @@ public class ChampionRoleDeletion extends Deletion{
 
     private static final String DELETECHAMPIONROLEDATASQLSTATEMENT = "DELETE FROM [dbo].[ChampionRole];";
 
-    public ChampionRoleDeletion(LolDbConnector connection) {
-        super(connection);
+    public ChampionRoleDeletion(LolDbConnector connector) {
+        super(connector);
     }
 
     @Override
     public void delete() {
         try {
-            connection.connect();
-            try (PreparedStatement deleteChampionRoleStatement = this.connection.getConnection().prepareStatement(DELETECHAMPIONROLEDATASQLSTATEMENT)) {
+            connector.connect();
+            try (PreparedStatement deleteChampionRoleStatement = this.connector.getConnection().prepareStatement(DELETECHAMPIONROLEDATASQLSTATEMENT)) {
                 deleteChampionRoleStatement.execute();
             }
         } catch (SQLException throwables) {
@@ -25,7 +25,7 @@ public class ChampionRoleDeletion extends Deletion{
         }
         finally {
             try {
-                this.connection.getConnection().close();
+                this.connector.getConnection().close();
             } catch (SQLException throwables) {
                 throwables.printStackTrace();
             }

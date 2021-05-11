@@ -17,8 +17,8 @@ public class ChampionRoleInsertion extends Insertion{
     private Map<String, Integer> roleIdMap;
     private final ChampionCollection championCollection;
 
-    public ChampionRoleInsertion(LolDbConnector connection, ChampionCollection championCollection) {
-        super(connection);
+    public ChampionRoleInsertion(LolDbConnector connector, ChampionCollection championCollection) {
+        super(connector);
         this.championCollection = championCollection;
         this.setChampionIdMap();
         this.setRoleIdMap();
@@ -27,8 +27,8 @@ public class ChampionRoleInsertion extends Insertion{
     @Override
     public void insertData() {
         try {
-            connection.connect();
-            try (PreparedStatement insertChampionRoleStatement = this.connection.getConnection().prepareStatement(constructSqlInsertStatement())) {
+            connector.connect();
+            try (PreparedStatement insertChampionRoleStatement = this.connector.getConnection().prepareStatement(constructSqlInsertStatement())) {
                 insertChampionRoleStatement.execute();
             }
         } catch (SQLException throwables) {
@@ -36,7 +36,7 @@ public class ChampionRoleInsertion extends Insertion{
         }
         finally {
             try {
-                this.connection.getConnection().close();
+                this.connector.getConnection().close();
             } catch (SQLException throwables) {
                 throwables.printStackTrace();
             }
@@ -45,8 +45,8 @@ public class ChampionRoleInsertion extends Insertion{
 
     private void setChampionIdMap() {
         this.championIdMap = new HashMap<>();
-        this.connection.connect();
-        try(PreparedStatement getChampionStatement = this.connection.getConnection().prepareStatement("SELECT c.Id, c.Name FROM [dbo].[Champion] c;")){
+        this.connector.connect();
+        try(PreparedStatement getChampionStatement = this.connector.getConnection().prepareStatement("SELECT c.Id, c.Name FROM [dbo].[Champion] c;")){
             ResultSet championIdResults = getChampionStatement.executeQuery();
             while(championIdResults.next()){
                 String championName = championIdResults.getString(2);
@@ -58,7 +58,7 @@ public class ChampionRoleInsertion extends Insertion{
         }
         finally {
             try {
-                this.connection.getConnection().close();
+                this.connector.getConnection().close();
             } catch (SQLException throwables) {
                 throwables.printStackTrace();
             }
@@ -67,8 +67,8 @@ public class ChampionRoleInsertion extends Insertion{
 
     private void setRoleIdMap() {
         this.roleIdMap = new HashMap<>();
-        this.connection.connect();
-        try(PreparedStatement getRoleStatement = this.connection.getConnection().prepareStatement("SELECT r.Id, r.Name FROM [dbo].[Role] r;")){
+        this.connector.connect();
+        try(PreparedStatement getRoleStatement = this.connector.getConnection().prepareStatement("SELECT r.Id, r.Name FROM [dbo].[Role] r;")){
             ResultSet roleIdResults = getRoleStatement.executeQuery();
             while(roleIdResults.next()){
                 String roleName = roleIdResults.getString(2);
@@ -80,7 +80,7 @@ public class ChampionRoleInsertion extends Insertion{
         }
         finally {
             try {
-                this.connection.getConnection().close();
+                this.connector.getConnection().close();
             } catch (SQLException throwables) {
                 throwables.printStackTrace();
             }

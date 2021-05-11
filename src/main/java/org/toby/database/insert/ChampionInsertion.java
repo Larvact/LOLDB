@@ -11,16 +11,16 @@ public class ChampionInsertion extends Insertion{
 
     private final ChampionCollection championCollection;
 
-    public ChampionInsertion(LolDbConnector connection, ChampionCollection championCollection) {
-        super(connection);
+    public ChampionInsertion(LolDbConnector connector, ChampionCollection championCollection) {
+        super(connector);
         this.championCollection = championCollection;
     }
 
     @Override
     public void insertData() {
         try {
-            connection.connect();
-            try (PreparedStatement insertChampionStatement = this.connection.getConnection().prepareStatement(constructSQLInsertStatement())) {
+            connector.connect();
+            try (PreparedStatement insertChampionStatement = this.connector.getConnection().prepareStatement(constructSQLInsertStatement())) {
                 insertChampionStatement.execute();
             }
         } catch (SQLException throwables) {
@@ -28,7 +28,7 @@ public class ChampionInsertion extends Insertion{
         }
         finally {
             try {
-                this.connection.getConnection().close();
+                this.connector.getConnection().close();
             } catch (SQLException throwables) {
                 throwables.printStackTrace();
             }

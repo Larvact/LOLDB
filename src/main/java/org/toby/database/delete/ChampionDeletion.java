@@ -9,15 +9,15 @@ public class ChampionDeletion extends Deletion{
 
     private static final String DELETECHAMPIONDATASQLSTATEMENT = "DELETE FROM dbo.Champion; DBCC CHECKIDENT ('Champion', RESEED, 0);";
 
-    public ChampionDeletion(LolDbConnector connection) {
-        super(connection);
+    public ChampionDeletion(LolDbConnector connector) {
+        super(connector);
     }
 
     @Override
     public void delete() {
         try {
-            connection.connect();
-            try (PreparedStatement deleteChampionStatement = this.connection.getConnection().prepareStatement(DELETECHAMPIONDATASQLSTATEMENT)) {
+            connector.connect();
+            try (PreparedStatement deleteChampionStatement = this.connector.getConnection().prepareStatement(DELETECHAMPIONDATASQLSTATEMENT)) {
                 deleteChampionStatement.execute();
             }
         } catch (SQLException throwables) {
@@ -25,7 +25,7 @@ public class ChampionDeletion extends Deletion{
         }
         finally {
             try {
-                this.connection.getConnection().close();
+                this.connector.getConnection().close();
             } catch (SQLException throwables) {
                 throwables.printStackTrace();
             }

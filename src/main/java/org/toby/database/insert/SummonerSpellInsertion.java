@@ -11,23 +11,23 @@ public class SummonerSpellInsertion extends Insertion{
 
     private final SummonerSpellCollection summonerSpellCollection;
 
-    public SummonerSpellInsertion(LolDbConnector connection, SummonerSpellCollection summonerSpellCollection) {
-        super(connection);
+    public SummonerSpellInsertion(LolDbConnector connector, SummonerSpellCollection summonerSpellCollection) {
+        super(connector);
         this.summonerSpellCollection = summonerSpellCollection;
     }
 
     @Override
     public void insertData() {
         try {
-            this.connection.connect();
-            try (PreparedStatement sqlInsertStatement = this.connection.getConnection().prepareStatement(constructSQLInsertStatement())) {
+            this.connector.connect();
+            try (PreparedStatement sqlInsertStatement = this.connector.getConnection().prepareStatement(constructSQLInsertStatement())) {
                 sqlInsertStatement.execute();
             } catch (SQLException throwables) {
                 throwables.printStackTrace();
             }
         } finally {
             try {
-                this.connection.getConnection().close();
+                this.connector.getConnection().close();
             } catch (SQLException throwables) {
                 throwables.printStackTrace();
             }

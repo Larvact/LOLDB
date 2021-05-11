@@ -11,16 +11,16 @@ public class RoleInsertion extends Insertion{
 
     private RoleCollection roleCollection;
 
-    public RoleInsertion(LolDbConnector connection, ChampionCollection championCollection) {
-        super(connection);
+    public RoleInsertion(LolDbConnector connector, ChampionCollection championCollection) {
+        super(connector);
         this.roleCollection = new RoleCollection(championCollection);
     }
 
     @Override
     public void insertData() {
         try {
-            connection.connect();
-            try (PreparedStatement insertRoleStatement = this.connection.getConnection().prepareStatement(constructSQLInsertStatement())) {
+            connector.connect();
+            try (PreparedStatement insertRoleStatement = this.connector.getConnection().prepareStatement(constructSQLInsertStatement())) {
                 insertRoleStatement.execute();
             }
         } catch (SQLException throwables) {
@@ -28,7 +28,7 @@ public class RoleInsertion extends Insertion{
         }
         finally {
             try {
-                this.connection.getConnection().close();
+                this.connector.getConnection().close();
             } catch (SQLException throwables) {
                 throwables.printStackTrace();
             }

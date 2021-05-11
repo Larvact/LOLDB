@@ -4,10 +4,10 @@ import org.toby.database.LolDbConnector;
 
 public abstract class Insertion {
 
-    protected LolDbConnector connection;
+    protected LolDbConnector connector;
 
-    protected Insertion(LolDbConnector connection) {
-        this.connection = connection;
+    protected Insertion(LolDbConnector connector) {
+        this.connector = connector;
     }
 
     public abstract void insertData();

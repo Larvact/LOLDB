@@ -9,15 +9,15 @@ public class RoleDeletion extends Deletion{
 
     private static final String DELETEROLEDATASQLSTATEMENT = "DELETE FROM dbo.Role; DBCC CHECKIDENT ('Role', RESEED, 0);";
 
-    public RoleDeletion(LolDbConnector connection) {
-        super(connection);
+    public RoleDeletion(LolDbConnector connector) {
+        super(connector);
     }
 
     @Override
     public void delete() {
         try {
-            connection.connect();
-            try (PreparedStatement deleteRoleStatement = this.connection.getConnection().prepareStatement(DELETEROLEDATASQLSTATEMENT)) {
+            connector.connect();
+            try (PreparedStatement deleteRoleStatement = this.connector.getConnection().prepareStatement(DELETEROLEDATASQLSTATEMENT)) {
                 deleteRoleStatement.execute();
             }
         } catch (SQLException throwables) {
@@ -25,7 +25,7 @@ public class RoleDeletion extends Deletion{
         }
         finally {
             try {
-                this.connection.getConnection().close();
+                this.connector.getConnection().close();
             } catch (SQLException throwables) {
                 throwables.printStackTrace();
             }

@@ -1,5 +1,6 @@
-package org.toby.database.insertion;
+package org.toby.database.deletion;
 
+import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.toby.database.LolDbConnector;
@@ -13,7 +14,8 @@ import org.toby.json.mappers.SummonerSpellCollectionMapper;
 import org.toby.reader.LolFileReader;
 import org.toby.reader.Reader;
 
-public class SummonerSpellTester {
+public class SummonerSpellDeletionTester {
+
     private static SQLManager sqlManager;
     private static Reader reader;
     private static LolDbConnector connector;
@@ -33,10 +35,17 @@ public class SummonerSpellTester {
         sqlManager = new SQLTableManager(insertion, deletion);
     }
 
-    @Test
+    @Before
     public void populateSummonerSpellTable(){
         sqlManager.insert();
     }
+
+    @Test
+    public void deleteDataFromSummonerSpellTable(){
+        sqlManager.delete();
+    }
+
+
 
 
 }
