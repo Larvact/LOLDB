@@ -2,13 +2,13 @@ package org.toby.valueobject.jsondeserialise.databasetransfer.summonerspell;
 
 import org.toby.valueobject.jsondeserialise.SummonerSpell;
 
-import java.util.Set;
+import java.util.List;
 
 public class SummonerSpellCollection {
 
     private String type;
     private double version;
-    private Set<SummonerSpell> summonerSpells;
+    private List<SummonerSpell> summonerSpells;
 
     public String getType() {
         return type;
@@ -26,11 +26,11 @@ public class SummonerSpellCollection {
         this.version = version;
     }
 
-    public Set<SummonerSpell> getSummonerSpells() {
+    public List<SummonerSpell> getSummonerSpells() {
         return summonerSpells;
     }
 
-    public void setSummonerSpells(Set<SummonerSpell> summonerSpells) {
+    public void setSummonerSpells(List<SummonerSpell> summonerSpells) {
         this.summonerSpells = summonerSpells;
     }
 }

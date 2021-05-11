@@ -9,6 +9,7 @@ import org.toby.database.insert.Insertion;
 import org.toby.database.insert.SummonerSpellInsertion;
 import org.toby.database.tablemanagers.SQLManager;
 import org.toby.database.tablemanagers.SQLTableManager;
+import org.toby.json.mappers.SummonerSpellCollectionMapper;
 import org.toby.reader.LolFileReader;
 import org.toby.reader.Reader;
 
@@ -26,13 +27,13 @@ public class SummonerSpellTester {private static SQLManager sqlManager;
         reader = new LolFileReader(summonerSpellFilePath);
         connector = new LolDbConnector(lolDbConnectionString);
         mapper = new SummonerSpellCollectionMapper(reader);
-        insertion = new SummonerSpellInsertion(connector, mapper.getSummonerSpellCollection());
+        insertion = new SummonerSpellInsertion(connector, mapper.getCollection());
         deletion = new SummonerSpellDeletion(connector);
         sqlManager = new SQLTableManager(insertion, deletion);
     }
 
     @Test
-    public void populateChampionTable(){
+    public void populateSummonerSpellTable(){
         sqlManager.insert();
     }
 

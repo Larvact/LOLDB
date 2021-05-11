@@ -30,7 +30,7 @@ public class ChampionRoleDeletionTester {
         reader = new LolFileReader(lolChampionFilePath);
         connector = new LolDbConnector(lolDbConnectionString);
         mapper = new ChampionCollectionMapper(reader);
-        insertion = new ChampionRoleInsertion(connector, mapper.getChampionCollection());
+        insertion = new ChampionRoleInsertion(connector, mapper.getCollection());
         deletion = new ChampionRoleDeletion(connector);
         sqlManager = new SQLTableManager(insertion, deletion);
     }

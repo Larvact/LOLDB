@@ -3,8 +3,6 @@ e
 5src/main/java/org/toby/database/insert/Insertion.java,0\a\0a15ff44d50076cf657bb32fde45830e1a59f939
 t
 Dsrc/main/java/org/toby/json/deserialisers/champion/Deserializer.java,e\4\e4ff31c242595405fd8229c1639e391b72316c08
-ƒ
-Ssrc/main/java/org/toby/json/deserialisers/summonerspell/CollectionDeserializer.java,9\6\96cee203bdc647015b94aa78c3cb87bdc2e4d95c
 y
 Isrc/main/java/org/toby/json/deserialisers/summonerspell/Deserializer.java,a\b\abda374733bb00b4eadc508fb80d74170378dd25
 ~
@@ -31,8 +29,6 @@ r
 Bsrc/main/java/org/toby/database/tablemanagers/SQLTableManager.java,0\6\0619435783af4b47e74c7df28e09d96fe8416a9b
 d
 4src/main/java/org/toby/database/delete/Deletion.java,b\5\b56d8dc391e4075fb56810e337143f4ec91fd9f0
-p
-@src/main/java/org/toby/valueobject/jsondeserialise/Champion.java,e\1\e167f153bd90c1f5b7187eb767bff4033baddf8c
 Œ
 \src/main/java/org/toby/valueobject/jsondeserialise/databasetransfer/role/RoleCollection.java,3\e\3e7d6d4b3ad51f8cb558360aab9084261affe9df
 h
@@ -41,7 +37,5 @@ h
 8src/main/java/org/toby/properties/PropertyRetriever.java,a\1\a13c432e947ccae0eec85e4d79fb242ffe375cac
 n
 >src/test/java/org/toby/properties/PropertyRetrieverTester.java,a\c\ac98bcaade7bd77f2831af28b3ac4191447a6839
-”
-dsrc/main/java/org/toby/valueobject/jsondeserialise/databasetransfer/champion/ChampionCollection.java,9\3\93c4989ea535abd846fdca9ad841a8faba5d7fe2
 q
 Asrc/main/java/org/toby/database/insert/ChampionRoleInsertion.java,d\d\dd83c3ae0e44219368cd8e67b3d9e516f31afdfe

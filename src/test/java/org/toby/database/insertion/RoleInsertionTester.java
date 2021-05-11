@@ -28,7 +28,7 @@ public class RoleInsertionTester {
         reader = new LolFileReader(lolChampionFilePath);
         connector = new LolDbConnector(lolDbConnectionString);
         mapper = new ChampionCollectionMapper(reader);
-        insertion = new RoleInsertion(connector, mapper.getChampionCollection());
+        insertion = new RoleInsertion(connector, mapper.getCollection());
         deletion = new RoleDeletion(connector);
         sqlManager = new SQLTableManager(insertion, deletion);
     }

@@ -35,16 +35,17 @@ public class SummonerSpellInsertion extends Insertion{
     }
 
     private String constructSQLInsertStatement(){
-        StringBuilder sqlInsertStatement = new StringBuilder("INSERT INTO [dbo].[SummonerSpell] (Name, Desciption, SummonerLevelRequired) VALUES ");
+        StringBuilder sqlInsertStatement = new StringBuilder("INSERT INTO [dbo].[SummonerSpell] (Name, Description, SummonerLevelRequired) VALUES ");
         for(SummonerSpell summonerSpell : this.summonerSpellCollection.getSummonerSpells()) {
             sqlInsertStatement.append("('")
                     .append(summonerSpell.getName())
-                    .append(", ")
+                    .append("', '")
                     .append(summonerSpell.getDescription())
-                    .append(", ")
+                    .append("', '")
                     .append(summonerSpell.getLevelRequired())
-                    .append("), ");
+                    .append("'), ");
         }
+        System.out.println(sqlInsertStatement.substring(0, sqlInsertStatement.length() - 2) + ";");
         return sqlInsertStatement.substring(0, sqlInsertStatement.length() - 2) + ";";
     }
 }

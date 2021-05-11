@@ -48,7 +48,8 @@ public class ChampionCollectionMapper {
         }
     }
 
-    public ChampionCollection getChampionCollection() {
+    public ChampionCollection getCollection() {
         return championCollection;
     }
+
 }

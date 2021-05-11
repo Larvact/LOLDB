@@ -13,10 +13,7 @@ import org.toby.valueobject.jsondeserialise.databasetransfer.summonerspell.Summo
 import org.toby.valueobject.jsondeserialise.SummonerSpell;
 
 import java.io.IOException;
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 public class CollectionDeserializer extends StdDeserializer<SummonerSpellCollection> {
 
@@ -46,10 +43,10 @@ public class CollectionDeserializer extends StdDeserializer<SummonerSpellCollect
         return summonerSpellCollection;
     }
 
-    private Set<SummonerSpell> parseSummonerSpells(JsonNode summonerSpellsNode) {
+    private List<SummonerSpell> parseSummonerSpells(JsonNode summonerSpellsNode) {
 
         ObjectMapper mapper = createSummonerSpellObjectmapper();
-        Set<SummonerSpell> summonerSpellSet = new HashSet<>();
+        List<SummonerSpell> summonerSpellList = new ArrayList<>();
         Iterator<Map.Entry<String, JsonNode>> summonerSpellsNodeIterator = summonerSpellsNode.fields();
         while (summonerSpellsNodeIterator.hasNext()){
             JsonNode summonerSpellNode = summonerSpellsNodeIterator.next().getValue();
@@ -60,9 +57,9 @@ public class CollectionDeserializer extends StdDeserializer<SummonerSpellCollect
             } catch (JsonProcessingException e) {
                 e.printStackTrace();
             }
-            summonerSpellSet.add(summonerSpell);
+            summonerSpellList.add(summonerSpell);
         }
-        return summonerSpellSet;
+        return summonerSpellList;
     }
 
     private ObjectMapper createSummonerSpellObjectmapper(){
