@@ -21,6 +21,12 @@ public class App
         LOG.trace("This is an trace log");
 
 
+        int val = 4;
+        int val2 = 8;
+
+        System.out.println(val++ * ++val2 + val);
+
+
 
 
     }

@@ -7,7 +7,7 @@ import java.sql.SQLException;
 
 public class ChampionRoleDeletion extends Deletion{
 
-    private static final String DELETECHAMPIONROLEDATASQLSTATEMENT = "DELETE FROM [dbo].[ChampionRole]; DBCC CHECKIDENT ('ChampionRole', RESEED, 0);";
+    private static final String DELETECHAMPIONROLEDATASQLSTATEMENT = "DELETE FROM [dbo].[ChampionRole];";
 
     public ChampionRoleDeletion(LolDbConnector connection) {
         super(connection);

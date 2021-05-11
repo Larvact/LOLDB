@@ -11,8 +11,6 @@ Isrc/main/java/org/toby/json/deserialisers/summonerspell/Deserializer.java,a\b\
 Nsrc/main/java/org/toby/json/deserialisers/champion/CollectionDeserializer.java,f\6\f6f6e208e91bfc49ca74261cc904cd8e06b1f0dd
 „
 Tsrc/test/java/org/toby/json/deserialisers/champion/CollectionDeserializerTester.java,2\0\20ad6820e9aa92eb77d181b77599d20ae96f09c3
-O
-src/main/java/org/toby/App.java,8\0\80a23f121712509e365cb227ce62be0815434902
 f
 6src/main/java/org/toby/writer/SummonSpellIdWriter.java,a\f\afc44e1cfc35854d213da3f7a14780a5570abf7e
 Y
@@ -39,15 +37,13 @@ p
 \src/main/java/org/toby/valueobject/jsondeserialise/databasetransfer/role/RoleCollection.java,3\e\3e7d6d4b3ad51f8cb558360aab9084261affe9df
 ž
 nsrc/main/java/org/toby/valueobject/jsondeserialise/databasetransfer/summonerspell/SummonerSpellCollection.java,0\2\025efeba05097d36cd56e39ae78552a8f407e6c8
-r
-Bsrc/test/java/org/toby/database/insertion/RoleInsertionTester.java,f\a\fa61bf1b2c43497e8b17538afa8407a0463366b4
 h
 8src/main/java/org/toby/database/delete/RoleDeletion.java,1\1\111684a3622564807b55f7aedc80ed68e8a1bdc3
-p
-@src/test/java/org/toby/database/deletion/RoleDeletionTester.java,c\e\cefb86736e4f51736ea1061c4fbff941065ca924
 h
 8src/main/java/org/toby/properties/PropertyRetriever.java,a\1\a13c432e947ccae0eec85e4d79fb242ffe375cac
 n
 >src/test/java/org/toby/properties/PropertyRetrieverTester.java,a\c\ac98bcaade7bd77f2831af28b3ac4191447a6839
 ”
 dsrc/main/java/org/toby/valueobject/jsondeserialise/databasetransfer/champion/ChampionCollection.java,9\3\93c4989ea535abd846fdca9ad841a8faba5d7fe2
+q
+Asrc/main/java/org/toby/database/insert/ChampionRoleInsertion.java,d\d\dd83c3ae0e44219368cd8e67b3d9e516f31afdfe
