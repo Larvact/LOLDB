@@ -6,7 +6,6 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.module.SimpleModule;
 import org.toby.json.deserialisers.summonerspell.CollectionDeserializer;
 import org.toby.reader.Reader;
-import org.toby.valueobject.jsondeserialise.databasetransfer.champion.ChampionCollection;
 import org.toby.valueobject.jsondeserialise.databasetransfer.summonerspell.SummonerSpellCollection;
 
 import java.io.IOException;

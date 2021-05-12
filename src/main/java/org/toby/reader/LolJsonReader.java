@@ -5,11 +5,11 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 
-public class LolFileReader extends Reader {
+public class LolJsonReader extends Reader {
 
     BufferedReader reader;
 
-    public LolFileReader(String filePath ) {
+    public LolJsonReader(String filePath ) {
         try {
             reader = new BufferedReader(new FileReader(filePath));
             this.readData = new StringBuilder();

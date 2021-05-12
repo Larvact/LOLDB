@@ -9,7 +9,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import org.toby.valueobject.jsondeserialise.databasetransfer.champion.ChampionCollection;
 import org.toby.json.deserialisers.champion.CollectionDeserializer;
-import org.toby.reader.LolFileReader;
+import org.toby.reader.LolJsonReader;
 import org.toby.reader.Reader;
 
 import java.io.BufferedReader;
@@ -36,7 +36,7 @@ public class ChampionIdWriterTester {
 
     @BeforeClass
     public static void setup(){
-        reader = new LolFileReader(filePath);
+        reader = new LolJsonReader(filePath);
         try {
             reader.read();
         } catch (IOException e) {

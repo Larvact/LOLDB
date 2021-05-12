@@ -13,7 +13,7 @@ public class LolReaderTester {
 
     @BeforeClass
     public static void setup(){
-        reader = new LolFileReader(filePath);
+        reader = new LolJsonReader(filePath);
     }
 
     @Test

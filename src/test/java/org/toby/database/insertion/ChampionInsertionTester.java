@@ -10,7 +10,7 @@ import org.toby.database.insert.Insertion;
 import org.toby.database.tablemanagers.SQLTableManager;
 import org.toby.database.tablemanagers.SQLManager;
 import org.toby.json.mappers.ChampionCollectionMapper;
-import org.toby.reader.LolFileReader;
+import org.toby.reader.LolJsonReader;
 import org.toby.reader.Reader;
 
 
@@ -27,7 +27,7 @@ public class ChampionInsertionTester {
 
     @BeforeClass
     public static void setUpManager(){
-        reader = new LolFileReader(lolChampionFilePath);
+        reader = new LolJsonReader(lolChampionFilePath);
         connector = new LolDbConnector(lolDbConnectionString);
         mapper = new ChampionCollectionMapper(reader);
         insertion = new ChampionInsertion(connector, mapper.getCollection());

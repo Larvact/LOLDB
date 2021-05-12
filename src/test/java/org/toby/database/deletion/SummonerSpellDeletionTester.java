@@ -11,7 +11,7 @@ import org.toby.database.insert.SummonerSpellInsertion;
 import org.toby.database.tablemanagers.SQLManager;
 import org.toby.database.tablemanagers.SQLTableManager;
 import org.toby.json.mappers.SummonerSpellCollectionMapper;
-import org.toby.reader.LolFileReader;
+import org.toby.reader.LolJsonReader;
 import org.toby.reader.Reader;
 
 public class SummonerSpellDeletionTester {
@@ -27,7 +27,7 @@ public class SummonerSpellDeletionTester {
 
     @BeforeClass
     public static void setUpManager(){
-        reader = new LolFileReader(summonerSpellFilePath);
+        reader = new LolJsonReader(summonerSpellFilePath);
         connector = new LolDbConnector(lolDbConnectionString);
         mapper = new SummonerSpellCollectionMapper(reader);
         insertion = new SummonerSpellInsertion(connector, mapper.getCollection());
