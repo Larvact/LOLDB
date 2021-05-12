@@ -45,7 +45,6 @@ public class SummonerSpellInsertion extends Insertion{
                     .append(summonerSpell.getLevelRequired())
                     .append("'), ");
         }
-        System.out.println(sqlInsertStatement.substring(0, sqlInsertStatement.length() - 2) + ";");
         return sqlInsertStatement.substring(0, sqlInsertStatement.length() - 2) + ";";
     }
 }
