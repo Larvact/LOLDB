@@ -4,8 +4,7 @@ import java.util.List;
 
 public interface CsvReader<T> {
 
+    void read();
 
-    public abstract void read();
-
-    public List<T> getDetails();
+    List<T> getDetails();
 }

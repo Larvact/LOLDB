@@ -7,7 +7,7 @@ import org.toby.csv.deserializers.Deserializer;
 import org.toby.csv.deserializers.GameDetailDeserilizer;
 import org.toby.valueobject.csvobjects.GameDetail;
 
-public class CsvGameDetailReaderTester {
+public class CsvGameReaderTester {
 
     private static Deserializer<GameDetail> deserializer;
     private static CsvReader<GameDetail> csvReader;
@@ -16,7 +16,7 @@ public class CsvGameDetailReaderTester {
     @BeforeClass
     public static void setup(){
         deserializer = new GameDetailDeserilizer("");
-        csvReader = new CsvGameDetailReader(csvFilePath, deserializer);
+        csvReader = new CsvGameReader<>(csvFilePath, deserializer);
     }
 
     @Test

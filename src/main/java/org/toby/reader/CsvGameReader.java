@@ -1,8 +1,6 @@
 package org.toby.reader;
 
 import org.toby.csv.deserializers.Deserializer;
-import org.toby.valueobject.csvobjects.GameDetail;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
@@ -12,13 +10,13 @@ import java.nio.file.Paths;
 import java.util.List;
 import java.util.ArrayList;
 
-public class CsvGameDetailReader implements CsvReader<GameDetail>{
+public class CsvGameReader<T> implements CsvReader<T>{
 
-    private List<GameDetail> details;
+    private List<T> details;
     private Path path;
-    private Deserializer<GameDetail> deserializer;
+    private Deserializer<T> deserializer;
 
-    public CsvGameDetailReader(String filePath, Deserializer<GameDetail> deserializer) {
+    public CsvGameReader(String filePath, Deserializer<T> deserializer) {
         this.path = Paths.get(filePath);
         this.deserializer = deserializer;
         this.details = new ArrayList<>();
@@ -31,7 +29,7 @@ public class CsvGameDetailReader implements CsvReader<GameDetail>{
             reader.readLine();
             while ((currentLine = reader.readLine()) != null){
                 this.deserializer.setCsvString(currentLine);
-                GameDetail gameDetail = this.deserializer.deserialize();
+                T gameDetail = this.deserializer.deserialize();
                 this.details.add(gameDetail);
             }
         } catch (IOException e) {
@@ -40,7 +38,7 @@ public class CsvGameDetailReader implements CsvReader<GameDetail>{
     }
 
     @Override
-    public List<GameDetail> getDetails() {
+    public List<T> getDetails() {
         return this.details;
     }
 
