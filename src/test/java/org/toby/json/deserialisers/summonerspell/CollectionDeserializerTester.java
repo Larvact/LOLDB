@@ -7,6 +7,8 @@ import com.fasterxml.jackson.databind.module.SimpleModule;
 import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;
+import org.toby.properties.PropertyKeys;
+import org.toby.properties.PropertyRetriever;
 import org.toby.valueobject.jsondeserialise.databasetransfer.summonerspell.SummonerSpellCollection;
 import org.toby.valueobject.jsondeserialise.SummonerSpell;
 import org.toby.reader.LolJsonReader;
@@ -16,20 +18,19 @@ import java.io.IOException;
 public class CollectionDeserializerTester {
 
     private static String json;
-    private final static String filePath = "D:\\Documents\\SQL Datasets\\Lol Datasets\\summoner_spell_info.json";
     private static Reader reader;
     private static ObjectMapper mapper;
-    private final int expectedNumberOfSummonerSpells = 17;
+    private final int expectedNumberOfSummonerSpells = 15;
 
     //Flash Expected
     private final static int expectedId = 4;
     private final static int expectedSummonerLevel = 8;
     private final static String expectedName = "Flash";
-    private final static String expectedDescription = "Teleports your champion a short distance toward your cursor's location.";
+    private final static String expectedDescription = "Teleports your champion a short distance toward your cursors location.";
 
     @BeforeClass
     public static void setup(){
-        reader = new LolJsonReader(filePath);
+        reader = new LolJsonReader(PropertyRetriever.getProperty(PropertyKeys.SUMMONER_SPELL_DATA_FILE_LOCATION.toString()));
         try {
             reader.read();
         } catch (IOException e) {
@@ -47,7 +48,7 @@ public class CollectionDeserializerTester {
     }
 
     @Test
-    public void ensureChampionCollectionHas139ChampionsAfterDeserialization(){
+    public void ensureSummonerSpellCollectionHas15SpellsAfterDeserialization(){
         SummonerSpellCollection summonerSpellCollection = null;
         try {
             summonerSpellCollection = mapper.readValue(json, SummonerSpellCollection.class);
@@ -58,7 +59,7 @@ public class CollectionDeserializerTester {
     }
 
     @Test
-    public void ensureDariusChampionHasBeenParsedCorrectly(){
+    public void ensureFlashSummonerSpellHasBeenParsedCorrectly(){
         SummonerSpellCollection summonerSpellCollection = null;
         try {
             summonerSpellCollection = mapper.readValue(json, SummonerSpellCollection.class);

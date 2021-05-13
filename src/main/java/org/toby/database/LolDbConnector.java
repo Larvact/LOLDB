@@ -31,8 +31,5 @@ public class LolDbConnector {
         return connection;
     }
 
-    public String getDbConnectionString() {
-        return dbConnectionString;
-    }
 }
 

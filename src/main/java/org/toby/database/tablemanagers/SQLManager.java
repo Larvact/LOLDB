@@ -1,14 +1,9 @@
 package org.toby.database.tablemanagers;
 
-public abstract class SQLManager {
+public interface SQLManager {
 
-    protected String lolDbConnectionString = "jdbc:sqlserver://localhost:1434;"  + "databaseName=loldb;" + "integratedSecurity=true;";
+    void insert();
 
-    public abstract void insert();
-
-    public abstract void delete();
-
-
-
+    void delete();
 
 }

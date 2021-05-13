@@ -6,13 +6,13 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
-public class SummonSpellIdMapper implements IdMapper {
+public class SummonerSpellIdMapper implements IdMapper {
 
     private SummonerSpellCollection summonerSpellCollection;
     private Map<Integer, Integer> summonerSpellIdMap;
 
 
-    public SummonSpellIdMapper(SummonerSpellCollection summonerSpellCollection) {
+    public SummonerSpellIdMapper(SummonerSpellCollection summonerSpellCollection) {
         this.summonerSpellCollection = summonerSpellCollection;
         this.summonerSpellIdMap = new HashMap<>();
 

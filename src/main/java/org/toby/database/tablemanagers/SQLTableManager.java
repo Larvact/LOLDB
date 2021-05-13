@@ -3,7 +3,7 @@ package org.toby.database.tablemanagers;
 import org.toby.database.delete.Deletion;
 import org.toby.database.insert.Insertion;
 
-public class SQLTableManager extends SQLManager {
+public class SQLTableManager implements SQLManager {
 
     private Insertion insertion;
     private Deletion deletion;

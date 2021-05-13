@@ -8,6 +8,8 @@ import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.toby.database.idmapper.ChampionIdMapper;
+import org.toby.properties.PropertyKeys;
+import org.toby.properties.PropertyRetriever;
 import org.toby.valueobject.jsondeserialise.databasetransfer.champion.ChampionCollection;
 import org.toby.json.deserialisers.champion.CollectionDeserializer;
 import org.toby.reader.LolJsonReader;
@@ -18,7 +20,6 @@ import java.io.IOException;
 public class ChampionIdMapperTester {
 
     private static String json;
-    private final static String filePath = "D:\\Documents\\SQL Datasets\\Lol Datasets\\champion_info_2.json";
     private static Reader reader;
     private static ObjectMapper mapper;
     private static ChampionCollection championCollection;
@@ -28,7 +29,7 @@ public class ChampionIdMapperTester {
 
     @BeforeClass
     public static void setup(){
-        reader = new LolJsonReader(filePath);
+        reader = new LolJsonReader(PropertyRetriever.getProperty(PropertyKeys.CHAMPION_DATA_FILE_LOCATION.toString()));
         try {
             reader.read();
         } catch (IOException e) {

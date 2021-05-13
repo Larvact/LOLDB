@@ -1,0 +1,10 @@
+package org.toby.properties;
+
+public enum PropertyKeys {
+
+    CHAMPION_DATA_FILE_LOCATION,
+    SUMMONER_SPELL_DATA_FILE_LOCATION,
+    GAMES_DATA_FILE_LOCATION,
+    DATABASE_CONNECTION_STRING
+
+}

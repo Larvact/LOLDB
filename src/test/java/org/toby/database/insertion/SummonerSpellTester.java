@@ -10,6 +10,8 @@ import org.toby.database.insert.SummonerSpellInsertion;
 import org.toby.database.tablemanagers.SQLManager;
 import org.toby.database.tablemanagers.SQLTableManager;
 import org.toby.json.mappers.SummonerSpellCollectionMapper;
+import org.toby.properties.PropertyKeys;
+import org.toby.properties.PropertyRetriever;
 import org.toby.reader.LolJsonReader;
 import org.toby.reader.Reader;
 
@@ -18,15 +20,13 @@ public class SummonerSpellTester {
     private static Reader reader;
     private static LolDbConnector connector;
     private static SummonerSpellCollectionMapper mapper;
-    private static final String lolDbConnectionString = "jdbc:sqlserver://localhost:1434;"  + "databaseName=loldb;" + "integratedSecurity=true;";
-    private static final String summonerSpellFilePath = "loldb/datafiles/summoner_spell_info.json";
     private static Insertion insertion;
     private static Deletion deletion;
 
     @BeforeClass
     public static void setUpManager(){
-        reader = new LolJsonReader(summonerSpellFilePath);
-        connector = new LolDbConnector(lolDbConnectionString);
+        reader = new LolJsonReader(PropertyRetriever.getProperty(PropertyKeys.SUMMONER_SPELL_DATA_FILE_LOCATION.toString()));
+        connector = new LolDbConnector(PropertyRetriever.getProperty(PropertyKeys.DATABASE_CONNECTION_STRING.toString()));
         mapper = new SummonerSpellCollectionMapper(reader);
         insertion = new SummonerSpellInsertion(connector, mapper.getCollection());
         deletion = new SummonerSpellDeletion(connector);
