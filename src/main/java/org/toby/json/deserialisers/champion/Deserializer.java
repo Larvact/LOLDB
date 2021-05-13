@@ -33,7 +33,7 @@ public class Deserializer extends StdDeserializer<Champion> {
         JsonNode titleNode = node.get("title");
         JsonNode rolesNode = node.get("tags");
 
-        champion.setId(idNode.asLong());
+        champion.setId(idNode.asInt());
         champion.setName(nameNode.asText());
         champion.setTitle(titleNode.asText());
         champion.setRoles(serparateString(",", rolesNode.asText()));

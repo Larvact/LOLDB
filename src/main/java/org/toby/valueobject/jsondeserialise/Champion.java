@@ -4,16 +4,16 @@ import java.util.List;
 
 public class Champion implements Comparable<Champion> {
 
-    private long id;
+    private int id;
     private String name;
     private String title;
     private List<String> roles;
 
-    public long getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(int id) {
         this.id = id;
     }
 

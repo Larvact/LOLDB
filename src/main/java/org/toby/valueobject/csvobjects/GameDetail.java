@@ -4,6 +4,7 @@ import java.util.List;
 
 public class GameDetail {
 
+    private long oldId;
     private long creationTime;
     private short gameDuration;
     private byte seasonId;
@@ -65,7 +66,8 @@ public class GameDetail {
     private short t2_ban4;
     private short t2_ban5;
 
-    public GameDetail(long creationTime, short gameDuration, byte seasonId, byte winner, byte firstBlood, byte firstTower, byte firstInhibitor, byte firstBaron, byte firstDragon, byte firstRiftHerald, short t1_champ1id, byte t1_champ1_sum1, byte t1_champ1_sum2, short t1_champ2id, byte t1_champ2_sum1, byte t1_champ2_sum2, short t1_champ3id, byte t1_champ3_sum1, byte t1_champ3_sum2, short t1_champ4id, byte t1_champ4_sum1, byte t1_champ4_sum2, short t1_champ5id, byte t1_champ5_sum1, byte t1_champ5_sum2, byte t1_towerKills, byte t1_inhibitorKills, byte t1_baronKills, byte t1_dragonKills, byte t1_riftHeraldKills, short t1_ban1, short t1_ban2, short t1_ban3, short t1_ban4, short t1_ban5, short t2_champ1id, byte t2_champ1_sum1, byte t2_champ1_sum2, short t2_champ2id, byte t2_champ2_sum1, byte t2_champ2_sum2, short t2_champ3id, byte t2_champ3_sum1, byte t2_champ3_sum2, short t2_champ4id, byte t2_champ4_sum1, byte t2_champ4_sum2, short t2_champ5id, byte t2_champ5_sum1, byte t2_champ5_sum2, byte t2_towerKills, byte t2_inhibitorKills, byte t2_baronKills, byte t2_dragonKills, byte t2_riftHeraldKills, short t2_ban1, short t2_ban2, short t2_ban3, short t2_ban4, short t2_ban5) {
+    public GameDetail(long oldId, long creationTime, short gameDuration, byte seasonId, byte winner, byte firstBlood, byte firstTower, byte firstInhibitor, byte firstBaron, byte firstDragon, byte firstRiftHerald, short t1_champ1id, byte t1_champ1_sum1, byte t1_champ1_sum2, short t1_champ2id, byte t1_champ2_sum1, byte t1_champ2_sum2, short t1_champ3id, byte t1_champ3_sum1, byte t1_champ3_sum2, short t1_champ4id, byte t1_champ4_sum1, byte t1_champ4_sum2, short t1_champ5id, byte t1_champ5_sum1, byte t1_champ5_sum2, byte t1_towerKills, byte t1_inhibitorKills, byte t1_baronKills, byte t1_dragonKills, byte t1_riftHeraldKills, short t1_ban1, short t1_ban2, short t1_ban3, short t1_ban4, short t1_ban5, short t2_champ1id, byte t2_champ1_sum1, byte t2_champ1_sum2, short t2_champ2id, byte t2_champ2_sum1, byte t2_champ2_sum2, short t2_champ3id, byte t2_champ3_sum1, byte t2_champ3_sum2, short t2_champ4id, byte t2_champ4_sum1, byte t2_champ4_sum2, short t2_champ5id, byte t2_champ5_sum1, byte t2_champ5_sum2, byte t2_towerKills, byte t2_inhibitorKills, byte t2_baronKills, byte t2_dragonKills, byte t2_riftHeraldKills, short t2_ban1, short t2_ban2, short t2_ban3, short t2_ban4, short t2_ban5) {
+        this.oldId = oldId;
         this.creationTime = creationTime;
         this.gameDuration = gameDuration;
         this.seasonId = seasonId;
@@ -129,6 +131,7 @@ public class GameDetail {
     }
 
     public GameDetail(List<String> gameDetails) {
+        this.oldId = Long.parseLong(gameDetails.get(0));
         this.creationTime = Long.parseLong(gameDetails.get(1));
         this.gameDuration = Short.parseShort(gameDetails.get(2));
         this.seasonId = Byte.parseByte(gameDetails.get(3));
@@ -189,6 +192,10 @@ public class GameDetail {
         this.t2_ban3 = Short.parseShort(gameDetails.get(58));
         this.t2_ban4 = Short.parseShort(gameDetails.get(59));;
         this.t2_ban5 = Short.parseShort(gameDetails.get(60));;
+    }
+
+    public long getOldId() {
+        return oldId;
     }
 
     public long getCreationTime() {
