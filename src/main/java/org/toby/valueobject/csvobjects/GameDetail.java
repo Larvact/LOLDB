@@ -15,56 +15,56 @@ public class GameDetail {
     private byte firstBaron;
     private byte firstDragon;
     private byte firstRiftHerald;
-    private short t1_champ1id;
-    private byte t1_champ1_sum1;
-    private byte t1_champ1_sum2;
-    private short t1_champ2id;
-    private byte t1_champ2_sum1;
-    private byte t1_champ2_sum2;
-    private short t1_champ3id;
-    private byte t1_champ3_sum1;
-    private byte t1_champ3_sum2;
-    private short t1_champ4id;
-    private byte t1_champ4_sum1;
-    private byte t1_champ4_sum2;
-    private short t1_champ5id;
-    private byte t1_champ5_sum1;
-    private byte t1_champ5_sum2;
+    private int t1_champ1id;
+    private int t1_champ1_sum1;
+    private int t1_champ1_sum2;
+    private int t1_champ2id;
+    private int t1_champ2_sum1;
+    private int t1_champ2_sum2;
+    private int t1_champ3id;
+    private int t1_champ3_sum1;
+    private int t1_champ3_sum2;
+    private int t1_champ4id;
+    private int t1_champ4_sum1;
+    private int t1_champ4_sum2;
+    private int t1_champ5id;
+    private int t1_champ5_sum1;
+    private int t1_champ5_sum2;
     private byte t1_towerKills;
     private byte t1_inhibitorKills;
     private byte t1_baronKills;
     private byte t1_dragonKills;
     private byte t1_riftHeraldKills;
-    private short t1_ban1;
-    private short t1_ban2;
-    private short t1_ban3;
-    private short t1_ban4;
-    private short t1_ban5;
-    private short t2_champ1id;
-    private byte t2_champ1_sum1;
-    private byte t2_champ1_sum2;
-    private short t2_champ2id;
-    private byte t2_champ2_sum1;
-    private byte t2_champ2_sum2;
-    private short t2_champ3id;
-    private byte t2_champ3_sum1;
-    private byte t2_champ3_sum2;
-    private short t2_champ4id;
-    private byte t2_champ4_sum1;
-    private byte t2_champ4_sum2;
-    private short t2_champ5id;
-    private byte t2_champ5_sum1;
-    private byte t2_champ5_sum2;
+    private int t1_ban1;
+    private int t1_ban2;
+    private int t1_ban3;
+    private int t1_ban4;
+    private int t1_ban5;
+    private int t2_champ1id;
+    private int t2_champ1_sum1;
+    private int t2_champ1_sum2;
+    private int t2_champ2id;
+    private int t2_champ2_sum1;
+    private int t2_champ2_sum2;
+    private int t2_champ3id;
+    private int t2_champ3_sum1;
+    private int t2_champ3_sum2;
+    private int t2_champ4id;
+    private int t2_champ4_sum1;
+    private int t2_champ4_sum2;
+    private int t2_champ5id;
+    private int t2_champ5_sum1;
+    private int t2_champ5_sum2;
     private byte t2_towerKills;
     private byte t2_inhibitorKills;
     private byte t2_baronKills;
     private byte t2_dragonKills;
     private byte t2_riftHeraldKills;
-    private short t2_ban1;
-    private short t2_ban2;
-    private short t2_ban3;
-    private short t2_ban4;
-    private short t2_ban5;
+    private int t2_ban1;
+    private int t2_ban2;
+    private int t2_ban3;
+    private int t2_ban4;
+    private int t2_ban5;
 
     public GameDetail(long oldId, long creationTime, short gameDuration, byte seasonId, byte winner, byte firstBlood, byte firstTower, byte firstInhibitor, byte firstBaron, byte firstDragon, byte firstRiftHerald, short t1_champ1id, byte t1_champ1_sum1, byte t1_champ1_sum2, short t1_champ2id, byte t1_champ2_sum1, byte t1_champ2_sum2, short t1_champ3id, byte t1_champ3_sum1, byte t1_champ3_sum2, short t1_champ4id, byte t1_champ4_sum1, byte t1_champ4_sum2, short t1_champ5id, byte t1_champ5_sum1, byte t1_champ5_sum2, byte t1_towerKills, byte t1_inhibitorKills, byte t1_baronKills, byte t1_dragonKills, byte t1_riftHeraldKills, short t1_ban1, short t1_ban2, short t1_ban3, short t1_ban4, short t1_ban5, short t2_champ1id, byte t2_champ1_sum1, byte t2_champ1_sum2, short t2_champ2id, byte t2_champ2_sum1, byte t2_champ2_sum2, short t2_champ3id, byte t2_champ3_sum1, byte t2_champ3_sum2, short t2_champ4id, byte t2_champ4_sum1, byte t2_champ4_sum2, short t2_champ5id, byte t2_champ5_sum1, byte t2_champ5_sum2, byte t2_towerKills, byte t2_inhibitorKills, byte t2_baronKills, byte t2_dragonKills, byte t2_riftHeraldKills, short t2_ban1, short t2_ban2, short t2_ban3, short t2_ban4, short t2_ban5) {
         this.oldId = oldId;
@@ -194,6 +194,166 @@ public class GameDetail {
         this.t2_ban5 = Short.parseShort(gameDetails.get(60));;
     }
 
+    public void setT1_champ1id(int t1_champ1id) {
+        this.t1_champ1id = t1_champ1id;
+    }
+
+    public void setT1_champ2id(int t1_champ2id) {
+        this.t1_champ2id = t1_champ2id;
+    }
+
+    public void setT1_champ3id(int t1_champ3id) {
+        this.t1_champ3id = t1_champ3id;
+    }
+
+    public void setT1_champ4id(int t1_champ4id) {
+        this.t1_champ4id = t1_champ4id;
+    }
+
+    public void setT1_champ5id(int t1_champ5id) {
+        this.t1_champ5id = t1_champ5id;
+    }
+
+    public void setT1_ban1(int t1_ban1) {
+        this.t1_ban1 = t1_ban1;
+    }
+
+    public void setT1_ban2(int t1_ban2) {
+        this.t1_ban2 = t1_ban2;
+    }
+
+    public void setT1_ban3(int t1_ban3) {
+        this.t1_ban3 = t1_ban3;
+    }
+
+    public void setT1_ban4(int t1_ban4) {
+        this.t1_ban4 = t1_ban4;
+    }
+
+    public void setT1_ban5(int t1_ban5) {
+        this.t1_ban5 = t1_ban5;
+    }
+
+    public void setT2_champ1id(int t2_champ1id) {
+        this.t2_champ1id = t2_champ1id;
+    }
+
+    public void setT2_champ2id(int t2_champ2id) {
+        this.t2_champ2id = t2_champ2id;
+    }
+
+    public void setT2_champ3id(int t2_champ3id) {
+        this.t2_champ3id = t2_champ3id;
+    }
+
+    public void setT2_champ4id(int t2_champ4id) {
+        this.t2_champ4id = t2_champ4id;
+    }
+
+    public void setT2_champ5id(int t2_champ5id) {
+        this.t2_champ5id = t2_champ5id;
+    }
+
+    public void setT2_ban1(int t2_ban1) {
+        this.t2_ban1 = t2_ban1;
+    }
+
+    public void setT2_ban2(int t2_ban2) {
+        this.t2_ban2 = t2_ban2;
+    }
+
+    public void setT2_ban3(int t2_ban3) {
+        this.t2_ban3 = t2_ban3;
+    }
+
+    public void setT2_ban4(int t2_ban4) {
+        this.t2_ban4 = t2_ban4;
+    }
+
+    public void setT2_ban5(int t2_ban5) {
+        this.t2_ban5 = t2_ban5;
+    }
+
+    public void setT1_champ1_sum1(int t1_champ1_sum1) {
+        this.t1_champ1_sum1 = t1_champ1_sum1;
+    }
+
+    public void setT1_champ1_sum2(int t1_champ1_sum2) {
+        this.t1_champ1_sum2 = t1_champ1_sum2;
+    }
+
+    public void setT1_champ2_sum1(int t1_champ2_sum1) {
+        this.t1_champ2_sum1 = t1_champ2_sum1;
+    }
+
+    public void setT1_champ2_sum2(int t1_champ2_sum2) {
+        this.t1_champ2_sum2 = t1_champ2_sum2;
+    }
+
+    public void setT1_champ3_sum1(int t1_champ3_sum1) {
+        this.t1_champ3_sum1 = t1_champ3_sum1;
+    }
+
+    public void setT1_champ3_sum2(int t1_champ3_sum2) {
+        this.t1_champ3_sum2 = t1_champ3_sum2;
+    }
+
+    public void setT1_champ4_sum1(int t1_champ4_sum1) {
+        this.t1_champ4_sum1 = t1_champ4_sum1;
+    }
+
+    public void setT1_champ4_sum2(int t1_champ4_sum2) {
+        this.t1_champ4_sum2 = t1_champ4_sum2;
+    }
+
+    public void setT1_champ5_sum1(int t1_champ5_sum1) {
+        this.t1_champ5_sum1 = t1_champ5_sum1;
+    }
+
+    public void setT1_champ5_sum2(int t1_champ5_sum2) {
+        this.t1_champ5_sum2 = t1_champ5_sum2;
+    }
+
+    public void setT2_champ1_sum1(int t2_champ1_sum1) {
+        this.t2_champ1_sum1 = t2_champ1_sum1;
+    }
+
+    public void setT2_champ1_sum2(int t2_champ1_sum2) {
+        this.t2_champ1_sum2 = t2_champ1_sum2;
+    }
+
+    public void setT2_champ2_sum1(int t2_champ2_sum1) {
+        this.t2_champ2_sum1 = t2_champ2_sum1;
+    }
+
+    public void setT2_champ2_sum2(int t2_champ2_sum2) {
+        this.t2_champ2_sum2 = t2_champ2_sum2;
+    }
+
+    public void setT2_champ3_sum1(int t2_champ3_sum1) {
+        this.t2_champ3_sum1 = t2_champ3_sum1;
+    }
+
+    public void setT2_champ3_sum2(int t2_champ3_sum2) {
+        this.t2_champ3_sum2 = t2_champ3_sum2;
+    }
+
+    public void setT2_champ4_sum1(int t2_champ4_sum1) {
+        this.t2_champ4_sum1 = t2_champ4_sum1;
+    }
+
+    public void setT2_champ4_sum2(int t2_champ4_sum2) {
+        this.t2_champ4_sum2 = t2_champ4_sum2;
+    }
+
+    public void setT2_champ5_sum1(int t2_champ5_sum1) {
+        this.t2_champ5_sum1 = t2_champ5_sum1;
+    }
+
+    public void setT2_champ5_sum2(int t2_champ5_sum2) {
+        this.t2_champ5_sum2 = t2_champ5_sum2;
+    }
+
     public long getOldId() {
         return oldId;
     }
@@ -238,63 +398,63 @@ public class GameDetail {
         return firstRiftHerald;
     }
 
-    public short getT1_champ1id() {
+    public int getT1_champ1id() {
         return t1_champ1id;
     }
 
-    public byte getT1_champ1_sum1() {
+    public int getT1_champ1_sum1() {
         return t1_champ1_sum1;
     }
 
-    public byte getT1_champ1_sum2() {
+    public int getT1_champ1_sum2() {
         return t1_champ1_sum2;
     }
 
-    public short getT1_champ2id() {
+    public int getT1_champ2id() {
         return t1_champ2id;
     }
 
-    public byte getT1_champ2_sum1() {
+    public int getT1_champ2_sum1() {
         return t1_champ2_sum1;
     }
 
-    public byte getT1_champ2_sum2() {
+    public int getT1_champ2_sum2() {
         return t1_champ2_sum2;
     }
 
-    public short getT1_champ3id() {
+    public int getT1_champ3id() {
         return t1_champ3id;
     }
 
-    public byte getT1_champ3_sum1() {
+    public int getT1_champ3_sum1() {
         return t1_champ3_sum1;
     }
 
-    public byte getT1_champ3_sum2() {
+    public int getT1_champ3_sum2() {
         return t1_champ3_sum2;
     }
 
-    public short getT1_champ4id() {
+    public int getT1_champ4id() {
         return t1_champ4id;
     }
 
-    public byte getT1_champ4_sum1() {
+    public int getT1_champ4_sum1() {
         return t1_champ4_sum1;
     }
 
-    public byte getT1_champ4_sum2() {
+    public int getT1_champ4_sum2() {
         return t1_champ4_sum2;
     }
 
-    public short getT1_champ5id() {
+    public int getT1_champ5id() {
         return t1_champ5id;
     }
 
-    public byte getT1_champ5_sum1() {
+    public int getT1_champ5_sum1() {
         return t1_champ5_sum1;
     }
 
-    public byte getT1_champ5_sum2() {
+    public int getT1_champ5_sum2() {
         return t1_champ5_sum2;
     }
 
@@ -318,83 +478,83 @@ public class GameDetail {
         return t1_riftHeraldKills;
     }
 
-    public short getT1_ban1() {
+    public int getT1_ban1() {
         return t1_ban1;
     }
 
-    public short getT1_ban2() {
+    public int getT1_ban2() {
         return t1_ban2;
     }
 
-    public short getT1_ban3() {
+    public int getT1_ban3() {
         return t1_ban3;
     }
 
-    public short getT1_ban4() {
+    public int getT1_ban4() {
         return t1_ban4;
     }
 
-    public short getT1_ban5() {
+    public int getT1_ban5() {
         return t1_ban5;
     }
 
-    public short getT2_champ1id() {
+    public int getT2_champ1id() {
         return t2_champ1id;
     }
 
-    public byte getT2_champ1_sum1() {
+    public int getT2_champ1_sum1() {
         return t2_champ1_sum1;
     }
 
-    public byte getT2_champ1_sum2() {
+    public int getT2_champ1_sum2() {
         return t2_champ1_sum2;
     }
 
-    public short getT2_champ2id() {
+    public int getT2_champ2id() {
         return t2_champ2id;
     }
 
-    public byte getT2_champ2_sum1() {
+    public int getT2_champ2_sum1() {
         return t2_champ2_sum1;
     }
 
-    public byte getT2_champ2_sum2() {
+    public int getT2_champ2_sum2() {
         return t2_champ2_sum2;
     }
 
-    public short getT2_champ3id() {
+    public int getT2_champ3id() {
         return t2_champ3id;
     }
 
-    public byte getT2_champ3_sum1() {
+    public int getT2_champ3_sum1() {
         return t2_champ3_sum1;
     }
 
-    public byte getT2_champ3_sum2() {
+    public int getT2_champ3_sum2() {
         return t2_champ3_sum2;
     }
 
-    public short getT2_champ4id() {
+    public int getT2_champ4id() {
         return t2_champ4id;
     }
 
-    public byte getT2_champ4_sum1() {
+    public int getT2_champ4_sum1() {
         return t2_champ4_sum1;
     }
 
-    public byte getT2_champ4_sum2() {
+    public int getT2_champ4_sum2() {
         return t2_champ4_sum2;
     }
 
-    public short getT2_champ5id() {
+    public int getT2_champ5id() {
         return t2_champ5id;
     }
 
-    public byte getT2_champ5_sum1() {
+    public int getT2_champ5_sum1() {
         return t2_champ5_sum1;
     }
 
-    public byte getT2_champ5_sum2() {
+    public int getT2_champ5_sum2() {
         return t2_champ5_sum2;
     }
 
@@ -418,23 +578,23 @@ public class GameDetail {
         return t2_riftHeraldKills;
     }
 
-    public short getT2_ban1() {
+    public int getT2_ban1() {
         return t2_ban1;
     }
 
-    public short getT2_ban2() {
+    public int getT2_ban2() {
         return t2_ban2;
     }
 
-    public short getT2_ban3() {
+    public int getT2_ban3() {
         return t2_ban3;
     }
 
-    public short getT2_ban4() {
+    public int getT2_ban4() {
         return t2_ban4;
     }
 
-    public short getT2_ban5() {
+    public int getT2_ban5() {
         return t2_ban5;
     }
 }
