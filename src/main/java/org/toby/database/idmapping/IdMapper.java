@@ -1,4 +1,4 @@
-package org.toby.database.idmapper;
+package org.toby.database.idmapping;
 
 public interface IdMapper {
 

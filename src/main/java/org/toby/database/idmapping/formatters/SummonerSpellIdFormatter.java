@@ -1,4 +1,4 @@
-package org.toby.csv.formatters;
+package org.toby.database.idmapping.formatters;
 
 import org.toby.valueobject.csvobjects.GameDetail;
 

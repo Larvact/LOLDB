@@ -1,4 +1,4 @@
-package org.toby.database.idmapper;
+package org.toby.database.idmapping;
 
 import org.toby.valueobject.jsondeserialise.SummonerSpell;
 import org.toby.valueobject.jsondeserialise.databasetransfer.summonerspell.SummonerSpellCollection;

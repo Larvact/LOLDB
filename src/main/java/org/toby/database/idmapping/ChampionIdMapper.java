@@ -1,16 +1,10 @@
-package org.toby.database.idmapper;
+package org.toby.database.idmapping;
 
 
 import org.toby.valueobject.jsondeserialise.databasetransfer.champion.ChampionCollection;
 import org.toby.valueobject.jsondeserialise.Champion;
 
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.*;
-import java.io.BufferedWriter;
-import java.io.FileWriter;
-import java.io.IOException;
 
 public class ChampionIdMapper implements IdMapper {
 

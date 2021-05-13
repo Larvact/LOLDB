@@ -1,4 +1,4 @@
-package org.toby.database.idmapper;
+package org.toby.database.idmapping;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.Version;
@@ -7,7 +7,6 @@ import com.fasterxml.jackson.databind.module.SimpleModule;
 import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;
-import org.toby.database.idmapper.ChampionIdMapper;
 import org.toby.properties.PropertyKeys;
 import org.toby.properties.PropertyRetriever;
 import org.toby.valueobject.jsondeserialise.databasetransfer.champion.ChampionCollection;
