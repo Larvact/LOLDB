@@ -205,7 +205,7 @@ public class CsvGameReaderTester {
     public void ensureT1_Ban5ValueIsCorrect(){
         Assert.assertEquals(29, csvReader.getDetails().get(5070).getT1_ban5());
     }
-
+//
     @Test
     public void ensureT2_Champ1IdValueIsCorrect(){
         Assert.assertEquals(6, csvReader.getDetails().get(45278).getT2_champ5_sum1());

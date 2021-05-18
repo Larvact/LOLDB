@@ -33,8 +33,6 @@ e
 5src/main/java/org/toby/database/insert/Insertion.java,0\a\0a15ff44d50076cf657bb32fde45830e1a59f939
 u
 Esrc/main/java/org/toby/valueobject/jsondeserialise/SummonerSpell.java,f\7\f7508b48273075d28bf15927fee7713525b872f3
-p
-@src/main/java/org/toby/valueobject/jsondeserialise/Champion.java,e\1\e167f153bd90c1f5b7187eb767bff4033baddf8c
 j
 :src/main/java/org/toby/csv/deserializers/Deserializer.java,c\d\cd7d8df66326e62086ecf9ac7ee5c236a897cc40
 s
@@ -59,10 +57,6 @@ Fsrc/main/java/org/toby/json/mappers/SummonerSpellCollectionMapper.java,a\a\aab
 ,src/main/java/org/toby/reader/CsvReader.java,4\a\4acd322d7b891a36dd5295f33048f5b0b896f433
 Y
 )src/main/java/org/toby/reader/Reader.java,3\5\3560a54e976b2f393588d144bcf534f809807f36
-”
-dsrc/main/java/org/toby/valueobject/jsondeserialise/databasetransfer/champion/ChampionCollection.java,9\3\93c4989ea535abd846fdca9ad841a8faba5d7fe2
-Œ
-\src/main/java/org/toby/valueobject/jsondeserialise/databasetransfer/role/RoleCollection.java,3\e\3e7d6d4b3ad51f8cb558360aab9084261affe9df
 ž
 nsrc/main/java/org/toby/valueobject/jsondeserialise/databasetransfer/summonerspell/SummonerSpellCollection.java,0\2\025efeba05097d36cd56e39ae78552a8f407e6c8
 c

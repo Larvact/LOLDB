@@ -4,6 +4,7 @@ import java.util.List;
 
 public class GameDetail {
 
+    private long newId;
     private long oldId;
     private long creationTime;
     private short gameDuration;
@@ -192,6 +193,14 @@ public class GameDetail {
         this.t2_ban3 = Short.parseShort(gameDetails.get(58));
         this.t2_ban4 = Short.parseShort(gameDetails.get(59));;
         this.t2_ban5 = Short.parseShort(gameDetails.get(60));;
+    }
+
+    public long getNewId() {
+        return newId;
+    }
+
+    public void setNewId(long newId) {
+        this.newId = newId;
     }
 
     public void setT1_champ1id(int t1_champ1id) {
