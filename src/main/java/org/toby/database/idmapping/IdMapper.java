@@ -1,6 +1,10 @@
 package org.toby.database.idmapping;
 
-public interface IdMapper {
+import java.util.Map;
 
-    public void map();
+public interface IdMapper<T> {
+
+    void map();
+
+    Map<T, T> getMapping();
 }

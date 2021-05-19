@@ -6,7 +6,7 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
-public class SummonerSpellIdMapper implements IdMapper {
+public class SummonerSpellIdMapper implements IdMapper<Integer> {
 
     private SummonerSpellCollection summonerSpellCollection;
     private Map<Integer, Integer> summonerSpellIdMap;
@@ -27,7 +27,8 @@ public class SummonerSpellIdMapper implements IdMapper {
         }
     }
 
-    public Map<Integer, Integer> getSummonerSpellIdMap(){
+    @Override
+    public Map<Integer, Integer> getMapping(){
         return summonerSpellIdMap;
     }
 }

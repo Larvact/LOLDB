@@ -1,4 +1,4 @@
-package org.toby.valueobject.csvobjects.databasetransfer.player;
+package org.toby.valueobject.csvobjects.databasetransfer;
 
 import org.toby.valueobject.csvobjects.GameDetail;
 import org.toby.valueobject.csvobjects.databasetransfer.Game;

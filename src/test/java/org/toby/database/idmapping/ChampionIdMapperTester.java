@@ -62,13 +62,13 @@ public class ChampionIdMapperTester {
 
     @Test
     public void ensureAatroxHasANewIdOf1AndIsMappedViaTheOldIdOf266(){
-        Integer aatroxNewId = championIdMapper.getChampionIdMap().get(266);
+        Integer aatroxNewId = championIdMapper.getMapping().get(266);
         Assert.assertEquals(1,aatroxNewId.intValue());
     }
 
     @Test
     public void ensureCorrectNumberOfChampionsArePresentInTheMap(){
-        Assert.assertEquals(numberOfChampions,championIdMapper.getChampionIdMap().size());
+        Assert.assertEquals(numberOfChampions,championIdMapper.getMapping().size());
     }
 
 }

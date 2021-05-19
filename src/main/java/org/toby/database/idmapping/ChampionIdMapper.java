@@ -6,7 +6,7 @@ import org.toby.valueobject.jsondeserialise.Champion;
 
 import java.util.*;
 
-public class ChampionIdMapper implements IdMapper {
+public class ChampionIdMapper implements IdMapper<Integer> {
 
     private ChampionCollection championCollection;
     private Map<Integer, Integer> championIdMap;
@@ -27,7 +27,8 @@ public class ChampionIdMapper implements IdMapper {
         }
     }
 
-    public Map<Integer, Integer> getChampionIdMap(){
+    @Override
+    public Map<Integer, Integer> getMapping(){
         return championIdMap;
     }
 }
