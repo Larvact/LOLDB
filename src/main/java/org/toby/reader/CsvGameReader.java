@@ -7,19 +7,19 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.List;
-import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 public class CsvGameReader<T> implements CsvReader<T>{
 
-    private List<T> details;
+    private Map<Integer, T> rowDetailsMap;
     private Path path;
     private Deserializer<T> deserializer;
 
     public CsvGameReader(String filePath, Deserializer<T> deserializer) {
         this.path = Paths.get(filePath);
         this.deserializer = deserializer;
-        this.details = new ArrayList<>();
+        this.rowDetailsMap = new HashMap<>();
     }
 
     @Override
@@ -27,10 +27,12 @@ public class CsvGameReader<T> implements CsvReader<T>{
         try(BufferedReader reader = Files.newBufferedReader(this.path, StandardCharsets.UTF_8)){
             String currentLine;
             reader.readLine();
+            int currentRow = 2;
             while ((currentLine = reader.readLine()) != null){
                 this.deserializer.setCsvString(currentLine);
                 T gameDetail = this.deserializer.deserialize();
-                this.details.add(gameDetail);
+                this.rowDetailsMap.put(currentRow, gameDetail);
+                currentRow++;
             }
         } catch (IOException e) {
             e.printStackTrace();
@@ -38,9 +40,7 @@ public class CsvGameReader<T> implements CsvReader<T>{
     }
 
     @Override
-    public List<T> getDetails() {
-        return this.details;
+    public Map<Integer, T> getRowDetailsMap() {
+        return this.rowDetailsMap;
     }
-
-
 }

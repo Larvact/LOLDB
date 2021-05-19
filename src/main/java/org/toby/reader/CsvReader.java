@@ -1,10 +1,10 @@
 package org.toby.reader;
 
-import java.util.List;
+import java.util.Map;
 
 public interface CsvReader<T> {
 
     void read();
 
-    List<T> getDetails();
+    Map<Integer, T> getRowDetailsMap();
 }

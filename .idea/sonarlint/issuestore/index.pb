@@ -49,8 +49,6 @@ Dsrc/main/java/org/toby/json/deserialisers/champion/Deserializer.java,e\4\e4ff3
 Ssrc/main/java/org/toby/json/deserialisers/summonerspell/CollectionDeserializer.java,9\6\96cee203bdc647015b94aa78c3cb87bdc2e4d95c
 v
 Fsrc/main/java/org/toby/json/mappers/SummonerSpellCollectionMapper.java,a\a\aab376e207db464e134c89f9e9bf5472d1088a18
-\
-,src/main/java/org/toby/reader/CsvReader.java,4\a\4acd322d7b891a36dd5295f33048f5b0b896f433
 Y
 )src/main/java/org/toby/reader/Reader.java,3\5\3560a54e976b2f393588d144bcf534f809807f36
 ž
@@ -91,8 +89,6 @@ q
 Asrc/main/java/org/toby/json/mappers/ChampionCollectionMapper.java,2\b\2bf21e0ba9450347e2eff94ccaeb7f4408558efa
 b
 2src/test/java/org/toby/reader/LolReaderTester.java,8\4\842be6fe12b49efcbbd018897a1f918cbbb8f0c5
-`
-0src/main/java/org/toby/reader/CsvGameReader.java,6\5\65eb341f586b6055341ccddf720b94e433aecd8e
 y
 Isrc/main/java/org/toby/json/deserialisers/summonerspell/Deserializer.java,a\b\abda374733bb00b4eadc508fb80d74170378dd25
 p

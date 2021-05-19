@@ -23,311 +23,311 @@ public class CsvGameReaderTester {
 
     @Test
     public void ensureAllLinesInGamesCsvAreRead(){
-        Assert.assertEquals(51490, csvReader.getDetails().size());
+        Assert.assertEquals(51490, csvReader.getRowDetailsMap().size());
     }
 
     @Test
     public void ensureGameIdValueIsCorrect(){
-        Assert.assertEquals(3229532219L, csvReader.getDetails().get(18128).getOldId());
+        Assert.assertEquals(3229532219L, csvReader.getRowDetailsMap().get(18130).getOldId());
     }
 
     @Test
     public void ensureCreationTimeValueIsCorrect(){
-        Assert.assertEquals(1504453965479L, csvReader.getDetails().get(26451).getCreationTime());
+        Assert.assertEquals(1504453965479L, csvReader.getRowDetailsMap().get(26453).getCreationTime());
     }
 
     @Test
     public void ensureGameDurationValueIsCorrect(){
-        Assert.assertEquals(1424, csvReader.getDetails().get(41273).getGameDuration());
+        Assert.assertEquals(1424, csvReader.getRowDetailsMap().get(41275).getGameDuration());
     }
 
     @Test
     public void ensureSeasonIdValueIsCorrect(){
-        Assert.assertEquals(9, csvReader.getDetails().get(33901).getSeasonId());
+        Assert.assertEquals(9, csvReader.getRowDetailsMap().get(33903).getSeasonId());
     }
 
     @Test
     public void ensureWinnerValueIsCorrect(){
-        Assert.assertEquals(2, csvReader.getDetails().get(27228).getWinner());
+        Assert.assertEquals(2, csvReader.getRowDetailsMap().get(27230).getWinner());
     }
 
     @Test
     public void ensureFirstBloodValueIsCorrect(){
-        Assert.assertEquals(2, csvReader.getDetails().get(20751).getFirstBlood());
+        Assert.assertEquals(2, csvReader.getRowDetailsMap().get(20753).getFirstBlood());
     }
 
     @Test
     public void ensureFirstTowerValueIsCorrect(){
-        Assert.assertEquals(2, csvReader.getDetails().get(42629).getFirstTower());
+        Assert.assertEquals(2, csvReader.getRowDetailsMap().get(42631).getFirstTower());
     }
 
     @Test
     public void ensureFirstInhibitorValueIsCorrect(){
-        Assert.assertEquals(2, csvReader.getDetails().get(26084).getFirstInhibitor());
+        Assert.assertEquals(2, csvReader.getRowDetailsMap().get(26086).getFirstInhibitor());
     }
 
     @Test
     public void ensureFirstBaronValueIsCorrect(){
-        Assert.assertEquals(2, csvReader.getDetails().get(29868).getFirstBaron());
+        Assert.assertEquals(2, csvReader.getRowDetailsMap().get(29870).getFirstBaron());
     }
 
     @Test
     public void ensureFirstDragonValueIsCorrect(){
-        Assert.assertEquals(1, csvReader.getDetails().get(18222).getFirstDragon());
+        Assert.assertEquals(1, csvReader.getRowDetailsMap().get(18224).getFirstDragon());
     }
 
     @Test
     public void ensureFirstRiftHeraldValueIsCorrect(){
-        Assert.assertEquals(2, csvReader.getDetails().get(38492).getFirstRiftHerald());
+        Assert.assertEquals(2, csvReader.getRowDetailsMap().get(38494).getFirstRiftHerald());
     }
 
     @Test
     public void ensureT1_Champ1IdValueIsCorrect(){
-        Assert.assertEquals(98, csvReader.getDetails().get(36954).getT1_champ1id());
+        Assert.assertEquals(98, csvReader.getRowDetailsMap().get(36956).getT1_champ1id());
     }
 
     @Test
     public void ensureT1_Champ1_Sum1ValueIsCorrect(){
-        Assert.assertEquals(14, csvReader.getDetails().get(49005).getT1_champ1_sum1());
+        Assert.assertEquals(14, csvReader.getRowDetailsMap().get(49007).getT1_champ1_sum1());
     }
 
     @Test
     public void ensureT1_Champ1_Sum2ValueIsCorrect(){
-        Assert.assertEquals(4, csvReader.getDetails().get(13742).getT1_champ1_sum2());
+        Assert.assertEquals(4, csvReader.getRowDetailsMap().get(13744).getT1_champ1_sum2());
     }
 
     @Test
     public void ensureT1_Champ2IdValueIsCorrect(){
-        Assert.assertEquals(21, csvReader.getDetails().get(22445).getT1_champ2id());
+        Assert.assertEquals(21, csvReader.getRowDetailsMap().get(22447).getT1_champ2id());
     }
 
     @Test
     public void ensureT1_Champ2_Sum1ValueIsCorrect(){
-        Assert.assertEquals(4, csvReader.getDetails().get(1897).getT1_champ2_sum1());
+        Assert.assertEquals(4, csvReader.getRowDetailsMap().get(1899).getT1_champ2_sum1());
     }
 
     @Test
     public void ensureT1_Champ2_Sum2ValueIsCorrect(){
-        Assert.assertEquals(7, csvReader.getDetails().get(8165).getT1_champ2_sum2());
+        Assert.assertEquals(7, csvReader.getRowDetailsMap().get(8167).getT1_champ2_sum2());
     }
 
     @Test
     public void ensureT1_Champ3IdValueIsCorrect(){
-        Assert.assertEquals(80, csvReader.getDetails().get(3307).getT1_champ3id());
+        Assert.assertEquals(80, csvReader.getRowDetailsMap().get(3309).getT1_champ3id());
     }
 
     @Test
     public void ensureT1_Champ3_Sum1ValueIsCorrect(){
-        Assert.assertEquals(4, csvReader.getDetails().get(33243).getT1_champ3_sum1());
+        Assert.assertEquals(4, csvReader.getRowDetailsMap().get(33245).getT1_champ3_sum1());
     }
 
     @Test
     public void ensureT1_Champ3_Sum2ValueIsCorrect(){
-        Assert.assertEquals(12, csvReader.getDetails().get(49284).getT1_champ3_sum2());
+        Assert.assertEquals(12, csvReader.getRowDetailsMap().get(49286).getT1_champ3_sum2());
     }
 
     @Test
     public void ensureT1_Champ4IdValueIsCorrect(){
-        Assert.assertEquals(238, csvReader.getDetails().get(45157).getT1_champ4id());
+        Assert.assertEquals(238, csvReader.getRowDetailsMap().get(45159).getT1_champ4id());
     }
 
     @Test
     public void ensureT1_Champ4_Sum1ValueIsCorrect(){
-        Assert.assertEquals(4, csvReader.getDetails().get(51175).getT1_champ4_sum1());
+        Assert.assertEquals(4, csvReader.getRowDetailsMap().get(51177).getT1_champ4_sum1());
     }
 
     @Test
     public void ensureT1_Champ4_Sum2ValueIsCorrect(){
-        Assert.assertEquals(4, csvReader.getDetails().get(31228).getT1_champ4_sum2());
+        Assert.assertEquals(4, csvReader.getRowDetailsMap().get(31230).getT1_champ4_sum2());
     }
 
     @Test
     public void ensureT1_Champ5IdValueIsCorrect(){
-        Assert.assertEquals(58, csvReader.getDetails().get(4534).getT1_champ5id());
+        Assert.assertEquals(58, csvReader.getRowDetailsMap().get(4536).getT1_champ5id());
     }
 
     @Test
     public void ensureT1_Champ5_Sum1ValueIsCorrect(){
-        Assert.assertEquals(4, csvReader.getDetails().get(8966).getT1_champ5_sum1());
+        Assert.assertEquals(4, csvReader.getRowDetailsMap().get(8968).getT1_champ5_sum1());
     }
 
     @Test
     public void ensureT1_Champ5_Sum2ValueIsCorrect(){
-        Assert.assertEquals(12, csvReader.getDetails().get(6944).getT1_champ5_sum2());
+        Assert.assertEquals(12, csvReader.getRowDetailsMap().get(6946).getT1_champ5_sum2());
     }
 
     @Test
     public void ensureT1_TowerKillsValueIsCorrect(){
-        Assert.assertEquals(10, csvReader.getDetails().get(3658).getT1_towerKills());
+        Assert.assertEquals(10, csvReader.getRowDetailsMap().get(3660).getT1_towerKills());
     }
 
     @Test
     public void ensureT1_InhibitorKillsValueIsCorrect(){
-        Assert.assertEquals(0, csvReader.getDetails().get(13943).getT1_inhibitorKills());
+        Assert.assertEquals(0, csvReader.getRowDetailsMap().get(13945).getT1_inhibitorKills());
     }
 
     @Test
     public void ensureT1_BaronKillsValueIsCorrect(){
-        Assert.assertEquals(0, csvReader.getDetails().get(9010).getT1_baronKills());
+        Assert.assertEquals(0, csvReader.getRowDetailsMap().get(9012).getT1_baronKills());
     }
 
     @Test
     public void ensureT1_DragonKillsValueIsCorrect(){
-        Assert.assertEquals(1, csvReader.getDetails().get(19049).getT1_dragonKills());
+        Assert.assertEquals(1, csvReader.getRowDetailsMap().get(19051).getT1_dragonKills());
     }
 
     @Test
     public void ensureT1_RiftHeraldValueIsCorrect(){
-        Assert.assertEquals(0, csvReader.getDetails().get(28579).getT1_riftHeraldKills());
+        Assert.assertEquals(0, csvReader.getRowDetailsMap().get(28581).getT1_riftHeraldKills());
     }
 
     @Test
     public void ensureT1_Ban1ValueIsCorrect(){
-        Assert.assertEquals(112, csvReader.getDetails().get(14311).getT1_ban1());
+        Assert.assertEquals(112, csvReader.getRowDetailsMap().get(14313).getT1_ban1());
     }
 
     @Test
     public void ensureT1_Ban2ValueIsCorrect(){
-        Assert.assertEquals(17, csvReader.getDetails().get(28298).getT1_ban2());
+        Assert.assertEquals(17, csvReader.getRowDetailsMap().get(28300).getT1_ban2());
     }
 
     @Test
     public void ensureT1_Ban3ValueIsCorrect(){
-        Assert.assertEquals(18, csvReader.getDetails().get(13342).getT1_ban3());
+        Assert.assertEquals(18, csvReader.getRowDetailsMap().get(13344).getT1_ban3());
     }
 
     @Test
     public void ensureT1_Ban4ValueIsCorrect(){
-        Assert.assertEquals(412, csvReader.getDetails().get(15664).getT1_ban4());
+        Assert.assertEquals(412, csvReader.getRowDetailsMap().get(15666).getT1_ban4());
     }
 
     @Test
     public void ensureT1_Ban5ValueIsCorrect(){
-        Assert.assertEquals(29, csvReader.getDetails().get(5070).getT1_ban5());
+        Assert.assertEquals(29, csvReader.getRowDetailsMap().get(5072).getT1_ban5());
     }
 
     @Test
     public void ensureT2_Champ1IdValueIsCorrect(){
-        Assert.assertEquals(21, csvReader.getDetails().get(37717).getT2_champ1id());
+        Assert.assertEquals(21, csvReader.getRowDetailsMap().get(37719).getT2_champ1id());
     }
 
     @Test
     public void ensureT2_Champ1_Sum1ValueIsCorrect(){
-        Assert.assertEquals(11, csvReader.getDetails().get(17926).getT2_champ1_sum1());
+        Assert.assertEquals(11, csvReader.getRowDetailsMap().get(17928).getT2_champ1_sum1());
     }
 
     @Test
     public void ensureT2_Champ1_Sum2ValueIsCorrect(){
-        Assert.assertEquals(4, csvReader.getDetails().get(31962).getT2_champ1_sum2());
+        Assert.assertEquals(4, csvReader.getRowDetailsMap().get(31964).getT2_champ1_sum2());
     }
 
     @Test
     public void ensureT2_Champ2IdValueIsCorrect(){
-        Assert.assertEquals(105, csvReader.getDetails().get(8227).getT2_champ2id());
+        Assert.assertEquals(105, csvReader.getRowDetailsMap().get(8229).getT2_champ2id());
     }
 
     @Test
     public void ensureT2_Champ2_Sum1ValueIsCorrect(){
-        Assert.assertEquals(4, csvReader.getDetails().get(46513).getT2_champ2_sum1());
+        Assert.assertEquals(4, csvReader.getRowDetailsMap().get(46515).getT2_champ2_sum1());
     }
 
     @Test
     public void ensureT2_Champ2_Sum2ValueIsCorrect(){
-        Assert.assertEquals(7, csvReader.getDetails().get(8219).getT2_champ2_sum2());
+        Assert.assertEquals(7, csvReader.getRowDetailsMap().get(8221).getT2_champ2_sum2());
     }
 
     @Test
     public void ensureT2_Champ3IdValueIsCorrect(){
-        Assert.assertEquals(22, csvReader.getDetails().get(7170).getT2_champ3id());
+        Assert.assertEquals(22, csvReader.getRowDetailsMap().get(7172).getT2_champ3id());
     }
 
     @Test
     public void ensureT2_Champ3_Sum1ValueIsCorrect(){
-        Assert.assertEquals(4, csvReader.getDetails().get(2099).getT2_champ3_sum1());
+        Assert.assertEquals(4, csvReader.getRowDetailsMap().get(2101).getT2_champ3_sum1());
     }
 
     @Test
     public void ensureT2_Champ3_Sum2ValueIsCorrect(){
-        Assert.assertEquals(6, csvReader.getDetails().get(34131).getT2_champ3_sum2());
+        Assert.assertEquals(6, csvReader.getRowDetailsMap().get(34133).getT2_champ3_sum2());
     }
 
     @Test
     public void ensureT2_Champ4IdValueIsCorrect(){
-        Assert.assertEquals(267, csvReader.getDetails().get(12907).getT2_champ4id());
+        Assert.assertEquals(267, csvReader.getRowDetailsMap().get(12909).getT2_champ4id());
     }
 
     @Test
     public void ensureT2_Champ4_Sum1ValueIsCorrect(){
-        Assert.assertEquals(4, csvReader.getDetails().get(30371).getT2_champ4_sum1());
+        Assert.assertEquals(4, csvReader.getRowDetailsMap().get(30373).getT2_champ4_sum1());
     }
 
     @Test
     public void ensureT2_Champ4_Sum2ValueIsCorrect(){
-        Assert.assertEquals(7, csvReader.getDetails().get(7894).getT2_champ4_sum2());
+        Assert.assertEquals(7, csvReader.getRowDetailsMap().get(7896).getT2_champ4_sum2());
     }
 
     @Test
     public void ensureT2_Champ5IdValueIsCorrect(){
-        Assert.assertEquals(24, csvReader.getDetails().get(2251).getT2_champ5id());
+        Assert.assertEquals(24, csvReader.getRowDetailsMap().get(2253).getT2_champ5id());
     }
 
     @Test
     public void ensureT2_Champ5_Sum1ValueIsCorrect(){
-        Assert.assertEquals(4, csvReader.getDetails().get(31052).getT2_champ5_sum1());
+        Assert.assertEquals(4, csvReader.getRowDetailsMap().get(31054).getT2_champ5_sum1());
     }
 
     @Test
     public void ensureT2_Champ5_Sum2ValueIsCorrect(){
-        Assert.assertEquals(4, csvReader.getDetails().get(45979).getT2_champ5_sum2());
+        Assert.assertEquals(4, csvReader.getRowDetailsMap().get(45981).getT2_champ5_sum2());
     }
 
     @Test
     public void ensureT2_TowerKillsValueIsCorrect(){
-        Assert.assertEquals(4, csvReader.getDetails().get(46192).getT2_towerKills());
+        Assert.assertEquals(4, csvReader.getRowDetailsMap().get(46194).getT2_towerKills());
     }
 
     @Test
     public void ensureT2_InhibitorKillsValueIsCorrect(){
-        Assert.assertEquals(0, csvReader.getDetails().get(32862).getT2_inhibitorKills());
+        Assert.assertEquals(0, csvReader.getRowDetailsMap().get(32864).getT2_inhibitorKills());
     }
 
     @Test
     public void ensureT2_BaronKillsValueIsCorrect(){
-        Assert.assertEquals(0, csvReader.getDetails().get(12742).getT2_baronKills());
+        Assert.assertEquals(0, csvReader.getRowDetailsMap().get(12744).getT2_baronKills());
     }
 
     @Test
     public void ensureT2_DragonKillsValueIsCorrect(){
-        Assert.assertEquals(0, csvReader.getDetails().get(14408).getT2_dragonKills());
+        Assert.assertEquals(0, csvReader.getRowDetailsMap().get(14410).getT2_dragonKills());
     }
 
     @Test
     public void ensureT2_RiftHeraldValueIsCorrect(){
-        Assert.assertEquals(0, csvReader.getDetails().get(17238).getT2_riftHeraldKills());
+        Assert.assertEquals(0, csvReader.getRowDetailsMap().get(17240).getT2_riftHeraldKills());
     }
 
     @Test
     public void ensureT2_Ban1ValueIsCorrect(){
-        Assert.assertEquals(134, csvReader.getDetails().get(39187).getT2_ban1());
+        Assert.assertEquals(134, csvReader.getRowDetailsMap().get(39189).getT2_ban1());
     }
 
     @Test
     public void ensureT2_Ban2ValueIsCorrect(){
-        Assert.assertEquals(150, csvReader.getDetails().get(18121).getT2_ban2());
+        Assert.assertEquals(150, csvReader.getRowDetailsMap().get(18123).getT2_ban2());
     }
 
     @Test
     public void ensureT2_Ban3ValueIsCorrect(){
-        Assert.assertEquals(11, csvReader.getDetails().get(45680).getT2_ban3());
+        Assert.assertEquals(11, csvReader.getRowDetailsMap().get(45682).getT2_ban3());
     }
 
     @Test
     public void ensureT2_Ban4ValueIsCorrect(){
-        Assert.assertEquals(141, csvReader.getDetails().get(18033).getT2_ban4());
+        Assert.assertEquals(141, csvReader.getRowDetailsMap().get(18035).getT2_ban4());
     }
 
     @Test
     public void ensureT2_Ban5ValueIsCorrect(){
-        Assert.assertEquals(38, csvReader.getDetails().get(5240).getT2_ban5());
+        Assert.assertEquals(38, csvReader.getRowDetailsMap().get(5242).getT2_ban5());
     }
 }
