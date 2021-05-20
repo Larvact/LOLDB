@@ -1,74 +1,46 @@
 package org.toby.database.idmapping;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.core.Version;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.module.SimpleModule;
 import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;
+import org.toby.json.mappers.ChampionCollectionMapper;
 import org.toby.properties.PropertyKeys;
 import org.toby.properties.PropertyRetriever;
-import org.toby.valueobject.jsondeserialise.databasetransfer.champion.ChampionCollection;
-import org.toby.json.deserialisers.champion.CollectionDeserializer;
 import org.toby.reader.LolJsonReader;
 import org.toby.reader.Reader;
 
-import java.io.IOException;
-
 public class ChampionIdMapperTester {
 
-    private static String json;
     private static Reader reader;
-    private static ObjectMapper mapper;
-    private static ChampionCollection championCollection;
+    private static ChampionCollectionMapper championCollectionMapper;
     private static ChampionIdMapper championIdMapper;
-    private final int numberOfChampions = 138;
+
+    private final int expectedNumberOfChampions = 138;
+    //change values as per specific champion. Get the old Id from the file and the new Id from the database after running the champion table insert. Currently using the champion Riven.
+    private final int championOldId = 92;
+    private final int expectedChampionNewId = 91;
 
 
     @BeforeClass
-    public static void setup(){
+    public static void setup() {
         reader = new LolJsonReader(PropertyRetriever.getProperty(PropertyKeys.CHAMPION_DATA_FILE_LOCATION.toString()));
-        try {
-            reader.read();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        json = reader.getReadData();
-        setupMapper();
-        setupChampionCollection();
+        championCollectionMapper = new ChampionCollectionMapper(reader);
         setupChampionIdMapper();
     }
 
-    private static void setupMapper(){
-        mapper = new ObjectMapper();
-        SimpleModule module = new SimpleModule("ChampionCollectionDeserializer", new Version(1, 0, 0, null, null, null));
-        module.addDeserializer(ChampionCollection.class, new CollectionDeserializer());
-        mapper.registerModule(module);
-    }
-
-    private static void setupChampionCollection() {
-        try {
-            championCollection = mapper.readValue(json, ChampionCollection.class);
-        } catch (JsonProcessingException e) {
-            e.printStackTrace();
-        }
-    }
-
     private static void setupChampionIdMapper(){
-        championIdMapper = new ChampionIdMapper(championCollection);
+        championIdMapper = new ChampionIdMapper(championCollectionMapper.getCollection());
         championIdMapper.map();
     }
 
     @Test
-    public void ensureAatroxHasANewIdOf1AndIsMappedViaTheOldIdOf266(){
-        Integer aatroxNewId = championIdMapper.getMapping().get(266);
-        Assert.assertEquals(1,aatroxNewId.intValue());
+    public void ensureSpecificChampionHasCorrectNewIdMappedViaTheirOldId(){
+        Integer newId = championIdMapper.getMapping().get(championOldId);
+        Assert.assertEquals(expectedChampionNewId, newId.intValue());
     }
 
     @Test
     public void ensureCorrectNumberOfChampionsArePresentInTheMap(){
-        Assert.assertEquals(numberOfChampions,championIdMapper.getMapping().size());
+        Assert.assertEquals(expectedNumberOfChampions,championIdMapper.getMapping().size());
     }
-
 }
