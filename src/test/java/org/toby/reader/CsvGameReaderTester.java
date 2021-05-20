@@ -16,7 +16,7 @@ public class CsvGameReaderTester {
 
     @BeforeClass
     public static void setup(){
-        deserializer = new GameDetailDeserilizer("");
+        deserializer = new GameDetailDeserilizer();
         csvReader = new CsvGameReader<>(PropertyRetriever.getProperty(PropertyKeys.GAMES_DATA_FILE_LOCATION.toString()), deserializer);
         csvReader.read();
     }

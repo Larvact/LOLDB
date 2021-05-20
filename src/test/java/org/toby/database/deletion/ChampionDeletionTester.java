@@ -34,12 +34,12 @@ public class ChampionDeletionTester {
         deletion = new ChampionDeletion(connector);
         sqlManager = new SQLTableManager(insertion, deletion);
     }
-
+/*
     @Before
     public void setupChampionData(){
         sqlManager.insert();
     }
-
+*/
     @Test
     public void deleteDataFromChampionTable(){
         sqlManager.delete();

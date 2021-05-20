@@ -34,12 +34,12 @@ public class ChampionRoleDeletionTester {
         deletion = new ChampionRoleDeletion(connector);
         sqlManager = new SQLTableManager(insertion, deletion);
     }
-
+/*
     @Before
     public void setupChampionRoleData(){
         sqlManager.insert();
     }
-
+*/
     @Test
     public void deleteDataInChampionRoleTable(){
         sqlManager.delete();

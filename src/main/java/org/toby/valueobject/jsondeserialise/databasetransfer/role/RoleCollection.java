@@ -19,6 +19,7 @@ public class RoleCollection {
         for(Champion champion : championCollection.getChampions()){
             roles.addAll(champion.getRoles());
         }
+        roles.remove("");
     }
 
     public Set<String> getRoles() {

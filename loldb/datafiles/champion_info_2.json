@@ -2,6 +2,14 @@
     "type": "champion",
     "version": "7.18.1",
     "data": {
+	"None": {
+            "tags": [
+            ],
+            "title": "None",
+            "id": -1,
+            "key": "None",
+            "name": "None"
+        },
         "MonkeyKing": {
             "tags": [
                 "Fighter",

@@ -1,23 +1,22 @@
 package org.toby.database.idmapping.formatters;
 
-import java.util.List;
 import java.util.Map;
 
 import org.toby.valueobject.csvobjects.GameDetail;
 
 public class ChampionIdFormatter implements Format{
 
-    private List<GameDetail> gameDetails;
+    private Map<Integer, GameDetail> gameDetails;
     private Map<Integer, Integer> championIdMap;
 
-    public ChampionIdFormatter(List<GameDetail> gameDetails, Map<Integer, Integer> championIdMap) {
+    public ChampionIdFormatter(Map<Integer, GameDetail> gameDetails, Map<Integer, Integer> championIdMap) {
         this.gameDetails = gameDetails;
         this.championIdMap = championIdMap;
     }
 
     @Override
     public void format() {
-        for(GameDetail gameDetail : this.gameDetails){
+        for(GameDetail gameDetail : this.gameDetails.values()){
             gameDetail.setT1_champ1id(this.championIdMap.get(gameDetail.getT1_champ1id()));
             gameDetail.setT1_champ2id(this.championIdMap.get(gameDetail.getT1_champ2id()));
             gameDetail.setT1_champ3id(this.championIdMap.get(gameDetail.getT1_champ3id()));
