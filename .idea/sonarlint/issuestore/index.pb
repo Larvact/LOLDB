@@ -37,8 +37,6 @@ r
 Bsrc/main/java/org/toby/database/tablemanagers/SQLTableManager.java,0\6\0619435783af4b47e74c7df28e09d96fe8416a9b
 ~
 Nsrc/main/java/org/toby/json/deserialisers/champion/CollectionDeserializer.java,f\6\f6f6e208e91bfc49ca74261cc904cd8e06b1f0dd
-t
-Dsrc/main/java/org/toby/json/deserialisers/champion/Deserializer.java,e\4\e4ff31c242595405fd8229c1639e391b72316c08
 ƒ
 Ssrc/main/java/org/toby/json/deserialisers/summonerspell/CollectionDeserializer.java,9\6\96cee203bdc647015b94aa78c3cb87bdc2e4d95c
 v
@@ -59,8 +57,6 @@ n
 >src/test/java/org/toby/properties/PropertyRetrieverTester.java,a\c\ac98bcaade7bd77f2831af28b3ac4191447a6839
 `
 0src/main/java/org/toby/reader/LolJsonReader.java,1\4\14a7473fc71ee6c4b82571e868eaa81a50a63eda
-z
-Jsrc/test/java/org/toby/json/deserialisers/champion/DeserializerTester.java,3\c\3c04a12913793f39b775e7d1f16c2f12c1aee6c2
 h
 8src/main/java/org/toby/properties/PropertyRetriever.java,a\1\a13c432e947ccae0eec85e4d79fb242ffe375cac
 c

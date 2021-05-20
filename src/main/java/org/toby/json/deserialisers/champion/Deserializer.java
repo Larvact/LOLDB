@@ -44,7 +44,7 @@ public class Deserializer extends StdDeserializer<Champion> {
     private List<String> serparateString(String delimiter, String string){
         String[] strings = string.split(delimiter);
 
-        if(strings[0].length() == 0){
+        if(strings[0].length() == 0 || strings[0].equals("[]")){
             return new ArrayList<>();
         }
 

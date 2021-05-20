@@ -91,11 +91,9 @@ public class ChampionRoleInsertion extends Insertion{
     private String constructSqlInsertStatement(){
         StringBuilder sqlInsertStatement = new StringBuilder("INSERT INTO [dbo].[ChampionRole] (ChampionId, RoleId) VALUES ");
         for(Champion champion : championCollection.getChampions()) {
-            if (champion.getId() > 0) {
-                List<String> championRoles = champion.getRoles();
-                for (String role : championRoles) {
-                    sqlInsertStatement.append("('").append(this.championIdMap.get(champion.getName())).append("', '").append(this.roleIdMap.get(role)).append("'), ");
-                }
+            List<String> championRoles = champion.getRoles();
+            for (String role : championRoles) {
+                sqlInsertStatement.append("('").append(this.championIdMap.get(champion.getName())).append("', '").append(this.roleIdMap.get(role)).append("'), ");
             }
         }
         return sqlInsertStatement.substring(0, sqlInsertStatement.length() - 2) + ";";
