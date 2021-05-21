@@ -141,7 +141,4 @@ public class ChampionIdFormatterTester {
     public void ensureThatTheChampionIdForT2_ban5HasBeenCorrectlyChanged(){
         Assert.assertEquals(115, csvReader.getRowDetailsMap().get(1885).getT2_ban5());
     }
-
-
-
 }

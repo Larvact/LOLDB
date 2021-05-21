@@ -107,8 +107,6 @@ e
 csrc/main/java/org/toby/valueobject/csvobjects/databasetransfer/endgamestats/PurpleEndGameStats.java,0\2\02179f85bd3bd0903a5bb1364277250412e44c53
 —
 gsrc/main/java/org/toby/valueobject/csvobjects/databasetransfer/endgamestats/EndGameStatsCollection.java,4\a\4a23121d5fd2f2d4d0563705aa47626ea7f264dc
-‚
-Rsrc/main/java/org/toby/database/idmapping/formatters/SummonerSpellIdFormatter.java,0\6\0611530c03bf7dcd5426486ea709a69afe5e3378
 g
 7src/main/java/org/toby/database/idmapping/IdMapper.java,e\8\e8819682f7d8e8cc4c17783543cc6c9354586039
 t
@@ -133,8 +131,6 @@ s
 Csrc/main/java/org/toby/csv/deserializers/GameDetailDeserilizer.java,7\6\768edcd97a7c0c59dda48d2f616d5a151a3cbc41
 `
 0src/main/java/org/toby/reader/CsvGameReader.java,6\5\65eb341f586b6055341ccddf720b94e433aecd8e
-q
-Asrc/main/java/org/toby/json/mappers/ChampionCollectionMapper.java,2\b\2bf21e0ba9450347e2eff94ccaeb7f4408558efa
 y
 Isrc/test/java/org/toby/database/deletion/SummonerSpellDeletionTester.java,b\c\bcee3d95332711363c106a3d4edcdfaad9fe5e01
 i
