@@ -34,12 +34,12 @@ public class SummonerSpellDeletionTester {
         deletion = new SummonerSpellDeletion(connector);
         sqlManager = new SQLTableManager(insertion, deletion);
     }
-
+/*
     @Before
     public void populateSummonerSpellTable(){
         sqlManager.insert();
     }
-
+*/
     @Test
     public void deleteDataFromSummonerSpellTable(){
         sqlManager.delete();

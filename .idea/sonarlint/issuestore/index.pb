@@ -15,10 +15,6 @@ Asrc/main/java/org/toby/database/delete/SummonerSpellDeletion.java,1\8\18b3e328
 0loldb/testscripts/spSpecificChampionRoleTest.sql,d\5\d583f9bff20c8f7791064c64cce5ce036deefa7c
 u
 Esrc/main/java/org/toby/valueobject/jsondeserialise/SummonerSpell.java,f\7\f7508b48273075d28bf15927fee7713525b872f3
-l
-<src/main/java/org/toby/database/delete/ChampionDeletion.java,0\8\0801aeeef46376708d407ad1ae782e3001fa0f36
-p
-@src/main/java/org/toby/database/delete/ChampionRoleDeletion.java,8\7\87b52bb70be65f4af80ca122831087eef4b8fd4d
 m
 =src/main/java/org/toby/database/tablemanagers/SQLManager.java,3\6\36f994eced40d3c963fda4e6d8f9f423bb117a7f
 ~
@@ -111,16 +107,10 @@ s
 Csrc/main/java/org/toby/csv/deserializers/GameDetailDeserilizer.java,7\6\768edcd97a7c0c59dda48d2f616d5a151a3cbc41
 `
 0src/main/java/org/toby/reader/CsvGameReader.java,6\5\65eb341f586b6055341ccddf720b94e433aecd8e
-y
-Isrc/test/java/org/toby/database/deletion/SummonerSpellDeletionTester.java,b\c\bcee3d95332711363c106a3d4edcdfaad9fe5e01
 Œ
 \src/main/java/org/toby/valueobject/jsondeserialise/databasetransfer/role/RoleCollection.java,3\e\3e7d6d4b3ad51f8cb558360aab9084261affe9df
 z
 Jsrc/test/java/org/toby/json/deserialisers/champion/DeserializerTester.java,3\c\3c04a12913793f39b775e7d1f16c2f12c1aee6c2
-x
-Hsrc/test/java/org/toby/database/deletion/ChampionRoleDeletionTester.java,9\8\9828cbb0d495fc8f1b2323eb46b79109d551762d
-p
-@src/test/java/org/toby/database/deletion/RoleDeletionTester.java,c\e\cefb86736e4f51736ea1061c4fbff941065ca924
 r
 Bsrc/test/java/org/toby/database/insertion/RoleInsertionTester.java,f\a\fa61bf1b2c43497e8b17538afa8407a0463366b4
 q
@@ -135,8 +125,6 @@ v
 Fsrc/main/java/org/toby/json/mappers/SummonerSpellCollectionMapper.java,a\a\aab376e207db464e134c89f9e9bf5472d1088a18
 }
 Msrc/main/java/org/toby/database/idmapping/formatters/ChampionIdFormatter.java,3\c\3c30fbae46e56b2945061cfbbc59d3c9ebd774b8
-v
-Fsrc/test/java/org/toby/database/insertion/ChampionInsertionTester.java,e\e\eef64b560a1b8be0f7e1c6b0465fba237def90ac
 ƒ
 Ssrc/test/java/org/toby/database/idmapping/formatters/ChampionIdFormatterTester.java,e\d\ede39ce48c28dedc09ede76b2f8610a3078c6dcb
 ‚
