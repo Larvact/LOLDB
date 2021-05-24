@@ -2,6 +2,7 @@ package org.toby.database.insert;
 
 import org.toby.database.LolDbConnector;
 
+
 public abstract class Insertion {
 
     protected LolDbConnector connector;
