@@ -13,10 +13,6 @@ Asrc/main/java/org/toby/database/delete/SummonerSpellDeletion.java,1\8\18b3e328
 -loldb/testscripts/spChampionRoleTableTest.sql,e\b\eb493c061400bf1d7f5549a2b3446b12a8d7dc05
 `
 0loldb/testscripts/spSpecificChampionRoleTest.sql,d\5\d583f9bff20c8f7791064c64cce5ce036deefa7c
-Y
-)loldb/testscripts/spChampionTableTest.sql,f\9\f9625469e6dd292513c3103f1f5640a971d3fa2b
-\
-,loldb/testscripts/spSpecificChampionTest.sql,8\4\843499880fcca5a40fa7d4cb104ff2d07a5a17fd
 u
 Esrc/main/java/org/toby/valueobject/jsondeserialise/SummonerSpell.java,f\7\f7508b48273075d28bf15927fee7713525b872f3
 l
