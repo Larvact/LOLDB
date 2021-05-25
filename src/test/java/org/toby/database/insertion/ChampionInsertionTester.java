@@ -14,13 +14,11 @@ import org.toby.properties.PropertyKeys;
 import org.toby.properties.PropertyRetriever;
 import org.toby.reader.LolJsonReader;
 import org.toby.reader.Reader;
+import org.toby.valueobject.jsondeserialise.Champion;
 
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.List;
-
 
 public class ChampionInsertionTester {
 
@@ -32,7 +30,6 @@ public class ChampionInsertionTester {
     private static Deletion deletion;
     private LocalDateTime testInitialiserTime;
     private final int expectedNumberOfChampions = 139;
-    private List<String> championList;
     private TestTableDataRetriever testOutcomeRetrieval;
 
     @BeforeClass
@@ -66,11 +63,10 @@ public class ChampionInsertionTester {
 
     @Test
     public void ensureThatAllSpecificChampionsHaveBeenInsertedIntoTheChampionTable(){
-        setupChampionlist();
-        for(String champion : championList) {
+        for(Champion champion : mapper.getCollection().getChampions()) {
             testOutcomeRetrieval.setTestInitialiserTime(LocalDateTime.now());
             try (PreparedStatement executeSpSpecificChampionTest = connector.getConnection().prepareStatement("EXECUTE [test].[spSpecificChampionTest] ?")) {
-                executeSpSpecificChampionTest.setString(1, champion);
+                executeSpSpecificChampionTest.setString(1, champion.getName());
                 executeSpSpecificChampionTest.execute();
             } catch (SQLException throwables) {
                 throwables.printStackTrace();
@@ -87,152 +83,6 @@ public class ChampionInsertionTester {
     @AfterClass
     public static void deleteChampionData(){
         sqlManager.delete();
-    }
-
-    private void setupChampionlist(){
-        this.championList = new ArrayList<>();
-        championList.add("Aatrox");
-        championList.add("Ahri");
-        championList.add("Akali");
-        championList.add("Alistar");
-        championList.add("Amumu");
-        championList.add("Anivia");
-        championList.add("Annie");
-        championList.add("Ashe");
-        championList.add("Aurelion Sol");
-        championList.add("Azir");
-        championList.add("Bard");
-        championList.add("Blitzcrank");
-        championList.add("Brand");
-        championList.add("Braum");
-        championList.add("Caitlyn");
-        championList.add("Camille");
-        championList.add("Cassiopeia");
-        championList.add("Chogath");
-        championList.add("Corki");
-        championList.add("Darius");
-        championList.add("Diana");
-        championList.add("Dr. Mundo");
-        championList.add("Draven");
-        /*
-        Ekko
-                Elise
-        Evelynn
-                Ezreal
-        Fiddlesticks
-                Fiora
-        Fizz
-                Galio
-        Gangplank
-                Garen
-        Gnar
-                Gragas
-        Graves
-                Hecarim
-        Heimerdinger
-                Illaoi
-        Irelia
-                Ivern
-        Janna
-        Jarvan IV
-        Jax
-                Jayce
-        Jhin
-                Jinx
-        Kalista
-                Karma
-        Karthus
-                Kassadin
-        Katarina
-                Kayle
-        Kayn
-                Kennen
-        Khazix
-                Kindred
-        Kled
-                Kogmaw
-        LeBlanc
-        Lee Sin
-        Leona
-                Lissandra
-        Lucian
-                Lulu
-        Lux
-                Malphite
-        Malzahar
-                Maokai
-        Master Yi
-        Miss Fortune
-        Mordekaiser
-                Morgana
-        Nami
-                Nasus
-        Nautilus
-                Nidalee
-        Nocturne
-                None
-        Nunu
-                Olaf
-        Orianna
-                Ornn
-        Pantheon
-                Poppy
-        Quinn
-                Rakan
-        Rammus
-                Reksai
-        Renekton
-                Rengar
-        Riven
-                Rumble
-        Ryze
-                Sejuani
-        Shaco
-                Shen
-        Shyvana
-                Singed
-        Sion
-                Sivir
-        Skarner
-                Sona
-        Soraka
-                Swain
-        Syndra
-        Tahm Kench
-        Taliyah
-                Talon
-        Taric
-                Teemo
-        Thresh
-                Tristana
-        Trundle
-                Tryndamere
-        Twisted Fate
-        Twitch
-                Udyr
-        Urgot
-                Varus
-        Vayne
-                Veigar
-        Velkoz
-                Vi
-        Viktor
-                Vladimir
-        Volibear
-                Warwick
-        Wukong
-                Xayah
-        Xerath
-        Xin Zhao
-        Yasuo
-                Yorick
-        Zac
-                Zed
-        Ziggs
-                Zilean
-        Zyra
-
-         */
     }
 }
 
