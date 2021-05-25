@@ -133,8 +133,6 @@ Rsrc/main/java/org/toby/database/idmapping/formatters/SummonerSpellIdFormatter.j
 Xsrc/test/java/org/toby/database/idmapping/formatters/SummonerSpellIdFormatterTester.java,a\3\a340f7ddbaa3ff53a26bbc1ff0c3d0369c0bbcce
 O
 src/main/java/org/toby/App.java,8\0\80a23f121712509e365cb227ce62be0815434902
-i
-9src/main/java/org/toby/database/insert/RoleInsertion.java,e\a\ea00ab4c317d63d22642edb289e36e84ee2e209c
 r
 Bsrc/main/java/org/toby/database/insert/SummonerSpellInsertion.java,0\3\03fe297f9399461844e8f4993ee91a15c24a5c9d
 r

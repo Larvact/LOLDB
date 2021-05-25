@@ -19,11 +19,21 @@ public class LolDbConnector {
 
     public void connect(){
         try {
-            connection = DriverManager.getConnection(dbConnectionString);
+            if(connection == null || connection.isClosed()) {
+                connection = DriverManager.getConnection(dbConnectionString);
+            }
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
         }
-        catch (SQLException e) {
-            e.printStackTrace();
-            logger.error(String.format("Unable to connect to the Lol database with connection string: %s", dbConnectionString));
+    }
+
+    public void closeConnection(){
+        if(this.connection != null){
+            try {
+                connection.close();
+            } catch (SQLException throwables) {
+                throwables.printStackTrace();
+            }
         }
     }
 

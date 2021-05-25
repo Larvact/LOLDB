@@ -50,23 +50,16 @@ public class ChampionInsertionTester {
     public void setupTestInitialiserTime(){
         this.testInitialiserTime = LocalDateTime.now();
         testOutcomeRetrieval = new TestTableDataRetriever(connector, this.testInitialiserTime);
+        connector.connect();
     }
 
     @Test
     public void ensureTheNumberOfChampionsInsideTheChampionTableIsCorrect(){
-        connector.connect();
         try(PreparedStatement executeSpChampionTableTest = connector.getConnection().prepareStatement("EXECUTE [test].[spChampionTableTest] ?")){
             executeSpChampionTableTest.setInt(1, this.expectedNumberOfChampions);
             executeSpChampionTableTest.execute();
         } catch (SQLException throwables) {
             throwables.printStackTrace();
-        }
-        finally {
-            try {
-                connector.getConnection().close();
-            } catch (SQLException throwables) {
-                throwables.printStackTrace();
-            }
         }
         Assert.assertEquals(1, testOutcomeRetrieval.getLastestTestResult());
     }
@@ -76,21 +69,19 @@ public class ChampionInsertionTester {
         setupChampionlist();
         for(String champion : championList) {
             testOutcomeRetrieval.setTestInitialiserTime(LocalDateTime.now());
-            connector.connect();
             try (PreparedStatement executeSpSpecificChampionTest = connector.getConnection().prepareStatement("EXECUTE [test].[spSpecificChampionTest] ?")) {
                 executeSpSpecificChampionTest.setString(1, champion);
                 executeSpSpecificChampionTest.execute();
             } catch (SQLException throwables) {
                 throwables.printStackTrace();
-            } finally {
-                try {
-                    connector.getConnection().close();
-                } catch (SQLException throwables) {
-                    throwables.printStackTrace();
-                }
             }
             Assert.assertEquals(1, testOutcomeRetrieval.getLastestTestResult());
         }
+    }
+
+    @After
+    public void teardown(){
+        connector.closeConnection();
     }
 
     @AfterClass
@@ -244,3 +235,6 @@ public class ChampionInsertionTester {
          */
     }
 }
+
+
+

@@ -10,7 +10,7 @@ import java.time.LocalDateTime;
 
 public class TestTableDataRetriever {
 
-    private static final String RETRIEVELASTTESTRESULTSQLSTATEMENT = "SELECT TOP 1 tst.TestOutcome FROM [test].[TestResults] tst WHERE tst.DateOfTestExecution > ? ORDER BY tst.DateOfTestExecution;";
+    private static final String RETRIEVELASTTESTRESULTSQLSTATEMENT = "SELECT TOP 1 tst.TestOutcome FROM [test].[TestResults] tst WHERE tst.DateOfTestExecution >= ? ORDER BY tst.DateOfTestExecution;";
     private LocalDateTime testInitialiserTime;
     private LolDbConnector connector;
 
@@ -30,17 +30,15 @@ public class TestTableDataRetriever {
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
-        finally {
-            try {
-                this.connector.getConnection().close();
-            } catch (SQLException throwables) {
-                throwables.printStackTrace();
-            }
-        }
         throw new IllegalArgumentException("The test result could not be retrieved. Please double check the testInitialiserTime.");
     }
 
     public void setTestInitialiserTime(LocalDateTime testInitialiserTime) {
         this.testInitialiserTime = testInitialiserTime;
+        try {
+            Thread.sleep(3);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 }
