@@ -33,7 +33,7 @@ public class ChampionInsertionTester {
     private TestTableDataRetriever testOutcomeRetrieval;
 
     @BeforeClass
-    public static void setup(){
+    public static void setupData(){
         reader = new LolJsonReader(PropertyRetriever.getProperty(PropertyKeys.CHAMPION_DATA_FILE_LOCATION.toString()));
         connector = new LolDbConnector(PropertyRetriever.getProperty(PropertyKeys.DATABASE_CONNECTION_STRING.toString()));
         mapper = new ChampionCollectionMapper(reader);
@@ -81,7 +81,7 @@ public class ChampionInsertionTester {
     }
 
     @AfterClass
-    public static void deleteChampionData(){
+    public static void deleteData(){
         sqlManager.delete();
     }
 }

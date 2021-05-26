@@ -11,8 +11,6 @@ q
 Asrc/main/java/org/toby/database/delete/SummonerSpellDeletion.java,1\8\18b3e3283d61b370574f4c0c6ec40dd506327dab
 ]
 -loldb/testscripts/spChampionRoleTableTest.sql,e\b\eb493c061400bf1d7f5549a2b3446b12a8d7dc05
-`
-0loldb/testscripts/spSpecificChampionRoleTest.sql,d\5\d583f9bff20c8f7791064c64cce5ce036deefa7c
 u
 Esrc/main/java/org/toby/valueobject/jsondeserialise/SummonerSpell.java,f\7\f7508b48273075d28bf15927fee7713525b872f3
 m
@@ -27,8 +25,6 @@ Y
 nsrc/main/java/org/toby/valueobject/jsondeserialise/databasetransfer/summonerspell/SummonerSpellCollection.java,0\2\025efeba05097d36cd56e39ae78552a8f407e6c8
 „
 Tsrc/test/java/org/toby/json/deserialisers/champion/CollectionDeserializerTester.java,2\0\20ad6820e9aa92eb77d181b77599d20ae96f09c3
-‰
-Ysrc/test/java/org/toby/json/deserialisers/summonerspell/CollectionDeserializerTester.java,f\2\f272e5f2fd327169c534157f80d443ccd19b7eef
 n
 >src/test/java/org/toby/properties/PropertyRetrieverTester.java,a\c\ac98bcaade7bd77f2831af28b3ac4191447a6839
 `
@@ -37,8 +33,6 @@ h
 8src/main/java/org/toby/properties/PropertyRetriever.java,a\1\a13c432e947ccae0eec85e4d79fb242ffe375cac
 c
 3src/main/java/org/toby/properties/PropertyKeys.java,9\6\96fa78f1478a7bffe301fc812235e062c165ab3d
-b
-2src/test/java/org/toby/reader/LolReaderTester.java,8\4\842be6fe12b49efcbbd018897a1f918cbbb8f0c5
 y
 Isrc/main/java/org/toby/json/deserialisers/summonerspell/Deserializer.java,a\b\abda374733bb00b4eadc508fb80d74170378dd25
 p
@@ -99,20 +93,14 @@ x
 Hsrc/test/java/org/toby/database/idmapping/SummonerSpellMapperTester.java,7\3\7380bc5590c4fcfb9da2c11cb926227a9e4934ee
 u
 Esrc/test/java/org/toby/database/idmapping/ChampionIdMapperTester.java,2\e\2e3bfdfbbfd1f72d75bda18faf717f8791b275cc
-f
-6src/test/java/org/toby/reader/CsvGameReaderTester.java,6\9\696c5b298c4b23e0ca01c72c3c1cac1e5c292719
 j
 :src/main/java/org/toby/csv/deserializers/Deserializer.java,c\d\cd7d8df66326e62086ecf9ac7ee5c236a897cc40
 s
 Csrc/main/java/org/toby/csv/deserializers/GameDetailDeserilizer.java,7\6\768edcd97a7c0c59dda48d2f616d5a151a3cbc41
 `
 0src/main/java/org/toby/reader/CsvGameReader.java,6\5\65eb341f586b6055341ccddf720b94e433aecd8e
-Œ
-\src/main/java/org/toby/valueobject/jsondeserialise/databasetransfer/role/RoleCollection.java,3\e\3e7d6d4b3ad51f8cb558360aab9084261affe9df
 z
 Jsrc/test/java/org/toby/json/deserialisers/champion/DeserializerTester.java,3\c\3c04a12913793f39b775e7d1f16c2f12c1aee6c2
-r
-Bsrc/test/java/org/toby/database/insertion/RoleInsertionTester.java,f\a\fa61bf1b2c43497e8b17538afa8407a0463366b4
 q
 Asrc/test/java/org/toby/database/insertion/ChampionRoleTester.java,2\c\2c84c47037cdb516f642f6e58013bb5795fab121
 t
@@ -137,8 +125,6 @@ r
 Bsrc/main/java/org/toby/database/insert/SummonerSpellInsertion.java,0\3\03fe297f9399461844e8f4993ee91a15c24a5c9d
 r
 Bsrc/main/java/org/toby/database/tablemanagers/SQLTableManager.java,0\6\0619435783af4b47e74c7df28e09d96fe8416a9b
-r
-Bsrc/test/java/org/toby/database/insertion/SummonerSpellTester.java,7\e\7ea4a5052fa5418f4133d3176c4e4b26439eed81
 e
 5src/main/java/org/toby/database/insert/Insertion.java,0\a\0a15ff44d50076cf657bb32fde45830e1a59f939
 h
@@ -171,3 +157,7 @@ p
 @src/test/java/org/toby/database/deletion/RoleDeletionTester.java,c\e\cefb86736e4f51736ea1061c4fbff941065ca924
 y
 Isrc/test/java/org/toby/database/deletion/SummonerSpellDeletionTester.java,b\c\bcee3d95332711363c106a3d4edcdfaad9fe5e01
+q
+Asrc/main/java/org/toby/database/insert/ChampionRoleInsertion.java,d\d\dd83c3ae0e44219368cd8e67b3d9e516f31afdfe
+t
+Dsrc/test/java/org/toby/database/deletion/ChampionDeletionTester.java,d\b\db0d26ca4a9861da746a8f2440ac081192fad4ca

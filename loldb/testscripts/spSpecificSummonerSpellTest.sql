@@ -12,7 +12,7 @@ AS
 		DECLARE @TestOutcome BIT;
 
 		/*Test 1 Ensure that the selected summoner spell exists within the summoner spell table*/
-		SET @TestDescription = 'Ensure that the sumkmoner spell ' + @SelectedSummonerSpell + ' exits within the summonerspell table';
+		SET @TestDescription = 'Ensure that the summoner spell ' + @SelectedSummonerSpell + ' exits within the summonerspell table';
 		SET @ExpectedResult = @SelectedSummonerSpell + ' exists within the summoner spell table';
 
 		BEGIN TRY
