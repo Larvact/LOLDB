@@ -15,7 +15,6 @@ import org.toby.properties.PropertyRetriever;
 import org.toby.reader.LolJsonReader;
 import org.toby.reader.Reader;
 import org.toby.valueobject.jsondeserialise.SummonerSpell;
-import org.toby.valueobject.jsondeserialise.databasetransfer.role.RoleCollection;
 
 import java.sql.PreparedStatement;
 import java.sql.SQLException;

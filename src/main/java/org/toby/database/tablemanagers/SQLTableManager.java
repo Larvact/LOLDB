@@ -23,4 +23,13 @@ public class SQLTableManager implements SQLManager {
         this.deletion.delete();
     }
 
+    @Override
+    public void setInsertion(Insertion insertion) {
+        this.insertion = insertion;
+    }
+
+    @Override
+    public void setDeletion(Deletion deletion) {
+        this.deletion = deletion;
+    }
 }

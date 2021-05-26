@@ -13,8 +13,6 @@ Asrc/main/java/org/toby/database/delete/SummonerSpellDeletion.java,1\8\18b3e328
 -loldb/testscripts/spChampionRoleTableTest.sql,e\b\eb493c061400bf1d7f5549a2b3446b12a8d7dc05
 u
 Esrc/main/java/org/toby/valueobject/jsondeserialise/SummonerSpell.java,f\7\f7508b48273075d28bf15927fee7713525b872f3
-m
-=src/main/java/org/toby/database/tablemanagers/SQLManager.java,3\6\36f994eced40d3c963fda4e6d8f9f423bb117a7f
 ~
 Nsrc/main/java/org/toby/json/deserialisers/champion/CollectionDeserializer.java,f\6\f6f6e208e91bfc49ca74261cc904cd8e06b1f0dd
 ƒ
@@ -23,8 +21,6 @@ Y
 )src/main/java/org/toby/reader/Reader.java,3\5\3560a54e976b2f393588d144bcf534f809807f36
 ž
 nsrc/main/java/org/toby/valueobject/jsondeserialise/databasetransfer/summonerspell/SummonerSpellCollection.java,0\2\025efeba05097d36cd56e39ae78552a8f407e6c8
-„
-Tsrc/test/java/org/toby/json/deserialisers/champion/CollectionDeserializerTester.java,2\0\20ad6820e9aa92eb77d181b77599d20ae96f09c3
 n
 >src/test/java/org/toby/properties/PropertyRetrieverTester.java,a\c\ac98bcaade7bd77f2831af28b3ac4191447a6839
 `
@@ -99,12 +95,6 @@ s
 Csrc/main/java/org/toby/csv/deserializers/GameDetailDeserilizer.java,7\6\768edcd97a7c0c59dda48d2f616d5a151a3cbc41
 `
 0src/main/java/org/toby/reader/CsvGameReader.java,6\5\65eb341f586b6055341ccddf720b94e433aecd8e
-z
-Jsrc/test/java/org/toby/json/deserialisers/champion/DeserializerTester.java,3\c\3c04a12913793f39b775e7d1f16c2f12c1aee6c2
-q
-Asrc/test/java/org/toby/database/insertion/ChampionRoleTester.java,2\c\2c84c47037cdb516f642f6e58013bb5795fab121
-t
-Dsrc/main/java/org/toby/json/deserialisers/champion/Deserializer.java,e\4\e4ff31c242595405fd8229c1639e391b72316c08
 m
 =src/main/java/org/toby/valueobject/csvobjects/GameDetail.java,8\5\855e986a44f7d655d1b4461f423ffe68a1ae303c
 q
@@ -123,8 +113,6 @@ O
 src/main/java/org/toby/App.java,8\0\80a23f121712509e365cb227ce62be0815434902
 r
 Bsrc/main/java/org/toby/database/insert/SummonerSpellInsertion.java,0\3\03fe297f9399461844e8f4993ee91a15c24a5c9d
-r
-Bsrc/main/java/org/toby/database/tablemanagers/SQLTableManager.java,0\6\0619435783af4b47e74c7df28e09d96fe8416a9b
 e
 5src/main/java/org/toby/database/insert/Insertion.java,0\a\0a15ff44d50076cf657bb32fde45830e1a59f939
 h

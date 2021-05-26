@@ -24,7 +24,7 @@ public class CollectionDeserializerTester {
     private static String json;
     private static Reader reader;
     private static ObjectMapper mapper;
-    private final int expectedNumberOfChampions = 138;
+    private final int expectedNumberOfChampions = 139;
 
     //Darius Expected
     private final static int expectedId = 122;

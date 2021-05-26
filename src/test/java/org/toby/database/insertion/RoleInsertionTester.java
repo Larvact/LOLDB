@@ -14,7 +14,6 @@ import org.toby.properties.PropertyKeys;
 import org.toby.properties.PropertyRetriever;
 import org.toby.reader.LolJsonReader;
 import org.toby.reader.Reader;
-import org.toby.valueobject.jsondeserialise.Champion;
 import org.toby.valueobject.jsondeserialise.databasetransfer.role.RoleCollection;
 
 import java.sql.PreparedStatement;
