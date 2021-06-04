@@ -125,16 +125,6 @@ p
 @src/main/java/org/toby/database/delete/ChampionRoleDeletion.java,8\7\87b52bb70be65f4af80ca122831087eef4b8fd4d
 d
 4src/main/java/org/toby/database/delete/Deletion.java,b\5\b56d8dc391e4075fb56810e337143f4ec91fd9f0
-l
-<src/main/java/org/toby/database/delete/ChampionDeletion.java,0\8\0801aeeef46376708d407ad1ae782e3001fa0f36
-p
-@src/test/java/org/toby/database/deletion/TeamDeletionTester.java,2\b\2bb6cb92cf626705b080ccd870fe0f6af5268671
-x
-Hsrc/test/java/org/toby/database/deletion/ChampionRoleDeletionTester.java,9\8\9828cbb0d495fc8f1b2323eb46b79109d551762d
-p
-@src/test/java/org/toby/database/deletion/RoleDeletionTester.java,c\e\cefb86736e4f51736ea1061c4fbff941065ca924
-y
-Isrc/test/java/org/toby/database/deletion/SummonerSpellDeletionTester.java,b\c\bcee3d95332711363c106a3d4edcdfaad9fe5e01
 q
 Asrc/main/java/org/toby/database/insert/ChampionRoleInsertion.java,d\d\dd83c3ae0e44219368cd8e67b3d9e516f31afdfe
 b
