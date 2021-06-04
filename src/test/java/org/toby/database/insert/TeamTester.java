@@ -1,11 +1,9 @@
-package org.toby.database.insertion;
+package org.toby.database.insert;
 
 import org.junit.*;
 import org.toby.database.LolDbConnector;
 import org.toby.database.delete.Deletion;
 import org.toby.database.delete.TeamDeletion;
-import org.toby.database.insert.Insertion;
-import org.toby.database.insert.TeamInsertion;
 import org.toby.database.tablemanagers.SQLManager;
 import org.toby.database.tablemanagers.SQLTableManager;
 import org.toby.database.testtable.TestTableDataRetriever;

@@ -1,11 +1,7 @@
-package org.toby.database.insertion;
+package org.toby.database.delete;
 
 import org.junit.*;
 import org.toby.database.LolDbConnector;
-import org.toby.database.delete.ChampionDeletion;
-import org.toby.database.delete.ChampionRoleDeletion;
-import org.toby.database.delete.Deletion;
-import org.toby.database.delete.RoleDeletion;
 import org.toby.database.insert.ChampionInsertion;
 import org.toby.database.insert.ChampionRoleInsertion;
 import org.toby.database.insert.Insertion;
@@ -18,13 +14,12 @@ import org.toby.properties.PropertyKeys;
 import org.toby.properties.PropertyRetriever;
 import org.toby.reader.LolJsonReader;
 import org.toby.reader.Reader;
-import org.toby.valueobject.jsondeserialise.Champion;
 
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.time.LocalDateTime;
 
-public class ChampionRoleTester {
+public class ChampionRoleDeletionTester {
 
     private static SQLManager sqlManager;
     private static Reader reader;
@@ -36,9 +31,8 @@ public class ChampionRoleTester {
     private static Deletion roleDeletion;
     private static Insertion championRoleInsertion;
     private static Deletion championRoleDeletion;
-    private LocalDateTime testInitialiserTime;
-    private final int expectedNumberOfChampionsRoleCombinations = 248;
     private TestTableDataRetriever testOutcomeRetrieval;
+    private LocalDateTime testInitialiserTime;
 
     @BeforeClass
     public static void setUpData(){
@@ -73,46 +67,32 @@ public class ChampionRoleTester {
     public void setupTestInitialiserTime(){
         this.testInitialiserTime = LocalDateTime.now();
         testOutcomeRetrieval = new TestTableDataRetriever(connector, this.testInitialiserTime);
-        connector.connect();
     }
 
     @Test
-    public void ensureTheNumberOfChampionRoleCombinationsInsideTheChampionRoleTableIsCorrect(){
-        try(PreparedStatement executeSpChampionRoleTableTest = connector.getConnection().prepareStatement("EXECUTE [test].[spChampionRoleTableTest] ?")){
-            executeSpChampionRoleTableTest.setInt(1, this.expectedNumberOfChampionsRoleCombinations);
-            executeSpChampionRoleTableTest.execute();
+    public void ensureDataHasBeenDeletedFromTheSummonerSpellTable(){
+        deleteChampionRoleData();
+        connector.connect();
+        try(PreparedStatement executeSpEnsureEmptyTable = connector.getConnection().prepareStatement("EXECUTE [test].[spEnsureEmptyTable] @SchemaName = ?, @SelectedTable = ?")){
+            executeSpEnsureEmptyTable.setString(1, "dbo");
+            executeSpEnsureEmptyTable.setString(2, "ChampionRole");
+            executeSpEnsureEmptyTable.execute();
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
         Assert.assertEquals(1, testOutcomeRetrieval.getLastestTestResult());
     }
 
-    @Test
-    public void ensureThatAllSpecificChampionRoleCombinationsHaveBeenInsertedIntoTheChampionRoleTable(){
-        for(Champion champion : mapper.getCollection().getChampions()) {
-            for(String role : champion.getRoles()) {
-                testOutcomeRetrieval.setTestInitialiserTime(LocalDateTime.now());
-                try (PreparedStatement executeSpSpecificChampionRoleTest = connector.getConnection().prepareStatement("EXECUTE [test].[spSpecificChampionRoleTest] @SelectedChampion = ?, @ExpectedRole = ?")) {
-                    executeSpSpecificChampionRoleTest.setString(1, champion.getName());
-                    executeSpSpecificChampionRoleTest.setString(2, role);
-                    executeSpSpecificChampionRoleTest.execute();
-                } catch (SQLException throwables) {
-                    throwables.printStackTrace();
-                }
-                Assert.assertEquals(1, testOutcomeRetrieval.getLastestTestResult());
-            }
-        }
-    }
-
-    @After
-    public void teardown(){
-        connector.closeConnection();
-    }
-
-    private static void deleteChampionRoleData(){
+    private void deleteChampionRoleData(){
         championRoleDeletion = new ChampionRoleDeletion(connector);
         sqlManager.setDeletion(championRoleDeletion);
         sqlManager.delete();
+    }
+
+    @AfterClass
+    public static void cleanupResidualData(){
+        deleteChampionData();
+        deleteRoleData();
     }
 
     private static void deleteChampionData(){
@@ -125,12 +105,4 @@ public class ChampionRoleTester {
         sqlManager.setDeletion(roleDeletion);
         sqlManager.delete();
     }
-
-    @AfterClass
-    public static void deleteData(){
-        deleteChampionRoleData();
-        deleteChampionData();
-        deleteRoleData();
-    }
-
 }
