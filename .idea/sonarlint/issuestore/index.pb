@@ -137,8 +137,6 @@ y
 Isrc/test/java/org/toby/database/deletion/SummonerSpellDeletionTester.java,b\c\bcee3d95332711363c106a3d4edcdfaad9fe5e01
 q
 Asrc/main/java/org/toby/database/insert/ChampionRoleInsertion.java,d\d\dd83c3ae0e44219368cd8e67b3d9e516f31afdfe
-t
-Dsrc/test/java/org/toby/database/deletion/ChampionDeletionTester.java,d\b\db0d26ca4a9861da746a8f2440ac081192fad4ca
 b
 2src/test/java/org/toby/reader/LolReaderTester.java,8\4\842be6fe12b49efcbbd018897a1f918cbbb8f0c5
 f
