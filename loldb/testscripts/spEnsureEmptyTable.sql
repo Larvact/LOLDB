@@ -6,7 +6,6 @@ AS
 		SET NOCOUNT ON;
 
 		DECLARE @Sql NVARCHAR(MAX);
-		DECLARE @Count BIGINT;
 		DECLARE @DateTimeOfExecution DATETIME2 = CURRENT_TIMESTAMP;
 		DECLARE @TestDescription VARCHAR(MAX);
 		DECLARE @ExpectedResult VARCHAR(MAX);
@@ -16,21 +15,18 @@ AS
 		/*Test 1 Ensure that the declared table has no data in it*/
 		SET @TestDescription = 'Ensure that the data base table: ' + QUOTENAME(@SchemaName) + '.' + QUOTENAME(@SelectedTable) + ' has no data inside it';
 		SET @ExpectedResult = 'The data base table: ' + QUOTENAME(@SchemaName) + '.' + QUOTENAME(@SelectedTable) + ' has no data inside it';
-		SET @Sql = N'SELECT @Count = COUNT(*) FROM ' + QUOTENAME(@SchemaName) + '.' + QUOTENAME(@SelectedTable) + ';'
+		SET @Sql = N'SELECT @IsData = CASE WHEN EXISTS(SELECT 1 FROM ' + QUOTENAME(@SchemaName) + '.' + QUOTENAME(@SelectedTable) + ') THEN 0 ELSE 1 END;'
 
-		EXEC sp_executesql @Sql, N'@Count bigint OUTPUT', @Count = @Count OUTPUT;
+		EXEC sp_executesql @Sql, N'@IsData bigint OUTPUT', @IsData = @TestOutcome OUTPUT;
 
-		IF (@Count = 0)
+		IF (@TestOutcome = 1)
 			BEGIN
-				SET @TestOutcome = 1;
 				SET @ActualResult = 'The data base table: ' + QUOTENAME(@SchemaName) + '.' + QUOTENAME(@SelectedTable) + ' has no data inside it';
 				INSERT INTO [test].[TestResults]
 				VALUES (@DateTimeOfExecution, @TestDescription, @ExpectedResult, @ActualResult, @TestOutcome)
-				SET @TestOutcome = 0;
 			END
 		ELSE
 			BEGIN
-				SET @TestOutcome = 0;
 				SET @ActualResult = 'The data base table: ' + QUOTENAME(@SchemaName) + '.' + QUOTENAME(@SelectedTable) + ' has data inside it';
 				INSERT INTO [test].[TestResults]
 				VALUES (@DateTimeOfExecution, @TestDescription, @ExpectedResult, @ActualResult, @TestOutcome)
