@@ -1,6 +1,7 @@
 package org.toby.properties;
 
-import java.io.FileInputStream;
+import java.io.BufferedReader;
+import java.io.FileReader;
 import java.io.IOException;
 import java.util.Properties;
 
@@ -17,9 +18,9 @@ public class PropertyRetriever {
     }
 
     private static void readPropertiesFile() {
-        try (FileInputStream fis = new FileInputStream(PROPERTIESFILEPATH)) {
+        try (BufferedReader reader = new BufferedReader(new FileReader(PROPERTIESFILEPATH))) {
             properties = new Properties();
-            properties.load(fis);
+            properties.load(reader);
         }  catch (IOException ioe) {
             ioe.printStackTrace();
         }
