@@ -6,7 +6,7 @@ public abstract class Deletion {
 
     protected LolDbConnector connector;
 
-    protected Deletion(LolDbConnector connector) {
+    public Deletion(LolDbConnector connector) {
         this.connector = connector;
     }
 

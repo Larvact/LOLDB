@@ -32,6 +32,7 @@ public class TeamDeletionTester {
         insertion = new TeamInsertion(connector);
         deletion = new TeamDeletion(connector);
         sqlManager = new SQLTableManager(insertion, deletion);
+        sqlManager.insert();
     }
 
     @Before

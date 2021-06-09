@@ -39,6 +39,7 @@ public class SummonerSpellDeletionTester {
         insertion = new SummonerSpellInsertion(connector, mapper.getCollection());
         deletion = new SummonerSpellDeletion(connector);
         sqlManager = new SQLTableManager(insertion, deletion);
+        sqlManager.insert();
     }
 
     @Before

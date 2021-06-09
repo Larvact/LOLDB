@@ -7,7 +7,7 @@ public abstract class Insertion {
 
     protected LolDbConnector connector;
 
-    protected Insertion(LolDbConnector connector) {
+    public Insertion(LolDbConnector connector) {
         this.connector = connector;
     }
 
