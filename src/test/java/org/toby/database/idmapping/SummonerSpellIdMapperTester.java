@@ -17,7 +17,7 @@ import org.toby.properties.PropertyRetriever;
 import org.toby.reader.LolJsonReader;
 import org.toby.reader.Reader;
 
-public class SummonerSpellMapperTester {
+public class SummonerSpellIdMapperTester {
 
     private static Reader reader;
     private static SummonerSpellCollectionMapper summonerSpellCollectionMapper;
@@ -36,14 +36,22 @@ public class SummonerSpellMapperTester {
 
     @BeforeClass
     public static void setup() {
+        readJson();
+        setupDataBaseData();
+        setupSummonerSpellIdMapper();
+    }
+
+    private static void readJson(){
         reader = new LolJsonReader(PropertyRetriever.getProperty(PropertyKeys.SUMMONER_SPELL_DATA_FILE_LOCATION.toString()));
         summonerSpellCollectionMapper = new SummonerSpellCollectionMapper(reader);
+    }
+
+    private static void setupDataBaseData(){
         connector = new LolDbConnector(PropertyRetriever.getProperty(PropertyKeys.DATABASE_CONNECTION_STRING.toString()));
         insertion = new SummonerSpellInsertion(connector, summonerSpellCollectionMapper.getCollection());
         deletion = new SummonerSpellDeletion(connector);
         sqlManager = new SQLTableManager(insertion, deletion);
         sqlManager.insert();
-        setupSummonerSpellIdMapper();
     }
 
     private static void setupSummonerSpellIdMapper(){
