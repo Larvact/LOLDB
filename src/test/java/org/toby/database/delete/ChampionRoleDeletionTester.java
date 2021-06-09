@@ -9,7 +9,7 @@ import org.toby.database.insert.RoleInsertion;
 import org.toby.database.tablemanagers.SQLManager;
 import org.toby.database.tablemanagers.SQLTableManager;
 import org.toby.database.testtable.TestTableDataRetriever;
-import org.toby.json.mappers.ChampionCollectionMapper;
+import org.toby.json.dbobjectgenerators.ChampionCollectionGenerator;
 import org.toby.properties.PropertyKeys;
 import org.toby.properties.PropertyRetriever;
 import org.toby.reader.LolJsonReader;
@@ -24,7 +24,7 @@ public class ChampionRoleDeletionTester {
     private static SQLManager sqlManager;
     private static Reader reader;
     private static LolDbConnector connector;
-    private static ChampionCollectionMapper mapper;
+    private static ChampionCollectionGenerator mapper;
     private static Insertion championInsertion;
     private static Deletion championDeletion;
     private static Insertion roleInsertion;
@@ -38,7 +38,7 @@ public class ChampionRoleDeletionTester {
     public static void setUpData(){
         reader = new LolJsonReader(PropertyRetriever.getProperty(PropertyKeys.CHAMPION_DATA_FILE_LOCATION.toString()));
         connector = new LolDbConnector(PropertyRetriever.getProperty(PropertyKeys.DATABASE_CONNECTION_STRING.toString()));
-        mapper = new ChampionCollectionMapper(reader);
+        mapper = new ChampionCollectionGenerator(reader);
         insertChampionData();
         insertRoleData();
         insertChampionRoleRoleData();

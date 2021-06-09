@@ -14,7 +14,7 @@ import org.toby.database.insert.Insertion;
 import org.toby.database.insert.SummonerSpellInsertion;
 import org.toby.database.tablemanagers.SQLManager;
 import org.toby.database.tablemanagers.SQLTableManager;
-import org.toby.json.mappers.SummonerSpellCollectionMapper;
+import org.toby.json.dbobjectgenerators.SummonerSpellCollectionGenerator;
 import org.toby.properties.PropertyKeys;
 import org.toby.properties.PropertyRetriever;
 import org.toby.reader.CsvGameReader;
@@ -28,7 +28,7 @@ public class SummonerSpellIdFormatterTester {
     private static CsvReader<GameDetail> csvReader;
     private static Deserializer<GameDetail> csvGameDetailDeserializer;
     private static Reader reader;
-    private static SummonerSpellCollectionMapper summonerSpellCollectionMapper;
+    private static SummonerSpellCollectionGenerator summonerSpellCollectionGenerator;
     private static SummonerSpellIdMapper summonerSpellIdMapper;
     private static Format summonerSpellIdFormatter;
     private static SQLManager sqlManager;
@@ -53,19 +53,19 @@ public class SummonerSpellIdFormatterTester {
 
     private static void readJson(){
         reader = new LolJsonReader(PropertyRetriever.getProperty(PropertyKeys.SUMMONER_SPELL_DATA_FILE_LOCATION.toString()));
-        summonerSpellCollectionMapper = new SummonerSpellCollectionMapper(reader);
+        summonerSpellCollectionGenerator = new SummonerSpellCollectionGenerator(reader);
     }
 
     private static void setupDataBaseData(){
         connector = new LolDbConnector(PropertyRetriever.getProperty(PropertyKeys.DATABASE_CONNECTION_STRING.toString()));
-        insertion = new SummonerSpellInsertion(connector, summonerSpellCollectionMapper.getCollection());
+        insertion = new SummonerSpellInsertion(connector, summonerSpellCollectionGenerator.getCollection());
         deletion = new SummonerSpellDeletion(connector);
         sqlManager = new SQLTableManager(insertion, deletion);
         sqlManager.insert();
     }
 
     private static void setupSummonerSpellIdMapper(){
-        summonerSpellIdMapper = new SummonerSpellIdMapper(summonerSpellCollectionMapper.getCollection(), connector);
+        summonerSpellIdMapper = new SummonerSpellIdMapper(summonerSpellCollectionGenerator.getCollection(), connector);
         summonerSpellIdMapper.map();
     }
 

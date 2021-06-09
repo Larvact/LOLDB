@@ -1,4 +1,4 @@
-package org.toby.json.mappers;
+package org.toby.json.dbobjectgenerators;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.Version;
@@ -11,13 +11,13 @@ import org.toby.valueobject.jsondeserialise.databasetransfer.summonerspell.Summo
 import java.io.IOException;
 import java.util.Collections;
 
-public class SummonerSpellCollectionMapper {
+public class SummonerSpellCollectionGenerator {
 
     private Reader reader;
     private SummonerSpellCollection summonerSpellCollection;
     private ObjectMapper mapper;
 
-    public SummonerSpellCollectionMapper(Reader reader) {
+    public SummonerSpellCollectionGenerator(Reader reader) {
         this.reader = reader;
         readSummonerSpellFile();
         setupSummonerSpellCollectionMapper();

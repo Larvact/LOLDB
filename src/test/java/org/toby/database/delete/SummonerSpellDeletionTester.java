@@ -10,7 +10,7 @@ import org.toby.database.insert.SummonerSpellInsertion;
 import org.toby.database.tablemanagers.SQLManager;
 import org.toby.database.tablemanagers.SQLTableManager;
 import org.toby.database.testtable.TestTableDataRetriever;
-import org.toby.json.mappers.SummonerSpellCollectionMapper;
+import org.toby.json.dbobjectgenerators.SummonerSpellCollectionGenerator;
 import org.toby.properties.PropertyKeys;
 import org.toby.properties.PropertyRetriever;
 import org.toby.reader.LolJsonReader;
@@ -25,7 +25,7 @@ public class SummonerSpellDeletionTester {
     private static SQLManager sqlManager;
     private static Reader reader;
     private static LolDbConnector connector;
-    private static SummonerSpellCollectionMapper mapper;
+    private static SummonerSpellCollectionGenerator mapper;
     private static Insertion insertion;
     private static Deletion deletion;
     private TestTableDataRetriever testOutcomeRetrieval;
@@ -35,7 +35,7 @@ public class SummonerSpellDeletionTester {
     public static void setData(){
         reader = new LolJsonReader(PropertyRetriever.getProperty(PropertyKeys.SUMMONER_SPELL_DATA_FILE_LOCATION.toString()));
         connector = new LolDbConnector(PropertyRetriever.getProperty(PropertyKeys.DATABASE_CONNECTION_STRING.toString()));
-        mapper = new SummonerSpellCollectionMapper(reader);
+        mapper = new SummonerSpellCollectionGenerator(reader);
         insertion = new SummonerSpellInsertion(connector, mapper.getCollection());
         deletion = new SummonerSpellDeletion(connector);
         sqlManager = new SQLTableManager(insertion, deletion);

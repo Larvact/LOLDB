@@ -14,7 +14,7 @@ import org.toby.database.insert.ChampionInsertion;
 import org.toby.database.insert.Insertion;
 import org.toby.database.tablemanagers.SQLManager;
 import org.toby.database.tablemanagers.SQLTableManager;
-import org.toby.json.mappers.ChampionCollectionMapper;
+import org.toby.json.dbobjectgenerators.ChampionCollectionGenerator;
 import org.toby.properties.PropertyKeys;
 import org.toby.properties.PropertyRetriever;
 import org.toby.reader.CsvGameReader;
@@ -28,7 +28,7 @@ public class ChampionIdFormatterTester {
     private static CsvReader<GameDetail> csvReader;
     private static Deserializer<GameDetail> csvGameDetailDeserializer;
     private static Reader reader;
-    private static ChampionCollectionMapper championCollectionMapper;
+    private static ChampionCollectionGenerator championCollectionGenerator;
     private static ChampionIdMapper championIdMapper;
     private static Format championIdFormatter;
     private static SQLManager sqlManager;
@@ -54,19 +54,19 @@ public class ChampionIdFormatterTester {
 
     private static void readJson(){
         reader = new LolJsonReader(PropertyRetriever.getProperty(PropertyKeys.CHAMPION_DATA_FILE_LOCATION.toString()));
-        championCollectionMapper = new ChampionCollectionMapper(reader);
+        championCollectionGenerator = new ChampionCollectionGenerator(reader);
     }
 
     private static void setupDataBaseData(){
         connector = new LolDbConnector(PropertyRetriever.getProperty(PropertyKeys.DATABASE_CONNECTION_STRING.toString()));
-        insertion = new ChampionInsertion(connector, championCollectionMapper.getCollection());
+        insertion = new ChampionInsertion(connector, championCollectionGenerator.getCollection());
         deletion = new ChampionDeletion(connector);
         sqlManager = new SQLTableManager(insertion, deletion);
         sqlManager.insert();
     }
 
     private static void setupChampionIdMapper(){
-        championIdMapper = new ChampionIdMapper(championCollectionMapper.getCollection(), connector);
+        championIdMapper = new ChampionIdMapper(championCollectionGenerator.getCollection(), connector);
         championIdMapper.map();
     }
 

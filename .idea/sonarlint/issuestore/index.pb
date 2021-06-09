@@ -63,8 +63,6 @@ gsrc/main/java/org/toby/valueobject/csvobjects/databasetransfer/endgamestats/End
 [src/main/java/org/toby/valueobject/csvobjects/databasetransfer/player/PlayerCollection.java,c\b\cb737c278b57680e7fa51108281384413b43764c
 \
 ,src/main/java/org/toby/reader/CsvReader.java,4\a\4acd322d7b891a36dd5295f33048f5b0b896f433
-q
-Asrc/main/java/org/toby/json/mappers/ChampionCollectionMapper.java,2\b\2bf21e0ba9450347e2eff94ccaeb7f4408558efa
 O
 src/main/java/org/toby/App.java,8\0\80a23f121712509e365cb227ce62be0815434902
 Y
@@ -185,3 +183,13 @@ v
 Fsrc/main/java/org/toby/json/mappers/SummonerSpellCollectionMapper.java,a\a\aab376e207db464e134c89f9e9bf5472d1088a18
 `
 0src/main/java/org/toby/reader/CsvGameReader.java,6\5\65eb341f586b6055341ccddf720b94e433aecd8e
+`
+0src/main/java/org/toby/reader/LolJsonReader.java,1\4\14a7473fc71ee6c4b82571e868eaa81a50a63eda
+o
+?src/test/java/org/toby/database/insert/SummonerSpellTester.java,7\0\7044051fb9c6d26edb11ed5c587efc7b20ce0319
+‚
+Rsrc/main/java/org/toby/database/idmapping/formatters/SummonerSpellIdFormatter.java,0\6\0611530c03bf7dcd5426486ea709a69afe5e3378
+z
+Jsrc/test/java/org/toby/database/idmapping/SummonerSpellIdMapperTester.java,d\5\d539490871ed4fd36b7b5547c1cfae91a7f8b87b
+l
+<src/main/java/org/toby/database/delete/ChampionDeletion.java,0\8\0801aeeef46376708d407ad1ae782e3001fa0f36

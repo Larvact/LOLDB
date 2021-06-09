@@ -1,4 +1,4 @@
-package org.toby.json.mappers;
+package org.toby.json.dbobjectgenerators;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.Version;
@@ -11,13 +11,13 @@ import org.toby.reader.Reader;
 import java.io.IOException;
 import java.util.Collections;
 
-public class ChampionCollectionMapper {
+public class ChampionCollectionGenerator {
 
     private Reader reader;
     private ChampionCollection championCollection;
     private ObjectMapper mapper;
 
-    public ChampionCollectionMapper(Reader reader) {
+    public ChampionCollectionGenerator(Reader reader) {
         this.reader = reader;
         readChampionFile();
         setupChampionCollectionMapper();
