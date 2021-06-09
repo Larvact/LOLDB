@@ -1,8 +1,16 @@
 package org.toby.database.idmapping;
 
+import org.junit.AfterClass;
 import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;
+import org.toby.database.LolDbConnector;
+import org.toby.database.delete.ChampionDeletion;
+import org.toby.database.delete.Deletion;
+import org.toby.database.insert.ChampionInsertion;
+import org.toby.database.insert.Insertion;
+import org.toby.database.tablemanagers.SQLManager;
+import org.toby.database.tablemanagers.SQLTableManager;
 import org.toby.json.mappers.ChampionCollectionMapper;
 import org.toby.properties.PropertyKeys;
 import org.toby.properties.PropertyRetriever;
@@ -15,21 +23,39 @@ public class ChampionIdMapperTester {
     private static ChampionCollectionMapper championCollectionMapper;
     private static ChampionIdMapper championIdMapper;
 
-    private final int expectedNumberOfChampions = 138;
-    //change values as per specific champion. Get the old Id from the file and the new Id from the database after running the champion table insert. Currently using the champion Riven.
-    private final int championOldId = 92;
-    private final int expectedChampionNewId = 91;
+    private static SQLManager sqlManager;
+    private static LolDbConnector connector;
+    private static Insertion insertion;
+    private static Deletion deletion;
+
+    private final int expectedNumberOfChampions = 139;
+    //change values as per specific champion. Get the old Id from the file and the new Id from the database after running the champion table insert. Currently using the champion Lissandra.
+    private final int championOldId = 127;
+    private final int expectedChampionNewId = 63;
 
 
     @BeforeClass
     public static void setup() {
-        reader = new LolJsonReader(PropertyRetriever.getProperty(PropertyKeys.CHAMPION_DATA_FILE_LOCATION.toString()));
-        championCollectionMapper = new ChampionCollectionMapper(reader);
+        readJson();
+        setupDataBaseData();
         setupChampionIdMapper();
     }
 
+    private static void readJson(){
+        reader = new LolJsonReader(PropertyRetriever.getProperty(PropertyKeys.CHAMPION_DATA_FILE_LOCATION.toString()));
+        championCollectionMapper = new ChampionCollectionMapper(reader);
+    }
+
+    private static void setupDataBaseData(){
+        connector = new LolDbConnector(PropertyRetriever.getProperty(PropertyKeys.DATABASE_CONNECTION_STRING.toString()));
+        insertion = new ChampionInsertion(connector, championCollectionMapper.getCollection());
+        deletion = new ChampionDeletion(connector);
+        sqlManager = new SQLTableManager(insertion, deletion);
+        sqlManager.insert();
+    }
+
     private static void setupChampionIdMapper(){
-        championIdMapper = new ChampionIdMapper(championCollectionMapper.getCollection());
+        championIdMapper = new ChampionIdMapper(championCollectionMapper.getCollection(), connector);
         championIdMapper.map();
     }
 
@@ -42,5 +68,10 @@ public class ChampionIdMapperTester {
     @Test
     public void ensureCorrectNumberOfChampionsArePresentInTheMap(){
         Assert.assertEquals(expectedNumberOfChampions,championIdMapper.getMapping().size());
+    }
+
+    @AfterClass
+    public static void deleteData(){
+        sqlManager.delete();
     }
 }

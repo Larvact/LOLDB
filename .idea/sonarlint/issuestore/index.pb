@@ -119,8 +119,6 @@ Isrc/main/java/org/toby/json/deserialisers/summonerspell/Deserializer.java,a\b\
 Ysrc/test/java/org/toby/json/deserialisers/summonerspell/CollectionDeserializerTester.java,f\2\f272e5f2fd327169c534157f80d443ccd19b7eef
 ƒ
 Ssrc/main/java/org/toby/json/deserialisers/summonerspell/CollectionDeserializer.java,9\6\96cee203bdc647015b94aa78c3cb87bdc2e4d95c
-l
-<src/main/java/org/toby/database/delete/ChampionDeletion.java,0\8\0801aeeef46376708d407ad1ae782e3001fa0f36
 i
 9src/main/java/org/toby/database/insert/TeamInsertion.java,f\8\f80fdd613b70fada93fe729cb5976835f3ae8852
 m
@@ -135,8 +133,6 @@ r
 Bsrc/main/java/org/toby/database/insert/SummonerSpellInsertion.java,0\3\03fe297f9399461844e8f4993ee91a15c24a5c9d
 h
 8src/main/java/org/toby/database/delete/TeamDeletion.java,3\0\304795bfe3893083e3b9dfaa1cf5bdfdf720aea0
-ƒ
-Ssrc/test/java/org/toby/database/idmapping/formatters/ChampionIdFormatterTester.java,e\d\ede39ce48c28dedc09ede76b2f8610a3078c6dcb
 ‹
 [src/main/java/org/toby/valueobject/csvobjects/databasetransfer/season/SeasonCollection.java,a\3\a380a6c903b8df63d04eac0421c7783710d76db4
 j
@@ -183,9 +179,9 @@ i
 9src/main/java/org/toby/database/insert/GameInsertion.java,3\f\3f6015a829f5cf7d8119899e16db61839317faab
 }
 Msrc/main/java/org/toby/database/idmapping/formatters/ChampionIdFormatter.java,3\c\3c30fbae46e56b2945061cfbbc59d3c9ebd774b8
-o
-?src/main/java/org/toby/database/idmapping/ChampionIdMapper.java,5\e\5e240cfeb63e61967ec77e2931e3f9d02a696ae5
-u
-Esrc/test/java/org/toby/database/idmapping/ChampionIdMapperTester.java,2\e\2e3bfdfbbfd1f72d75bda18faf717f8791b275cc
 u
 Esrc/test/java/org/toby/database/testtable/TestTableDataRetriever.java,a\8\a8ce030dd0ed7a051b4f6573c55c469a6e33333e
+v
+Fsrc/main/java/org/toby/json/mappers/SummonerSpellCollectionMapper.java,a\a\aab376e207db464e134c89f9e9bf5472d1088a18
+`
+0src/main/java/org/toby/reader/CsvGameReader.java,6\5\65eb341f586b6055341ccddf720b94e433aecd8e

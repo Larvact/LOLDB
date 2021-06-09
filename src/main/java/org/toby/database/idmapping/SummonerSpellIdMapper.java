@@ -17,7 +17,6 @@ public class SummonerSpellIdMapper implements IdMapper<Integer> {
     private LolDbConnector connector;
     private Map<Integer, Integer> summonerSpellIdMap;
 
-
     public SummonerSpellIdMapper(SummonerSpellCollection summonerSpellCollection, LolDbConnector connector) {
         this.summonerSpellCollection = summonerSpellCollection;
         this.connector = connector;
@@ -26,7 +25,6 @@ public class SummonerSpellIdMapper implements IdMapper<Integer> {
     }
     @Override
     public void map() {
-
         ResultSet summonerSpellData = selectSummonerSpellTableData();
         try{
             while (summonerSpellData.next()){

@@ -36,7 +36,6 @@ public class SummonerSpellIdFormatterTester {
     private static Insertion insertion;
     private static Deletion deletion;
 
-
     @BeforeClass
     public static void setup() {
         readCsv();
