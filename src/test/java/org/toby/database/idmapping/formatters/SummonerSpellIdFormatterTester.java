@@ -1,11 +1,19 @@
 package org.toby.database.idmapping.formatters;
 
+import org.junit.AfterClass;
 import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.toby.csv.deserializers.Deserializer;
 import org.toby.csv.deserializers.GameDetailDeserilizer;
+import org.toby.database.LolDbConnector;
+import org.toby.database.delete.Deletion;
+import org.toby.database.delete.SummonerSpellDeletion;
 import org.toby.database.idmapping.SummonerSpellIdMapper;
+import org.toby.database.insert.Insertion;
+import org.toby.database.insert.SummonerSpellInsertion;
+import org.toby.database.tablemanagers.SQLManager;
+import org.toby.database.tablemanagers.SQLTableManager;
 import org.toby.json.mappers.SummonerSpellCollectionMapper;
 import org.toby.properties.PropertyKeys;
 import org.toby.properties.PropertyRetriever;
@@ -23,23 +31,48 @@ public class SummonerSpellIdFormatterTester {
     private static SummonerSpellCollectionMapper summonerSpellCollectionMapper;
     private static SummonerSpellIdMapper summonerSpellIdMapper;
     private static Format summonerSpellIdFormatter;
+    private static SQLManager sqlManager;
+    private static LolDbConnector connector;
+    private static Insertion insertion;
+    private static Deletion deletion;
 
 
     @BeforeClass
     public static void setup() {
+        readCsv();
+        readJson();
+        setupDataBaseData();
+        setupSummonerSpellIdMapper();
+        formatGameDetails();
+    }
+
+    private static void readCsv(){
         csvGameDetailDeserializer = new GameDetailDeserilizer();
         csvReader = new CsvGameReader<>(PropertyRetriever.getProperty(PropertyKeys.GAMES_DATA_FILE_LOCATION.toString()), csvGameDetailDeserializer);
         csvReader.read();
+    }
+
+    private static void readJson(){
         reader = new LolJsonReader(PropertyRetriever.getProperty(PropertyKeys.SUMMONER_SPELL_DATA_FILE_LOCATION.toString()));
         summonerSpellCollectionMapper = new SummonerSpellCollectionMapper(reader);
-        setupSummonerSpellIdMapper();
-        summonerSpellIdFormatter = new SummonerSpellIdFormatter(csvReader.getRowDetailsMap(), summonerSpellIdMapper.getMapping());
-        summonerSpellIdFormatter.format();
+    }
+
+    private static void setupDataBaseData(){
+        connector = new LolDbConnector(PropertyRetriever.getProperty(PropertyKeys.DATABASE_CONNECTION_STRING.toString()));
+        insertion = new SummonerSpellInsertion(connector, summonerSpellCollectionMapper.getCollection());
+        deletion = new SummonerSpellDeletion(connector);
+        sqlManager = new SQLTableManager(insertion, deletion);
+        sqlManager.insert();
     }
 
     private static void setupSummonerSpellIdMapper(){
-        //summonerSpellIdMapper = new SummonerSpellIdMapper(summonerSpellCollectionMapper.getCollection());
+        summonerSpellIdMapper = new SummonerSpellIdMapper(summonerSpellCollectionMapper.getCollection(), connector);
         summonerSpellIdMapper.map();
+    }
+
+    private static void formatGameDetails(){
+        summonerSpellIdFormatter = new SummonerSpellIdFormatter(csvReader.getRowDetailsMap(), summonerSpellIdMapper.getMapping());
+        summonerSpellIdFormatter.format();
     }
 
     @Test
@@ -140,5 +173,10 @@ public class SummonerSpellIdFormatterTester {
     @Test
     public void ensureThatTheSummonerspellIdForT2_champ5_sum2HasBeenCorrectlyChanged(){
         Assert.assertEquals(13, csvReader.getRowDetailsMap().get(42298).getT2_champ5_sum2());
+    }
+
+    @AfterClass
+    public static void deleteData(){
+        sqlManager.delete();
     }
 }

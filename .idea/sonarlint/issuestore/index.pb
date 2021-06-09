@@ -63,12 +63,8 @@ gsrc/main/java/org/toby/valueobject/csvobjects/databasetransfer/endgamestats/End
 [src/main/java/org/toby/valueobject/csvobjects/databasetransfer/player/PlayerCollection.java,c\b\cb737c278b57680e7fa51108281384413b43764c
 \
 ,src/main/java/org/toby/reader/CsvReader.java,4\a\4acd322d7b891a36dd5295f33048f5b0b896f433
-`
-0src/main/java/org/toby/reader/CsvGameReader.java,6\5\65eb341f586b6055341ccddf720b94e433aecd8e
 q
 Asrc/main/java/org/toby/json/mappers/ChampionCollectionMapper.java,2\b\2bf21e0ba9450347e2eff94ccaeb7f4408558efa
-‚
-Rsrc/main/java/org/toby/database/idmapping/formatters/SummonerSpellIdFormatter.java,0\6\0611530c03bf7dcd5426486ea709a69afe5e3378
 O
 src/main/java/org/toby/App.java,8\0\80a23f121712509e365cb227ce62be0815434902
 Y
@@ -191,7 +187,5 @@ o
 ?src/main/java/org/toby/database/idmapping/ChampionIdMapper.java,5\e\5e240cfeb63e61967ec77e2931e3f9d02a696ae5
 u
 Esrc/test/java/org/toby/database/idmapping/ChampionIdMapperTester.java,2\e\2e3bfdfbbfd1f72d75bda18faf717f8791b275cc
-ˆ
-Xsrc/test/java/org/toby/database/idmapping/formatters/SummonerSpellIdFormatterTester.java,a\3\a340f7ddbaa3ff53a26bbc1ff0c3d0369c0bbcce
 u
 Esrc/test/java/org/toby/database/testtable/TestTableDataRetriever.java,a\8\a8ce030dd0ed7a051b4f6573c55c469a6e33333e
