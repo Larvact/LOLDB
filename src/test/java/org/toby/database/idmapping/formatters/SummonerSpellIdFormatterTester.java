@@ -38,7 +38,7 @@ public class SummonerSpellIdFormatterTester {
     }
 
     private static void setupSummonerSpellIdMapper(){
-        summonerSpellIdMapper = new SummonerSpellIdMapper(summonerSpellCollectionMapper.getCollection());
+        //summonerSpellIdMapper = new SummonerSpellIdMapper(summonerSpellCollectionMapper.getCollection());
         summonerSpellIdMapper.map();
     }
 

@@ -1,0 +1,21 @@
+
+V
+java:S1128"4Remove this unused import 'java.time.LocalDateTime'.(æÃ§ƒüÿÿÿÿ8éô™„˜/
+P
+java:S1128".Remove this unused import 'java.time.Instant'.(Â‚éñÿÿÿÿÿ8éô™„˜/
+J
+java:S1128"-Remove this unused import 'java.time.ZoneId'.( Æ½“8êô™„˜/
+L
+java:S1068"*Remove this unused "gameId" private field.(Èµß„üÿÿÿÿ8ğŠ™„˜/
+P
+java:S1068".Remove this unused "firstBlood" private field.(ùèŒ³üÿÿÿÿ8‘à—„˜/
+K
+java:S1068".Remove this unused "firstTower" private field.(åıõ8‘à—„˜/
+O
+java:S1068"2Remove this unused "firstInhibitor" private field.(Ï£à8‘à—„˜/
+K
+java:S1068".Remove this unused "firstBaron" private field.(ÿé¹8‘à—„˜/
+Q
+java:S1068"/Remove this unused "firstDragon" private field.(‹Ä©×üÿÿÿÿ8‘à—„˜/
+P
+java:S1068"3Remove this unused "firstRiftHerald" private field.(¢íÔá8‘à—„˜/
