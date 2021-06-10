@@ -131,8 +131,6 @@ r
 Bsrc/main/java/org/toby/database/insert/SummonerSpellInsertion.java,0\3\03fe297f9399461844e8f4993ee91a15c24a5c9d
 h
 8src/main/java/org/toby/database/delete/TeamDeletion.java,3\0\304795bfe3893083e3b9dfaa1cf5bdfdf720aea0
-‹
-[src/main/java/org/toby/valueobject/csvobjects/databasetransfer/season/SeasonCollection.java,a\3\a380a6c903b8df63d04eac0421c7783710d76db4
 j
 :src/main/java/org/toby/database/delete/SeasonDeletion.java,7\6\767251af210f3abd24f544c81457ef1a0f9c0629
 X
@@ -147,14 +145,10 @@ f
 6src/test/java/org/toby/database/insert/TeamTester.java,4\8\483c93506afb953cfecc36021303adca6bacaae7
 i
 9src/main/java/org/toby/database/insert/RoleInsertion.java,e\a\ea00ab4c317d63d22642edb289e36e84ee2e209c
-h
-8src/test/java/org/toby/database/insert/SeasonTester.java,6\9\69110abd7bd647824b640407c38d6f776229722c
 e
 5src/main/java/org/toby/database/insert/Insertion.java,0\a\0a15ff44d50076cf657bb32fde45830e1a59f939
 d
 4src/main/java/org/toby/database/delete/Deletion.java,b\5\b56d8dc391e4075fb56810e337143f4ec91fd9f0
-k
-;src/main/java/org/toby/database/insert/SeasonInsertion.java,4\9\49dfecf00f2350db1f6d78405597c496d7efad2f
 p
 @src/test/java/org/toby/database/delete/SeasonDeletionTester.java,5\7\57d6b4ed024bc7427bccb32b39cacd1d357a3871
 n
@@ -163,8 +157,6 @@ n
 >src/test/java/org/toby/database/delete/TeamDeletionTester.java,3\a\3ae28b8b05d7524dec0cbe54a039b7a8fbff98b5
 w
 Gsrc/test/java/org/toby/database/delete/SummonerSpellDeletionTester.java,e\8\e863d6832c4dcbb00999bceaed724a21bedf799b
-g
-7src/main/java/org/toby/database/idmapping/IdMapper.java,e\8\e8819682f7d8e8cc4c17783543cc6c9354586039
 ‡
 Wsrc/main/java/org/toby/valueobject/csvobjects/databasetransfer/game/GameCollection.java,e\f\efe4f8db56133f1429260c538341fd3b8034bcbd
 }
@@ -179,8 +171,6 @@ i
 Msrc/main/java/org/toby/database/idmapping/formatters/ChampionIdFormatter.java,3\c\3c30fbae46e56b2945061cfbbc59d3c9ebd774b8
 u
 Esrc/test/java/org/toby/database/testtable/TestTableDataRetriever.java,a\8\a8ce030dd0ed7a051b4f6573c55c469a6e33333e
-v
-Fsrc/main/java/org/toby/json/mappers/SummonerSpellCollectionMapper.java,a\a\aab376e207db464e134c89f9e9bf5472d1088a18
 `
 0src/main/java/org/toby/reader/CsvGameReader.java,6\5\65eb341f586b6055341ccddf720b94e433aecd8e
 `
@@ -189,7 +179,5 @@ o
 ?src/test/java/org/toby/database/insert/SummonerSpellTester.java,7\0\7044051fb9c6d26edb11ed5c587efc7b20ce0319
 ‚
 Rsrc/main/java/org/toby/database/idmapping/formatters/SummonerSpellIdFormatter.java,0\6\0611530c03bf7dcd5426486ea709a69afe5e3378
-z
-Jsrc/test/java/org/toby/database/idmapping/SummonerSpellIdMapperTester.java,d\5\d539490871ed4fd36b7b5547c1cfae91a7f8b87b
 l
 <src/main/java/org/toby/database/delete/ChampionDeletion.java,0\8\0801aeeef46376708d407ad1ae782e3001fa0f36

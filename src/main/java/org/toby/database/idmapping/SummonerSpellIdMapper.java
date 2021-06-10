@@ -25,8 +25,8 @@ public class SummonerSpellIdMapper implements IdMapper<Integer> {
     }
     @Override
     public void map() {
-        ResultSet summonerSpellData = selectSummonerSpellTableData();
         try{
+            ResultSet summonerSpellData = selectSummonerSpellTableData();
             while (summonerSpellData.next()){
                 for(SummonerSpell summonerSpell : summonerSpellCollection.getSummonerSpells()){
                     if(summonerSpell.getName().equals(summonerSpellData.getString("Name"))){
@@ -44,16 +44,10 @@ public class SummonerSpellIdMapper implements IdMapper<Integer> {
         }
     }
 
-    private ResultSet selectSummonerSpellTableData(){
+    private ResultSet selectSummonerSpellTableData() throws SQLException {
         this.connector.connect();
-        try{
-            PreparedStatement selectSummonerSpellStatement = this.connector.getConnection().prepareStatement("SELECT ss.Id, ss.Name FROM [dbo].[SummonerSpell] ss");
-            return selectSummonerSpellStatement.executeQuery();
-
-        } catch (SQLException throwables) {
-            throwables.printStackTrace();
-        }
-        throw new NullPointerException("Unable to retrieve a result set from the select summoner spells SQL query - SummonerSpellIdMapper: selectSummonerSpellTableData");
+        PreparedStatement selectSummonerSpellStatement = this.connector.getConnection().prepareStatement("SELECT ss.Id, ss.Name FROM [dbo].[SummonerSpell] ss");
+        return selectSummonerSpellStatement.executeQuery();
     }
 
     @Override

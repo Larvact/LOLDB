@@ -25,8 +25,8 @@ public class ChampionIdMapper implements IdMapper<Integer> {
     }
     @Override
     public void map() {
-        ResultSet championData = selectChampionTableData();
         try{
+            ResultSet championData = selectChampionTableData();
             while (championData.next()){
                 for(Champion champion : championCollection.getChampions()){
                     if(champion.getName().equals(championData.getString("Name"))){
@@ -44,15 +44,10 @@ public class ChampionIdMapper implements IdMapper<Integer> {
         }
     }
 
-    private ResultSet selectChampionTableData(){
+    private ResultSet selectChampionTableData() throws SQLException {
         this.connector.connect();
-        try{
-            PreparedStatement selectChampionStatement = this.connector.getConnection().prepareStatement("SELECT c.Id, c.Name FROM [dbo].[Champion] c");
-            return selectChampionStatement.executeQuery();
-        } catch (SQLException throwables) {
-            throwables.printStackTrace();
-        }
-        throw new NullPointerException("Unable to retrieve a result set from the select champion SQL query - ChampionIdMapper: selectChampionTableData");
+        PreparedStatement selectChampionStatement = this.connector.getConnection().prepareStatement("SELECT c.Id, c.Name FROM [dbo].[Champion] c");
+        return selectChampionStatement.executeQuery();
     }
 
     @Override
