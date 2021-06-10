@@ -23,8 +23,6 @@ n
 >src/test/java/org/toby/properties/PropertyRetrieverTester.java,a\c\ac98bcaade7bd77f2831af28b3ac4191447a6839
 c
 3src/main/java/org/toby/properties/PropertyKeys.java,9\6\96fa78f1478a7bffe301fc812235e062c165ab3d
-p
-@src/main/java/org/toby/database/idmapping/formatters/Format.java,6\c\6ccab2fce751544d8f02ae53a5e67fe39d2134a7
 ë
 asrc/main/java/org/toby/valueobject/csvobjects/databasetransfer/endgamestats/BlueEndGameStats.java,f\b\fb65cafc992525b550f63cf773c80b116f70dd5d
 ç
@@ -123,8 +121,6 @@ m
 =src/main/java/org/toby/database/insert/ChampionInsertion.java,2\3\23f6417e360b14e6912a3eb735d2c160883a518e
 è
 _src/main/java/org/toby/valueobject/csvobjects/databasetransfer/gamemilestone/GameMilestone.java,9\8\9852333997d0934b45301996ac2a939703c84430
-m
-=src/main/java/org/toby/valueobject/csvobjects/GameDetail.java,8\5\855e986a44f7d655d1b4461f423ffe68a1ae303c
 ô
 isrc/main/java/org/toby/valueobject/csvobjects/databasetransfer/gamemilestone/GameMilestoneCollection.java,e\6\e63f34444d461389267c158dfc749d7c5edf0e5e
 r
@@ -167,8 +163,6 @@ h
 8src/main/java/org/toby/database/delete/GameDeletion.java,f\c\fc76c975bf4e76a2490d5fb0c5a3abac57b262d7
 i
 9src/main/java/org/toby/database/insert/GameInsertion.java,3\f\3f6015a829f5cf7d8119899e16db61839317faab
-}
-Msrc/main/java/org/toby/database/idmapping/formatters/ChampionIdFormatter.java,3\c\3c30fbae46e56b2945061cfbbc59d3c9ebd774b8
 u
 Esrc/test/java/org/toby/database/testtable/TestTableDataRetriever.java,a\8\a8ce030dd0ed7a051b4f6573c55c469a6e33333e
 `

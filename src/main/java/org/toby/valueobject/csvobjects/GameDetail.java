@@ -199,6 +199,10 @@ public class GameDetail {
         return newId;
     }
 
+    public void setSeasonId(byte seasonId) {
+        this.seasonId = seasonId;
+    }
+
     public void setNewId(long newId) {
         this.newId = newId;
     }
