@@ -207,6 +207,34 @@ public class GameDetail {
         this.newId = newId;
     }
 
+    public void setWinner(byte winner) {
+        this.winner = winner;
+    }
+
+    public void setFirstBlood(byte firstBlood) {
+        this.firstBlood = firstBlood;
+    }
+
+    public void setFirstTower(byte firstTower) {
+        this.firstTower = firstTower;
+    }
+
+    public void setFirstInhibitor(byte firstInhibitor) {
+        this.firstInhibitor = firstInhibitor;
+    }
+
+    public void setFirstBaron(byte firstBaron) {
+        this.firstBaron = firstBaron;
+    }
+
+    public void setFirstDragon(byte firstDragon) {
+        this.firstDragon = firstDragon;
+    }
+
+    public void setFirstRiftHerald(byte firstRiftHerald) {
+        this.firstRiftHerald = firstRiftHerald;
+    }
+
     public void setT1_champ1id(int t1_champ1id) {
         this.t1_champ1id = t1_champ1id;
     }

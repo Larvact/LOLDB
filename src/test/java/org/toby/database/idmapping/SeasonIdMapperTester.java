@@ -35,7 +35,7 @@ public class SeasonIdMapperTester {
 
     private final int expectedNumberOfSeasons = 1;
     private final byte seasonOldId = 9;
-    private final byte expectedChampionNewId = 1;
+    private final byte expectedSeasonNewId = 1;
 
 
     @BeforeClass
@@ -72,7 +72,7 @@ public class SeasonIdMapperTester {
     @Test
     public void ensureSpecificSeasonHasCorrectNewIdMappedViaTheirOldId(){
         byte newId = seasonIdMapper.getMapping().get(seasonOldId);
-        Assert.assertEquals(expectedChampionNewId, newId);
+        Assert.assertEquals(expectedSeasonNewId, newId);
     }
 
     @Test
