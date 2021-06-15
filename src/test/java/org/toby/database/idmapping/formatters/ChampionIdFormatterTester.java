@@ -17,10 +17,10 @@ import org.toby.database.tablemanagers.SQLTableManager;
 import org.toby.json.dbobjectgenerators.ChampionCollectionGenerator;
 import org.toby.properties.PropertyKeys;
 import org.toby.properties.PropertyRetriever;
-import org.toby.reader.CsvGameReader;
-import org.toby.reader.CsvReader;
-import org.toby.reader.LolJsonReader;
-import org.toby.reader.Reader;
+import org.toby.csv.reader.CsvGameReader;
+import org.toby.csv.reader.CsvReader;
+import org.toby.json.reader.LolJsonReader;
+import org.toby.json.reader.Reader;
 import org.toby.valueobject.csvobjects.GameDetail;
 
 public class ChampionIdFormatterTester {

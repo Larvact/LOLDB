@@ -5,6 +5,8 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import org.toby.csv.deserializers.Deserializer;
 import org.toby.csv.deserializers.GameDetailDeserilizer;
+import org.toby.csv.reader.CsvGameReader;
+import org.toby.csv.reader.CsvReader;
 import org.toby.properties.PropertyKeys;
 import org.toby.properties.PropertyRetriever;
 import org.toby.valueobject.csvobjects.GameDetail;

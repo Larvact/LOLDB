@@ -11,8 +11,8 @@ import org.toby.properties.PropertyKeys;
 import org.toby.properties.PropertyRetriever;
 import org.toby.valueobject.jsondeserialise.databasetransfer.summonerspell.SummonerSpellCollection;
 import org.toby.valueobject.jsondeserialise.SummonerSpell;
-import org.toby.reader.LolJsonReader;
-import org.toby.reader.Reader;
+import org.toby.json.reader.LolJsonReader;
+import org.toby.json.reader.Reader;
 import java.io.IOException;
 
 public class CollectionDeserializerTester {

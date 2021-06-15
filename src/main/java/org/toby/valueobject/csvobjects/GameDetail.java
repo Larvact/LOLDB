@@ -1,6 +1,7 @@
 package org.toby.valueobject.csvobjects;
 
 import java.util.List;
+import java.util.Objects;
 
 public class GameDetail {
 
@@ -637,5 +638,18 @@ public class GameDetail {
 
     public int getT2_ban5() {
         return t2_ban5;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        GameDetail that = (GameDetail) o;
+        return oldId == that.oldId;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(oldId);
     }
 }

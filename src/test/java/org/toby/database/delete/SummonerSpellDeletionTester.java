@@ -13,8 +13,8 @@ import org.toby.database.testtable.TestTableDataRetriever;
 import org.toby.json.dbobjectgenerators.SummonerSpellCollectionGenerator;
 import org.toby.properties.PropertyKeys;
 import org.toby.properties.PropertyRetriever;
-import org.toby.reader.LolJsonReader;
-import org.toby.reader.Reader;
+import org.toby.json.reader.LolJsonReader;
+import org.toby.json.reader.Reader;
 
 import java.sql.PreparedStatement;
 import java.sql.SQLException;

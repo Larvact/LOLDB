@@ -3,6 +3,8 @@ package org.toby.database.insert;
 import org.junit.*;
 import org.toby.csv.deserializers.Deserializer;
 import org.toby.csv.deserializers.GameDetailDeserilizer;
+import org.toby.csv.validators.duplicate.BaseDuplicateFilter;
+import org.toby.csv.validators.duplicate.DuplicateFilter;
 import org.toby.database.LolDbConnector;
 import org.toby.database.delete.*;
 import org.toby.database.idmapping.IdMapper;
@@ -17,8 +19,8 @@ import org.toby.database.tablemanagers.SQLTableManager;
 import org.toby.database.testtable.TestTableDataRetriever;
 import org.toby.properties.PropertyKeys;
 import org.toby.properties.PropertyRetriever;
-import org.toby.reader.CsvGameReader;
-import org.toby.reader.CsvReader;
+import org.toby.csv.reader.CsvGameReader;
+import org.toby.csv.reader.CsvReader;
 import org.toby.valueobject.csvobjects.GameDetail;
 import org.toby.valueobject.csvobjects.databasetransfer.game.GameCollection;
 import org.toby.valueobject.csvobjects.databasetransfer.season.SeasonCollection;
@@ -31,6 +33,7 @@ public class GameInsertionTester {
 
     private static CsvReader<GameDetail> csvReader;
     private static Deserializer<GameDetail> csvGameDetailDeserializer;
+    private static DuplicateFilter<Integer, GameDetail> gameDetailDuplicateFilter;
     private static List<Format> formatters;
     private static Format globalFormatter;
 
@@ -52,6 +55,7 @@ public class GameInsertionTester {
     public static void setUpData(){
         connector = new LolDbConnector(PropertyRetriever.getProperty(PropertyKeys.DATABASE_CONNECTION_STRING.toString()));
         readCsv();
+        filterData();
         insertTeamData();
         insertSeasonData();
         formatData();
@@ -64,6 +68,12 @@ public class GameInsertionTester {
         csvReader.read();
     }
 
+    private static void filterData(){
+        gameDetailDuplicateFilter = new BaseDuplicateFilter<>(csvReader.getRowDetailsMap());
+        System.out.println(gameDetailDuplicateFilter.getDuplicates().size());
+        System.out.println(gameDetailDuplicateFilter.getDistinctiveMap().size());
+    }
+
     private static void insertTeamData(){
         teamInsertion = new TeamInsertion(connector);
         teamDeletion = new TeamDeletion(connector);
@@ -72,25 +82,25 @@ public class GameInsertionTester {
     }
 
     private static void insertSeasonData(){
-        seasonInsertion = new SeasonInsertion(connector, new SeasonCollection(csvReader.getRowDetailsMap().values()));
+        seasonInsertion = new SeasonInsertion(connector, new SeasonCollection(gameDetailDuplicateFilter.getDistinctiveMap().values()));
         sqlManager.setInsertion(seasonInsertion);
         sqlManager.insert();
     }
 
     private static void insertGameData(){
-        gameInsertion = new GameInsertion(connector, new GameCollection(new ArrayList<>(csvReader.getRowDetailsMap().values())));
+        gameInsertion = new GameInsertion(connector, new GameCollection(new ArrayList<>(gameDetailDuplicateFilter.getDistinctiveMap().values())));
         sqlManager.setInsertion(gameInsertion);
         sqlManager.insert();
     }
 
     private static void formatData(){
-        IdMapper<Byte> seasonIdMapper = new SeasonIdMapper(new SeasonCollection(csvReader.getRowDetailsMap().values()), connector);
+        IdMapper<Byte> seasonIdMapper = new SeasonIdMapper(new SeasonCollection(gameDetailDuplicateFilter.getDistinctiveMap().values()), connector);
         IdMapper<Byte> teamIdMapper = new TeamIdMapper(connector);
         seasonIdMapper.map();
         teamIdMapper.map();
 
-        Format seasonIdFormatter = new SeasonIdFormatter(csvReader.getRowDetailsMap(), seasonIdMapper.getMapping());
-        Format teamIdFormatter = new TeamIdFormatter(csvReader.getRowDetailsMap(), teamIdMapper.getMapping());
+        Format seasonIdFormatter = new SeasonIdFormatter(gameDetailDuplicateFilter.getDistinctiveMap(), seasonIdMapper.getMapping());
+        Format teamIdFormatter = new TeamIdFormatter(gameDetailDuplicateFilter.getDistinctiveMap(), teamIdMapper.getMapping());
 
         formatters = new ArrayList<>();
         formatters.add(seasonIdFormatter);

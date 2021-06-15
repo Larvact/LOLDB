@@ -3,6 +3,8 @@ package org.toby.reader;
 import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;
+import org.toby.json.reader.LolJsonReader;
+import org.toby.json.reader.Reader;
 import org.toby.properties.PropertyKeys;
 import org.toby.properties.PropertyRetriever;
 

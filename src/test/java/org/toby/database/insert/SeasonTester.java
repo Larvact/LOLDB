@@ -11,8 +11,8 @@ import org.toby.database.tablemanagers.SQLTableManager;
 import org.toby.database.testtable.TestTableDataRetriever;
 import org.toby.properties.PropertyKeys;
 import org.toby.properties.PropertyRetriever;
-import org.toby.reader.CsvGameReader;
-import org.toby.reader.CsvReader;
+import org.toby.csv.reader.CsvGameReader;
+import org.toby.csv.reader.CsvReader;
 import org.toby.valueobject.csvobjects.GameDetail;
 import org.toby.valueobject.csvobjects.databasetransfer.season.SeasonCollection;
 

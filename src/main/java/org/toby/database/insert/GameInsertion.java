@@ -44,7 +44,6 @@ public class GameInsertion extends Insertion{
                     .append(game.getLegacyId()).append(", ")
                     .append(game.getSeasonId()).append("), ");
         }
-        System.out.println(sqlInsertStatement.substring(0,sqlInsertStatement.length() - 2) + ";");
         return sqlInsertStatement.substring(0,sqlInsertStatement.length() - 2) + ";";
     }
 }
